@@ -1,0 +1,5 @@
+# No compiled python files
+*.pyc
+
+# No buffers
+*~
