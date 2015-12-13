@@ -40,6 +40,7 @@ def get_instance():
                         if alb.get_title() == album_title and alb.get_artist().get_name() == artist_name:
                                 # Album already created
                                 al = alb
+                                break
                 else:
                         # Set title and image only if album is new
                         al.set_title(album_title)
