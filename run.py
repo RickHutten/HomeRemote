@@ -1,3 +1,3 @@
-import server.main
+import server
 
-server.main.start_server()
+server.start_server()

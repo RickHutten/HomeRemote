@@ -1,205 +1,255 @@
-song;artist;album;order;file_path;image_path
-Polly [Live];Nirvana;MTV Unplugged In New York;07;/home/pi/Music/Nirvana/MTV Unplugged In New York/07 Polly [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Something In The Way [Live];Nirvana;MTV Unplugged In New York;09;/home/pi/Music/Nirvana/MTV Unplugged In New York/09 Something In The Way [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Oh Me [Live];Nirvana;MTV Unplugged In New York;11;/home/pi/Music/Nirvana/MTV Unplugged In New York/11 Oh Me [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Plateau [Live];Nirvana;MTV Unplugged In New York;10;/home/pi/Music/Nirvana/MTV Unplugged In New York/10 Plateau [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-About A Girl [Live];Nirvana;MTV Unplugged In New York;01;/home/pi/Music/Nirvana/MTV Unplugged In New York/01 About A Girl [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Come As You Are [Live];Nirvana;MTV Unplugged In New York;02;/home/pi/Music/Nirvana/MTV Unplugged In New York/02 Come As You Are [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-The Man Who Sold The World [Live];Nirvana;MTV Unplugged In New York;04;/home/pi/Music/Nirvana/MTV Unplugged In New York/04 The Man Who Sold The World [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-On A Plain [Live];Nirvana;MTV Unplugged In New York;08;/home/pi/Music/Nirvana/MTV Unplugged In New York/08 On A Plain [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Pennyroyal Tea [Live];Nirvana;MTV Unplugged In New York;05;/home/pi/Music/Nirvana/MTV Unplugged In New York/05 Pennyroyal Tea [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-All Apologies [Live];Nirvana;MTV Unplugged In New York;13;/home/pi/Music/Nirvana/MTV Unplugged In New York/13 All Apologies [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Jesus Doesn't Want Me For A Sunbeam [Live];Nirvana;MTV Unplugged In New York;03;/home/pi/Music/Nirvana/MTV Unplugged In New York/03 Jesus Doesn't Want Me For A Sunbeam [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Lake Of Fire [Live];Nirvana;MTV Unplugged In New York;12;/home/pi/Music/Nirvana/MTV Unplugged In New York/12 Lake Of Fire [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Where Did You Sleep Last Night [Live];Nirvana;MTV Unplugged In New York;14;/home/pi/Music/Nirvana/MTV Unplugged In New York/14 Where Did You Sleep Last Night [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Dumb [Live];Nirvana;MTV Unplugged In New York;06;/home/pi/Music/Nirvana/MTV Unplugged In New York/06 Dumb [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg
-Something In The Way;Nirvana;Nevermind;12;/home/pi/Music/Nirvana/Nevermind/12 Something In The Way.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-On A Plain;Nirvana;Nevermind;11;/home/pi/Music/Nirvana/Nevermind/11 On A Plain.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Breed;Nirvana;Nevermind;04;/home/pi/Music/Nirvana/Nevermind/04 Breed.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Smells Like Teen Spirit;Nirvana;Nevermind;01;/home/pi/Music/Nirvana/Nevermind/01 Smells Like Teen Spirit.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Drain You;Nirvana;Nevermind;08;/home/pi/Music/Nirvana/Nevermind/08 Drain You.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Endless, Nameless;Nirvana;Nevermind;13;/home/pi/Music/Nirvana/Nevermind/13 Endless, Nameless.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Lithium;Nirvana;Nevermind;05;/home/pi/Music/Nirvana/Nevermind/05 Lithium.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-In Bloom;Nirvana;Nevermind;02;/home/pi/Music/Nirvana/Nevermind/02 In Bloom.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Stay Away;Nirvana;Nevermind;10;/home/pi/Music/Nirvana/Nevermind/10 Stay Away.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Lounge Act;Nirvana;Nevermind;09;/home/pi/Music/Nirvana/Nevermind/09 Lounge Act.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Polly;Nirvana;Nevermind;06;/home/pi/Music/Nirvana/Nevermind/06 Polly.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Come As You Are;Nirvana;Nevermind;03;/home/pi/Music/Nirvana/Nevermind/03 Come As You Are.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Territorial Pissings;Nirvana;Nevermind;07;/home/pi/Music/Nirvana/Nevermind/07 Territorial Pissings.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg
-Rape Me;Nirvana;The Very Best Of;17;/home/pi/Music/Nirvana/The Very Best Of/17 Rape Me.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Big Long Now;Nirvana;The Very Best Of;14;/home/pi/Music/Nirvana/The Very Best Of/14 Big Long Now.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Heart-Shaped Box;Nirvana;The Very Best Of;06;/home/pi/Music/Nirvana/The Very Best Of/06 Heart-Shaped Box.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Aero Zeppelin;Nirvana;The Very Best Of;05;/home/pi/Music/Nirvana/The Very Best Of/05 Aero Zeppelin.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Smells Like Teen Spirit;Nirvana;The Very Best Of;01;/home/pi/Music/Nirvana/The Very Best Of/01 Smells Like Teen Spirit.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Come As You Are;Nirvana;The Very Best Of;02;/home/pi/Music/Nirvana/The Very Best Of/02 Come As You Are.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Breed;Nirvana;The Very Best Of;21;/home/pi/Music/Nirvana/The Very Best Of/21 Breed.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-About A Girl (Live);Nirvana;The Very Best Of;20;/home/pi/Music/Nirvana/The Very Best Of/20 About A Girl (Live).mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Drain You;Nirvana;The Very Best Of;11;/home/pi/Music/Nirvana/The Very Best Of/11 Drain You.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Puss;Nirvana;The Very Best Of;07;/home/pi/Music/Nirvana/The Very Best Of/07 Puss.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Stay Away;Nirvana;The Very Best Of;15;/home/pi/Music/Nirvana/The Very Best Of/15 Stay Away.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Aneurism;Nirvana;The Very Best Of;16;/home/pi/Music/Nirvana/The Very Best Of/16 Aneurism.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Lithium;Nirvana;The Very Best Of;12;/home/pi/Music/Nirvana/The Very Best Of/12 Lithium.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-In Bloom;Nirvana;The Very Best Of;08;/home/pi/Music/Nirvana/The Very Best Of/08 In Bloom.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Sliver;Nirvana;The Very Best Of;09;/home/pi/Music/Nirvana/The Very Best Of/09 Sliver.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-School (Live);Nirvana;The Very Best Of;18;/home/pi/Music/Nirvana/The Very Best Of/18 School (Live).mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Oh, The Guilit;Nirvana;The Very Best Of;03;/home/pi/Music/Nirvana/The Very Best Of/03 Oh, The Guilit.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-All Apologies;Nirvana;The Very Best Of;13;/home/pi/Music/Nirvana/The Very Best Of/13 All Apologies.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Dive;Nirvana;The Very Best Of;04;/home/pi/Music/Nirvana/The Very Best Of/04 Dive.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Floyd The Barber (Live);Nirvana;The Very Best Of;19;/home/pi/Music/Nirvana/The Very Best Of/19 Floyd The Barber (Live).mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Frances Farmer Will Have Her;Nirvana;The Very Best Of;10;/home/pi/Music/Nirvana/The Very Best Of/10 Frances Farmer Will Have Her.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg
-Everlong;Foo Fighters;Greatest Hits;03;/home/pi/Music/Foo Fighters/Greatest Hits/03 Everlong.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-My Hero;Foo Fighters;Greatest Hits;05;/home/pi/Music/Foo Fighters/Greatest Hits/05 My Hero.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Best of You;Foo Fighters;Greatest Hits;02;/home/pi/Music/Foo Fighters/Greatest Hits/02 Best of You.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Monkey Wrench;Foo Fighters;Greatest Hits;08;/home/pi/Music/Foo Fighters/Greatest Hits/08 Monkey Wrench.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Skin and Bones;Foo Fighters;Greatest Hits;13;/home/pi/Music/Foo Fighters/Greatest Hits/13 Skin and Bones.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Times Like These;Foo Fighters;Greatest Hits;07;/home/pi/Music/Foo Fighters/Greatest Hits/07 Times Like These.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Breakout;Foo Fighters;Greatest Hits;10;/home/pi/Music/Foo Fighters/Greatest Hits/10 Breakout.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Big Me;Foo Fighters;Greatest Hits;09;/home/pi/Music/Foo Fighters/Greatest Hits/09 Big Me.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-This is a Call;Foo Fighters;Greatest Hits;12;/home/pi/Music/Foo Fighters/Greatest Hits/12 This is a Call.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-All My Life;Foo Fighters;Greatest Hits;01;/home/pi/Music/Foo Fighters/Greatest Hits/01 All My Life.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Learn to Fly;Foo Fighters;Greatest Hits;06;/home/pi/Music/Foo Fighters/Greatest Hits/06 Learn to Fly.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Everlong (Acoustic);Foo Fighters;Greatest Hits;16;/home/pi/Music/Foo Fighters/Greatest Hits/16 Everlong (Acoustic).mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Long Road to Ruin;Foo Fighters;Greatest Hits;11;/home/pi/Music/Foo Fighters/Greatest Hits/11 Long Road to Ruin.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Word Forward;Foo Fighters;Greatest Hits;15;/home/pi/Music/Foo Fighters/Greatest Hits/15 Word Forward.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-The Pretender;Foo Fighters;Greatest Hits;04;/home/pi/Music/Foo Fighters/Greatest Hits/04 The Pretender.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-Wheels;Foo Fighters;Greatest Hits;14;/home/pi/Music/Foo Fighters/Greatest Hits/14 Wheels.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg
-These Days;Foo Fighters;Wasting Lights;06;/home/pi/Music/Foo Fighters/Wasting Lights/06 These Days.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Bridge Burning;Foo Fighters;Wasting Lights;01;/home/pi/Music/Foo Fighters/Wasting Lights/01 Bridge Burning.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Rope;Foo Fighters;Wasting Lights;02;/home/pi/Music/Foo Fighters/Wasting Lights/02 Rope.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Back & Forth;Foo Fighters;Wasting Lights;07;/home/pi/Music/Foo Fighters/Wasting Lights/07 Back & Forth.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Dear Rosemary;Foo Fighters;Wasting Lights;03;/home/pi/Music/Foo Fighters/Wasting Lights/03 Dear Rosemary.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Arlandria;Foo Fighters;Wasting Lights;05;/home/pi/Music/Foo Fighters/Wasting Lights/05 Arlandria.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-A Matter Of Time;Foo Fighters;Wasting Lights;08;/home/pi/Music/Foo Fighters/Wasting Lights/08 A Matter Of Time.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Miss The Misery;Foo Fighters;Wasting Lights;09;/home/pi/Music/Foo Fighters/Wasting Lights/09 Miss The Misery.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-White Limo;Foo Fighters;Wasting Lights;04;/home/pi/Music/Foo Fighters/Wasting Lights/04 White Limo.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-Walk;Foo Fighters;Wasting Lights;11;/home/pi/Music/Foo Fighters/Wasting Lights/11 Walk.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-I Should Have Know;Foo Fighters;Wasting Lights;10;/home/pi/Music/Foo Fighters/Wasting Lights/10 I Should Have Know.mp3;/home/pi/Music/Foo Fighters/Wasting Lights/folder.jpg
-New Way Home;Foo Fighters;The Colour And The Shape;13;/home/pi/Music/Foo Fighters/The Colour And The Shape/13 New Way Home.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-February Stars;Foo Fighters;The Colour And The Shape;10;/home/pi/Music/Foo Fighters/The Colour And The Shape/10 February Stars.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-My Hero;Foo Fighters;The Colour And The Shape;07;/home/pi/Music/Foo Fighters/The Colour And The Shape/07 My Hero.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Everlong;Foo Fighters;The Colour And The Shape;11;/home/pi/Music/Foo Fighters/The Colour And The Shape/11 Everlong.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Walking After You;Foo Fighters;The Colour And The Shape;12;/home/pi/Music/Foo Fighters/The Colour And The Shape/12 Walking After You.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Monkey Wrench;Foo Fighters;The Colour And The Shape;02;/home/pi/Music/Foo Fighters/The Colour And The Shape/02 Monkey Wrench.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Wind Up;Foo Fighters;The Colour And The Shape;05;/home/pi/Music/Foo Fighters/The Colour And The Shape/05 Wind Up.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Doll;Foo Fighters;The Colour And The Shape;01;/home/pi/Music/Foo Fighters/The Colour And The Shape/01 Doll.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Enough Space;Foo Fighters;The Colour And The Shape;09;/home/pi/Music/Foo Fighters/The Colour And The Shape/09 Enough Space.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-See You;Foo Fighters;The Colour And The Shape;08;/home/pi/Music/Foo Fighters/The Colour And The Shape/08 See You.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Hey, Johnny Park!;Foo Fighters;The Colour And The Shape;03;/home/pi/Music/Foo Fighters/The Colour And The Shape/03 Hey, Johnny Park!.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-My Poor Brain;Foo Fighters;The Colour And The Shape;04;/home/pi/Music/Foo Fighters/The Colour And The Shape/04 My Poor Brain.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Up In Arms;Foo Fighters;The Colour And The Shape;06;/home/pi/Music/Foo Fighters/The Colour And The Shape/06 Up In Arms.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg
-Life of Illusion [Joe Walsh Cover];Foo Fighters;Medium Rare;03;/home/pi/Music/Foo Fighters/Medium Rare/03 Life of Illusion [Joe Walsh Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Darling Nikki [Prince & The Revolution Cover];Foo Fighters;Medium Rare;06;/home/pi/Music/Foo Fighters/Medium Rare/06 Darling Nikki [Prince & The Revolution Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Young Man Blues [Mose Allison Cover];Foo Fighters;Medium Rare;04;/home/pi/Music/Foo Fighters/Medium Rare/04 Young Man Blues [Mose Allison Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Gas Chamber [Angry Samoans Cover];Foo Fighters;Medium Rare;12;/home/pi/Music/Foo Fighters/Medium Rare/12 Gas Chamber [Angry Samoans Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Have a Cigar [Pink Floyd Cover];Foo Fighters;Medium Rare;10;/home/pi/Music/Foo Fighters/Medium Rare/10 Have a Cigar [Pink Floyd Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-This Will Be Our Year [The Zombies Cover];Foo Fighters;Medium Rare;13;/home/pi/Music/Foo Fighters/Medium Rare/13 This Will Be Our Year [The Zombies Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Band On The Run [Wings Cover];Foo Fighters;Medium Rare;01;/home/pi/Music/Foo Fighters/Medium Rare/01 Band On The Run [Wings Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-I Feel Free [Cream Cover];Foo Fighters;Medium Rare;02;/home/pi/Music/Foo Fighters/Medium Rare/02 I Feel Free [Cream Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Danny Says [Ramones Cover Feat Greg Bissonette On Drums];Foo Fighters;Medium Rare;09;/home/pi/Music/Foo Fighters/Medium Rare/09 Danny Says [Ramones Cover Feat Greg Bissonette On Drums].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Bad Reputation [Thin Lizzy Cover];Foo Fighters;Medium Rare;05;/home/pi/Music/Foo Fighters/Medium Rare/05 Bad Reputation [Thin Lizzy Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Never Talking To You Again [Husker Du Cover];Foo Fighters;Medium Rare;11;/home/pi/Music/Foo Fighters/Medium Rare/11 Never Talking To You Again [Husker Du Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Down In The Park [Gary Numan & Tubeway Army Cover];Foo Fighters;Medium Rare;07;/home/pi/Music/Foo Fighters/Medium Rare/07 Down In The Park [Gary Numan & Tubeway Army Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-Baker Street [Gerry Rafferty Cover];Foo Fighters;Medium Rare;08;/home/pi/Music/Foo Fighters/Medium Rare/08 Baker Street [Gerry Rafferty Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg
-DOA;Foo Fighters;In Your Honor;04;/home/pi/Music/Foo Fighters/In Your Honor/04 DOA.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-The Deepest Blues Are Black;Foo Fighters;In Your Honor;09;/home/pi/Music/Foo Fighters/In Your Honor/09 The Deepest Blues Are Black.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Free Me;Foo Fighters;In Your Honor;07;/home/pi/Music/Foo Fighters/In Your Honor/07 Free Me.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-End Over End;Foo Fighters;In Your Honor;10;/home/pi/Music/Foo Fighters/In Your Honor/10 End Over End.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Over And Out;Foo Fighters;In Your Honor;16;/home/pi/Music/Foo Fighters/In Your Honor/16 Over And Out.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Razor;Foo Fighters;In Your Honor;20;/home/pi/Music/Foo Fighters/In Your Honor/20 Razor.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-The Last Song;Foo Fighters;In Your Honor;06;/home/pi/Music/Foo Fighters/In Your Honor/06 The Last Song.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Miracle;Foo Fighters;In Your Honor;13;/home/pi/Music/Foo Fighters/In Your Honor/13 Miracle.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Best Of You;Foo Fighters;In Your Honor;03;/home/pi/Music/Foo Fighters/In Your Honor/03 Best Of You.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Still;Foo Fighters;In Your Honor;11;/home/pi/Music/Foo Fighters/In Your Honor/11 Still.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Hell;Foo Fighters;In Your Honor;05;/home/pi/Music/Foo Fighters/In Your Honor/05 Hell.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-On The Mend;Foo Fighters;In Your Honor;17;/home/pi/Music/Foo Fighters/In Your Honor/17 On The Mend.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-What If I Do;Foo Fighters;In Your Honor;12;/home/pi/Music/Foo Fighters/In Your Honor/12 What If I Do.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Another Round;Foo Fighters;In Your Honor;14;/home/pi/Music/Foo Fighters/In Your Honor/14 Another Round.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Virginia Moon;Foo Fighters;In Your Honor;18;/home/pi/Music/Foo Fighters/In Your Honor/18 Virginia Moon.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Resolve;Foo Fighters;In Your Honor;08;/home/pi/Music/Foo Fighters/In Your Honor/08 Resolve.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Cold Day In The Sun;Foo Fighters;In Your Honor;19;/home/pi/Music/Foo Fighters/In Your Honor/19 Cold Day In The Sun.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-No Way Back;Foo Fighters;In Your Honor;02;/home/pi/Music/Foo Fighters/In Your Honor/02 No Way Back.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-In Your Honor;Foo Fighters;In Your Honor;01;/home/pi/Music/Foo Fighters/In Your Honor/01 In Your Honor.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-Friend Of A Friend;Foo Fighters;In Your Honor;15;/home/pi/Music/Foo Fighters/In Your Honor/15 Friend Of A Friend.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg
-My Hero;Foo Fighters;Skin And Bones;05;/home/pi/Music/Foo Fighters/Skin And Bones/05 My Hero.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Best Of You;Foo Fighters;Skin And Bones;14;/home/pi/Music/Foo Fighters/Skin And Bones/14 Best Of You.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Skin And Bones;Foo Fighters;Skin And Bones;10;/home/pi/Music/Foo Fighters/Skin And Bones/10 Skin And Bones.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Friend Of A Friend;Foo Fighters;Skin And Bones;13;/home/pi/Music/Foo Fighters/Skin And Bones/13 Friend Of A Friend.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-February Stars;Foo Fighters;Skin And Bones;11;/home/pi/Music/Foo Fighters/Skin And Bones/11 February Stars.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Walking After You;Foo Fighters;Skin And Bones;03;/home/pi/Music/Foo Fighters/Skin And Bones/03 Walking After You.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Big Me;Foo Fighters;Skin And Bones;08;/home/pi/Music/Foo Fighters/Skin And Bones/08 Big Me.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Times Like These;Foo Fighters;Skin And Bones;12;/home/pi/Music/Foo Fighters/Skin And Bones/12 Times Like These.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Next Year;Foo Fighters;Skin And Bones;06;/home/pi/Music/Foo Fighters/Skin And Bones/06 Next Year.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Razor;Foo Fighters;Skin And Bones;01;/home/pi/Music/Foo Fighters/Skin And Bones/01 Razor.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Another Round;Foo Fighters;Skin And Bones;07;/home/pi/Music/Foo Fighters/Skin And Bones/07 Another Round.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Cold Day In The Sun;Foo Fighters;Skin And Bones;09;/home/pi/Music/Foo Fighters/Skin And Bones/09 Cold Day In The Sun.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Marigold;Foo Fighters;Skin And Bones;04;/home/pi/Music/Foo Fighters/Skin And Bones/04 Marigold.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Everlong;Foo Fighters;Skin And Bones;15;/home/pi/Music/Foo Fighters/Skin And Bones/15 Everlong.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Over And Out ;Foo Fighters;Skin And Bones;02;/home/pi/Music/Foo Fighters/Skin And Bones/02 Over And Out .mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg
-Lonely As You;Foo Fighters;One By One;08;/home/pi/Music/Foo Fighters/One By One/08 Lonely As You.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Times Like These;Foo Fighters;One By One;04;/home/pi/Music/Foo Fighters/One By One/04 Times Like These.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Halo;Foo Fighters;One By One;07;/home/pi/Music/Foo Fighters/One By One/07 Halo.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Burn Away;Foo Fighters;One By One;10;/home/pi/Music/Foo Fighters/One By One/10 Burn Away.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-All My Life;Foo Fighters;One By One;01;/home/pi/Music/Foo Fighters/One By One/01 All My Life.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Come Back;Foo Fighters;One By One;11;/home/pi/Music/Foo Fighters/One By One/11 Come Back.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Tired Of You;Foo Fighters;One By One;06;/home/pi/Music/Foo Fighters/One By One/06 Tired Of You.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Low;Foo Fighters;One By One;02;/home/pi/Music/Foo Fighters/One By One/02 Low.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Have It All;Foo Fighters;One By One;03;/home/pi/Music/Foo Fighters/One By One/03 Have It All.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Overdrive;Foo Fighters;One By One;09;/home/pi/Music/Foo Fighters/One By One/09 Overdrive.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Disenchanted Lullaby;Foo Fighters;One By One;05;/home/pi/Music/Foo Fighters/One By One/05 Disenchanted Lullaby.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg
-Long Road To Ruin;Foo Fighters;Echoes, Silence, Patience And Grace;04;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/04 Long Road To Ruin.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Summer's End;Foo Fighters;Echoes, Silence, Patience And Grace;08;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/08 Summer's End.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Let It Die;Foo Fighters;Echoes, Silence, Patience And Grace;02;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/02 Let It Die.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Home;Foo Fighters;Echoes, Silence, Patience And Grace;12;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/12 Home.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Come Alive;Foo Fighters;Echoes, Silence, Patience And Grace;05;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/05 Come Alive.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-The Pretender;Foo Fighters;Echoes, Silence, Patience And Grace;01;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/01 The Pretender.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-The Ballad of the Beaconsfield Miners;Foo Fighters;Echoes, Silence, Patience And Grace;09;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/09 The Ballad of the Beaconsfield Miners.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Statues;Foo Fighters;Echoes, Silence, Patience And Grace;10;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/10 Statues.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Once And For All (Demo) [Bonus Track];Foo Fighters;Echoes, Silence, Patience And Grace;13;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/13 Once And For All (Demo) [Bonus Track].mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Cheer Up Boys, Your Makeup Is Running;Foo Fighters;Echoes, Silence, Patience And Grace;07;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/07 Cheer Up Boys, Your Makeup Is Running.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Erase Replace;Foo Fighters;Echoes, Silence, Patience And Grace;03;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/03 Erase Replace.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-Stranger Things Have Happened;Foo Fighters;Echoes, Silence, Patience And Grace;06;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/06 Stranger Things Have Happened.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-But Honestly;Foo Fighters;Echoes, Silence, Patience And Grace;11;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/11 But Honestly.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg
-This Is A Call;Foo Fighters;Foo Fighters;01;/home/pi/Music/Foo Fighters/Foo Fighters/01 This Is A Call.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Alone + Easy Target;Foo Fighters;Foo Fighters;04;/home/pi/Music/Foo Fighters/Foo Fighters/04 Alone + Easy Target.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-For All The Cows;Foo Fighters;Foo Fighters;09;/home/pi/Music/Foo Fighters/Foo Fighters/09 For All The Cows.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Weenie Beenie;Foo Fighters;Foo Fighters;07;/home/pi/Music/Foo Fighters/Foo Fighters/07 Weenie Beenie.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Exhausted;Foo Fighters;Foo Fighters;12;/home/pi/Music/Foo Fighters/Foo Fighters/12 Exhausted.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Floaty;Foo Fighters;Foo Fighters;06;/home/pi/Music/Foo Fighters/Foo Fighters/06 Floaty.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Oh George;Foo Fighters;Foo Fighters;08;/home/pi/Music/Foo Fighters/Foo Fighters/08 Oh George.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Wattershed;Foo Fighters;Foo Fighters;11;/home/pi/Music/Foo Fighters/Foo Fighters/11 Wattershed.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Good Grief;Foo Fighters;Foo Fighters;05;/home/pi/Music/Foo Fighters/Foo Fighters/05 Good Grief.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-X-Static;Foo Fighters;Foo Fighters;10;/home/pi/Music/Foo Fighters/Foo Fighters/10 X-Static.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Big Me;Foo Fighters;Foo Fighters;03;/home/pi/Music/Foo Fighters/Foo Fighters/03 Big Me.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-I'll Stick Around;Foo Fighters;Foo Fighters;02;/home/pi/Music/Foo Fighters/Foo Fighters/02 I'll Stick Around.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg
-Live-In Skin;Foo Fighters;There Is Nothing Left To Lose;07;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/07 Live-In Skin.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-M.I.A.;Foo Fighters;There Is Nothing Left To Lose;11;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/11 M.I.A..mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Aurora;Foo Fighters;There Is Nothing Left To Lose;06;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/06 Aurora.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Breakout;Foo Fighters;There Is Nothing Left To Lose;02;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/02 Breakout.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Gimme Stitches;Foo Fighters;There Is Nothing Left To Lose;04;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/04 Gimme Stitches.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Headwires;Foo Fighters;There Is Nothing Left To Lose;09;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/09 Headwires.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Stacked Actors;Foo Fighters;There Is Nothing Left To Lose;01;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/01 Stacked Actors.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Ain't It The Life;Foo Fighters;There Is Nothing Left To Lose;10;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/10 Ain't It The Life.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Generator;Foo Fighters;There Is Nothing Left To Lose;05;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/05 Generator.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Learn To Fly;Foo Fighters;There Is Nothing Left To Lose;03;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/03 Learn To Fly.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Next Year;Foo Fighters;There Is Nothing Left To Lose;08;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/08 Next Year.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg
-Don't Walk Away;Kensington;Rivals;07;/home/pi/Music/Kensington/Rivals/07 Don't Walk Away.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-All For Nothing;Kensington;Rivals;02;/home/pi/Music/Kensington/Rivals/02 All For Nothing.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Streets;Kensington;Rivals;01;/home/pi/Music/Kensington/Rivals/01 Streets.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Rivals;Kensington;Rivals;10;/home/pi/Music/Kensington/Rivals/10 Rivals.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Done With It;Kensington;Rivals;03;/home/pi/Music/Kensington/Rivals/03 Done With It.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-War;Kensington;Rivals;06;/home/pi/Music/Kensington/Rivals/06 War.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Little Light;Kensington;Rivals;08;/home/pi/Music/Kensington/Rivals/08 Little Light.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Riddles;Kensington;Rivals;05;/home/pi/Music/Kensington/Rivals/05 Riddles.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-System;Kensington;Rivals;04;/home/pi/Music/Kensington/Rivals/04 System.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Words You Don't Know;Kensington;Rivals;09;/home/pi/Music/Kensington/Rivals/09 Words You Don't Know.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg
-Kilimanjaro;Kensington;Vultures;05;/home/pi/Music/Kensington/Vultures/05 Kilimanjaro.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-It Doesn't Have To Hurt;Kensington;Vultures;09;/home/pi/Music/Kensington/Vultures/09 It Doesn't Have To Hurt.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Ride;Kensington;Vultures;02;/home/pi/Music/Kensington/Vultures/02 Ride.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Good Life;Kensington;Vultures;11;/home/pi/Music/Kensington/Vultures/11 Good Life.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Don't Look Back;Kensington;Vultures;03;/home/pi/Music/Kensington/Vultures/03 Don't Look Back.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Call My Name;Kensington;Vultures;10;/home/pi/Music/Kensington/Vultures/10 Call My Name.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-No Way Out;Kensington;Vultures;04;/home/pi/Music/Kensington/Vultures/04 No Way Out.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Send Me Away;Kensington;Vultures;01;/home/pi/Music/Kensington/Vultures/01 Send Me Away.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Ghosts;Kensington;Vultures;08;/home/pi/Music/Kensington/Vultures/08 Ghosts.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-Go Down;Kensington;Vultures;07;/home/pi/Music/Kensington/Vultures/07 Go Down.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
-We Are The Young;Kensington;Vultures;06;/home/pi/Music/Kensington/Vultures/06 We Are The Young.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg
+song;artist;album;order;file_path;image_path;length
+Polly [Live];Nirvana;MTV Unplugged In New York;07;/home/pi/Music/Nirvana/MTV Unplugged In New York/07 Polly [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;196.466666667
+Something In The Way [Live];Nirvana;MTV Unplugged In New York;09;/home/pi/Music/Nirvana/MTV Unplugged In New York/09 Something In The Way [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;241.493424036
+Oh Me [Live];Nirvana;MTV Unplugged In New York;11;/home/pi/Music/Nirvana/MTV Unplugged In New York/11 Oh Me [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;206.199931973
+Plateau [Live];Nirvana;MTV Unplugged In New York;10;/home/pi/Music/Nirvana/MTV Unplugged In New York/10 Plateau [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;218.106689342
+About A Girl [Live];Nirvana;MTV Unplugged In New York;01;/home/pi/Music/Nirvana/MTV Unplugged In New York/01 About A Girl [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;217.96
+Come As You Are [Live];Nirvana;MTV Unplugged In New York;02;/home/pi/Music/Nirvana/MTV Unplugged In New York/02 Come As You Are [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;253.906666667
+The Man Who Sold The World [Live];Nirvana;MTV Unplugged In New York;04;/home/pi/Music/Nirvana/MTV Unplugged In New York/04 The Man Who Sold The World [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;261.026666667
+On A Plain [Live];Nirvana;MTV Unplugged In New York;08;/home/pi/Music/Nirvana/MTV Unplugged In New York/08 On A Plain [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;224.773310658
+Pennyroyal Tea [Live];Nirvana;MTV Unplugged In New York;05;/home/pi/Music/Nirvana/MTV Unplugged In New York/05 Pennyroyal Tea [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;220.506598639
+All Apologies [Live];Nirvana;MTV Unplugged In New York;13;/home/pi/Music/Nirvana/MTV Unplugged In New York/13 All Apologies [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;263.266598639
+Jesus Doesn't Want Me For A Sunbeam [Live];Nirvana;MTV Unplugged In New York;03;/home/pi/Music/Nirvana/MTV Unplugged In New York/03 Jesus Doesn't Want Me For A Sunbeam [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;277.333333333
+Lake Of Fire [Live];Nirvana;MTV Unplugged In New York;12;/home/pi/Music/Nirvana/MTV Unplugged In New York/12 Lake Of Fire [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;175.933356009
+Where Did You Sleep Last Night [Live];Nirvana;MTV Unplugged In New York;14;/home/pi/Music/Nirvana/MTV Unplugged In New York/14 Where Did You Sleep Last Night [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;308.0
+Dumb [Live];Nirvana;MTV Unplugged In New York;06;/home/pi/Music/Nirvana/MTV Unplugged In New York/06 Dumb [Live].mp3;/home/pi/Music/Nirvana/MTV Unplugged In New York/front.jpg;172.960090703
+Something In The Way;Nirvana;Nevermind;12;/home/pi/Music/Nirvana/Nevermind/12 Something In The Way.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;439.224428571
+On A Plain;Nirvana;Nevermind;11;/home/pi/Music/Nirvana/Nevermind/11 On A Plain.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;196.271142857
+Breed;Nirvana;Nevermind;4;/home/pi/Music/Nirvana/Nevermind/04 Breed.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;183.504964286
+Smells Like Teen Spirit;Nirvana;Nevermind;1;/home/pi/Music/Nirvana/Nevermind/01 Smells Like Teen Spirit.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;301.091178571
+Drain You;Nirvana;Nevermind;8;/home/pi/Music/Nirvana/Nevermind/08 Drain You.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;223.709928571
+Endless, Nameless;Nirvana;Nevermind;13;/home/pi/Music/Nirvana/Nevermind/13 Endless, Nameless.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;404.292964286
+Lithium;Nirvana;Nevermind;5;/home/pi/Music/Nirvana/Nevermind/05 Lithium.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;256.839071429
+In Bloom;Nirvana;Nevermind;2;/home/pi/Music/Nirvana/Nevermind/02 In Bloom.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;254.776928571
+Stay Away;Nirvana;Nevermind;10;/home/pi/Music/Nirvana/Nevermind/10 Stay Away.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;212.3785
+Lounge Act;Nirvana;Nevermind;9;/home/pi/Music/Nirvana/Nevermind/09 Lounge Act.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;156.561357143
+Polly;Nirvana;Nevermind;6;/home/pi/Music/Nirvana/Nevermind/06 Polly.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;176.872821429
+Come As You Are;Nirvana;Nevermind;3;/home/pi/Music/Nirvana/Nevermind/03 Come As You Are.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;218.984321429
+Territorial Pissings;Nirvana;Nevermind;7;/home/pi/Music/Nirvana/Nevermind/07 Territorial Pissings.mp3;/home/pi/Music/Nirvana/Nevermind/Folder.jpg;143.117178571
+Rape Me;Nirvana;The Very Best;17;/home/pi/Music/Nirvana/The Very Best Of/17 Rape Me.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;171.04
+Big Long Now;Nirvana;The Very Best;14;/home/pi/Music/Nirvana/The Very Best Of/14 Big Long Now.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;114.866666667
+Heart-Shaped Box;Nirvana;The Very Best;06;/home/pi/Music/Nirvana/The Very Best Of/06 Heart-Shaped Box.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;281.706666667
+Aero Zeppelin;Nirvana;The Very Best;05;/home/pi/Music/Nirvana/The Very Best Of/05 Aero Zeppelin.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;280.666666667
+Smells Like Teen Spirit;Nirvana;The Very Best;01;/home/pi/Music/Nirvana/The Very Best Of/01 Smells Like Teen Spirit.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;302.84
+Come As You Are;Nirvana;The Very Best;02;/home/pi/Music/Nirvana/The Very Best Of/02 Come As You Are.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;221.333333333
+Breed;Nirvana;The Very Best;21;/home/pi/Music/Nirvana/The Very Best Of/21 Breed.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;184.266666667
+About A Girl (Live);Nirvana;The Very Best;20;/home/pi/Music/Nirvana/The Very Best Of/20 About A Girl (Live).mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;175.333333333
+Drain You;Nirvana;The Very Best;11;/home/pi/Music/Nirvana/The Very Best Of/11 Drain You.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;226.106666667
+Puss;Nirvana;The Very Best;07;/home/pi/Music/Nirvana/The Very Best Of/07 Puss.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;201.466666667
+Stay Away;Nirvana;The Very Best;15;/home/pi/Music/Nirvana/The Very Best Of/15 Stay Away.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;213.133333333
+Aneurism;Nirvana;The Very Best;16;/home/pi/Music/Nirvana/The Very Best Of/16 Aneurism.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;276.8
+Lithium;Nirvana;The Very Best;12;/home/pi/Music/Nirvana/The Very Best Of/12 Lithium.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;258.76
+In Bloom;Nirvana;The Very Best;08;/home/pi/Music/Nirvana/The Very Best Of/08 In Bloom.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;255.733333333
+Sliver;Nirvana;The Very Best;09;/home/pi/Music/Nirvana/The Very Best Of/09 Sliver.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;133.266666667
+School (Live);Nirvana;The Very Best;18;/home/pi/Music/Nirvana/The Very Best Of/18 School (Live).mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;146.226666667
+Oh, The Guilit;Nirvana;The Very Best;03;/home/pi/Music/Nirvana/The Very Best Of/03 Oh, The Guilit.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;204.026666667
+All Apologies;Nirvana;The Very Best;13;/home/pi/Music/Nirvana/The Very Best Of/13 All Apologies.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;232.4
+Dive;Nirvana;The Very Best;04;/home/pi/Music/Nirvana/The Very Best Of/04 Dive.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;234.133333333
+Floyd The Barber (Live);Nirvana;The Very Best;19;/home/pi/Music/Nirvana/The Very Best Of/19 Floyd The Barber (Live).mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;140.4
+Frances Farmer Will Have Her;Nirvana;The Very Best;10;/home/pi/Music/Nirvana/The Very Best Of/10 Frances Farmer Will Have Her.mp3;/home/pi/Music/Nirvana/The Very Best Of/Folder.jpg;249.826666667
+Busted;The Black Keys;The Big Come Up;1;/home/pi/Music/The Black Keys/The Big Come Up/Busted.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;153.986666667
+I'll Be Your Man;The Black Keys;The Big Come Up;3;/home/pi/Music/The Black Keys/The Big Come Up/I'll Be Your Man.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;140.933333333
+Brooklyn Bound;The Black Keys;The Big Come Up;12;/home/pi/Music/The Black Keys/The Big Come Up/Brooklyn Bound.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;191.133333333
+Leavin' Truck;The Black Keys;The Big Come Up;7;/home/pi/Music/The Black Keys/The Big Come Up/Leavin' Truck.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;180.213333333
+240 Years Before Your Time;The Black Keys;The Big Come Up;13;/home/pi/Music/The Black Keys/The Big Come Up/240 Years Before Your Time.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;101.146122449
+She Said, She Said;The Black Keys;The Big Come Up;9;/home/pi/Music/The Black Keys/The Big Come Up/She Said, She Said.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;152.253333333
+Do The Rump;The Black Keys;The Big Come Up;2;/home/pi/Music/The Black Keys/The Big Come Up/Do The Rump.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;157.733333333
+Heavy Soul;The Black Keys;The Big Come Up;8;/home/pi/Music/The Black Keys/The Big Come Up/Heavy Soul.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;128.893333333
+Run Me Down;The Black Keys;The Big Come Up;6;/home/pi/Music/The Black Keys/The Big Come Up/Run Me Down.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;147.346666667
+Yearnin';The Black Keys;The Big Come Up;11;/home/pi/Music/The Black Keys/The Big Come Up/Yearnin'.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;118.826666667
+Them Eyes;The Black Keys;The Big Come Up;10;/home/pi/Music/The Black Keys/The Big Come Up/Them Eyes.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;143.053333333
+The Breaks;The Black Keys;The Big Come Up;5;/home/pi/Music/The Black Keys/The Big Come Up/The Breaks.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;181.306666667
+Countdown;The Black Keys;The Big Come Up;4;/home/pi/Music/The Black Keys/The Big Come Up/Countdown.mp3;/home/pi/Music/The Black Keys/The Big Come Up/Folder.jpg;158.573333333
+Lonely Boy;The Black Keys;El Camino;1;/home/pi/Music/The Black Keys/El Camino/01 Lonely Boy.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;193.21324263
+Stop Stop;The Black Keys;El Camino;9;/home/pi/Music/The Black Keys/El Camino/09 Stop Stop.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;209.722630385
+Dead and Gone;The Black Keys;El Camino;2;/home/pi/Music/The Black Keys/El Camino/02 Dead and Gone.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;221.053968254
+Money Maker;The Black Keys;El Camino;5;/home/pi/Music/The Black Keys/El Camino/05 Money Maker.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;177.284353741
+Sister;The Black Keys;El Camino;7;/home/pi/Music/The Black Keys/El Camino/07 Sister.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;205.217959184
+Run Right Back;The Black Keys;El Camino;6;/home/pi/Music/The Black Keys/El Camino/06 Run Right Back.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;197.044535147
+Hell of a Season;The Black Keys;El Camino;8;/home/pi/Music/The Black Keys/El Camino/08 Hell of a Season.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;225.047800454
+Nova Baby;The Black Keys;El Camino;10;/home/pi/Music/The Black Keys/El Camino/10 Nova Baby.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;207.075555556
+Little Black Submarines;The Black Keys;El Camino;4;/home/pi/Music/The Black Keys/El Camino/04 Little Black Submarines.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;251.309569161
+Gold on the Ceiling;The Black Keys;El Camino;3;/home/pi/Music/The Black Keys/El Camino/03 Gold on the Ceiling.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;224.374421769
+Mind Eraser;The Black Keys;El Camino;11;/home/pi/Music/The Black Keys/El Camino/11 Mind Eraser.mp3;/home/pi/Music/The Black Keys/El Camino/Folder.jpg;194.629659864
+All You Ever Wanted;The Black Keys;Attack and Release;01;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 01 - All You Ever Wanted.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;176.1999375
+Remember When (Side A);The Black Keys;Attack and Release;06;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 06 - Remember When (Side A).mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;201.51259375
+Lies;The Black Keys;Attack and Release;05;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 05 - Lies.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;238.9983125
+Psychotic Girl;The Black Keys;Attack and Release;04;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 04 - Psychotic Girl.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;250.67503125
+Remember When (Side B);The Black Keys;Attack and Release;07;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 07 - Remember When (Side B).mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;130.98196875
+Same Old Thing;The Black Keys;Attack and Release;08;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 08 - Same Old Thing.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;189.23503125
+Things Ain't Like They Used to Be;The Black Keys;Attack and Release;11;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 11 - Things Ain't Like They Used to Be.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;294.95259375
+I Got Mine;The Black Keys;Attack and Release;02;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 02 - I Got Mine.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;239.0766875
+So He Won't Break;The Black Keys;Attack and Release;09;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 09 - So He Won't Break.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;254.2799375
+Oceans & Streams;The Black Keys;Attack and Release;10;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 10 - Oceans & Streams.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;206.266875
+Strange Times;The Black Keys;Attack and Release;03;/home/pi/Music/The Black Keys/Attack and Release/Black Keys, the - Attack and Release - 03 - Strange Times.mp3;/home/pi/Music/The Black Keys/Attack and Release/Folder.jpg;190.2538125
+Too Afraid To Love You;The Black Keys;Brothers;8;/home/pi/Music/The Black Keys/Brothers/08 - The Black Keys - Too Afraid To Love You.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;206.747188209
+Next Girl;The Black Keys;Brothers;2;/home/pi/Music/The Black Keys/Brothers/02 - The Black Keys - Next Girl.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;200.216575964
+Tighten Up;The Black Keys;Brothers;3;/home/pi/Music/The Black Keys/Brothers/03 - The Black Keys - Tighten Up.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;213.12106576
+Never Give You Up;The Black Keys;Brothers;14;/home/pi/Music/The Black Keys/Brothers/14 - The Black Keys - Never Give You Up.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;221.010045351
+I'm Not The One;The Black Keys;Brothers;12;/home/pi/Music/The Black Keys/Brothers/12 - The Black Keys - I'm Not The One.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;231.093310658
+Everlasting Light;The Black Keys;Brothers;1;/home/pi/Music/The Black Keys/Brothers/01 - The Black Keys - Everlasting Light.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;205.780657596
+These Days;The Black Keys;Brothers;15;/home/pi/Music/The Black Keys/Brothers/15 - The Black Keys - These Days.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;311.863922902
+Black Mud;The Black Keys;Brothers;6;/home/pi/Music/The Black Keys/Brothers/06 - The Black Keys - Black Mud.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;131.462290249
+Sinister Kid;The Black Keys;Brothers;10;/home/pi/Music/The Black Keys/Brothers/10 - The Black Keys - Sinister Kid.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;226.574126984
+The Go Getter;The Black Keys;Brothers;11;/home/pi/Music/The Black Keys/Brothers/11 - The Black Keys - The Go Getter.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;219.050861678
+Unknown Brother;The Black Keys;Brothers;13;/home/pi/Music/The Black Keys/Brothers/13 - The Black Keys - Unknown Brother.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;241.699024943
+She's Long Gone;The Black Keys;Brothers;5;/home/pi/Music/The Black Keys/Brothers/05 - The Black Keys - She's Long Gone.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;188.01739229
+Ten Cent Pistol;The Black Keys;Brothers;9;/home/pi/Music/The Black Keys/Brothers/09 - The Black Keys - Ten Cent Pistol.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;271.348004535
+Howlin' For You;The Black Keys;Brothers;4;/home/pi/Music/The Black Keys/Brothers/04 - The Black Keys - Howlin' For You.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;193.790453515
+The Only One;The Black Keys;Brothers;7;/home/pi/Music/The Black Keys/Brothers/07 - The Black Keys - The Only One.mp3;/home/pi/Music/The Black Keys/Brothers/Folder.jpg;302.381473923
+Everlong;Foo Fighters;Greatest Hits;03;/home/pi/Music/Foo Fighters/Greatest Hits/03 Everlong.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;250.093333333
+My Hero;Foo Fighters;Greatest Hits;05;/home/pi/Music/Foo Fighters/Greatest Hits/05 My Hero.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;258.973333333
+Best of You;Foo Fighters;Greatest Hits;02;/home/pi/Music/Foo Fighters/Greatest Hits/02 Best of You.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;256.106666667
+Monkey Wrench;Foo Fighters;Greatest Hits;08;/home/pi/Music/Foo Fighters/Greatest Hits/08 Monkey Wrench.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;232.8
+Skin and Bones;Foo Fighters;Greatest Hits;13;/home/pi/Music/Foo Fighters/Greatest Hits/13 Skin and Bones.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;243.666666667
+Times Like These;Foo Fighters;Greatest Hits;07;/home/pi/Music/Foo Fighters/Greatest Hits/07 Times Like These.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;267.973333333
+Breakout;Foo Fighters;Greatest Hits;10;/home/pi/Music/Foo Fighters/Greatest Hits/10 Breakout.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;201.813333333
+Big Me;Foo Fighters;Greatest Hits;09;/home/pi/Music/Foo Fighters/Greatest Hits/09 Big Me.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;134.306666667
+This is a Call;Foo Fighters;Greatest Hits;12;/home/pi/Music/Foo Fighters/Greatest Hits/12 This is a Call.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;234.733333333
+All My Life;Foo Fighters;Greatest Hits;01;/home/pi/Music/Foo Fighters/Greatest Hits/01 All My Life.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;264.213333333
+Learn to Fly;Foo Fighters;Greatest Hits;06;/home/pi/Music/Foo Fighters/Greatest Hits/06 Learn to Fly.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;236.266666667
+Everlong (Acoustic);Foo Fighters;Greatest Hits;16;/home/pi/Music/Foo Fighters/Greatest Hits/16 Everlong (Acoustic).mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;250.906666667
+Long Road to Ruin;Foo Fighters;Greatest Hits;11;/home/pi/Music/Foo Fighters/Greatest Hits/11 Long Road to Ruin.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;228.373333333
+Word Forward;Foo Fighters;Greatest Hits;15;/home/pi/Music/Foo Fighters/Greatest Hits/15 Word Forward.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;228.586666667
+The Pretender;Foo Fighters;Greatest Hits;04;/home/pi/Music/Foo Fighters/Greatest Hits/04 The Pretender.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;267.36
+Wheels;Foo Fighters;Greatest Hits;14;/home/pi/Music/Foo Fighters/Greatest Hits/14 Wheels.mp3;/home/pi/Music/Foo Fighters/Greatest Hits/Folder.jpg;278.213333333
+New Way Home;Foo Fighters;The Colour And The Shape;13;/home/pi/Music/Foo Fighters/The Colour And The Shape/13 New Way Home.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;340.133333333
+February Stars;Foo Fighters;The Colour And The Shape;10;/home/pi/Music/Foo Fighters/The Colour And The Shape/10 February Stars.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;289.226666667
+My Hero;Foo Fighters;The Colour And The Shape;7;/home/pi/Music/Foo Fighters/The Colour And The Shape/07 My Hero.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;260.0
+Everlong;Foo Fighters;The Colour And The Shape;11;/home/pi/Music/Foo Fighters/The Colour And The Shape/11 Everlong.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;250.666666667
+Walking After You;Foo Fighters;The Colour And The Shape;12;/home/pi/Music/Foo Fighters/The Colour And The Shape/12 Walking After You.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;303.773333333
+Monkey Wrench;Foo Fighters;The Colour And The Shape;2;/home/pi/Music/Foo Fighters/The Colour And The Shape/02 Monkey Wrench.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;231.426666667
+Wind Up;Foo Fighters;The Colour And The Shape;5;/home/pi/Music/Foo Fighters/The Colour And The Shape/05 Wind Up.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;152.066666667
+Doll;Foo Fighters;The Colour And The Shape;1;/home/pi/Music/Foo Fighters/The Colour And The Shape/01 Doll.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;83.4
+Enough Space;Foo Fighters;The Colour And The Shape;9;/home/pi/Music/Foo Fighters/The Colour And The Shape/09 Enough Space.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;157.306666667
+See You;Foo Fighters;The Colour And The Shape;8;/home/pi/Music/Foo Fighters/The Colour And The Shape/08 See You.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;146.693333333
+Hey, Johnny Park!;Foo Fighters;The Colour And The Shape;3;/home/pi/Music/Foo Fighters/The Colour And The Shape/03 Hey, Johnny Park!.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;248.44
+My Poor Brain;Foo Fighters;The Colour And The Shape;4;/home/pi/Music/Foo Fighters/The Colour And The Shape/04 My Poor Brain.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;213.36
+Up In Arms;Foo Fighters;The Colour And The Shape;6;/home/pi/Music/Foo Fighters/The Colour And The Shape/06 Up In Arms.mp3;/home/pi/Music/Foo Fighters/The Colour And The Shape/Folder.jpg;135.64
+Life of Illusion [Joe Walsh Cover];Foo Fighters;Medium Rare [LP Rip];03;/home/pi/Music/Foo Fighters/Medium Rare/03 Life of Illusion [Joe Walsh Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;219.954225
+Darling Nikki [Prince & The Revolution Cover];Foo Fighters;Medium Rare [LP Rip];06;/home/pi/Music/Foo Fighters/Medium Rare/06 Darling Nikki [Prince & The Revolution Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;202.373825
+Young Man Blues [Mose Allison Cover];Foo Fighters;Medium Rare [LP Rip];04;/home/pi/Music/Foo Fighters/Medium Rare/04 Young Man Blues [Mose Allison Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;341.789325
+Gas Chamber [Angry Samoans Cover];Foo Fighters;Medium Rare [LP Rip];12;/home/pi/Music/Foo Fighters/Medium Rare/12 Gas Chamber [Angry Samoans Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;56.5583
+Have a Cigar [Pink Floyd Cover];Foo Fighters;Medium Rare [LP Rip];10;/home/pi/Music/Foo Fighters/Medium Rare/10 Have a Cigar [Pink Floyd Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;244.8228
+This Will Be Our Year [The Zombies Cover];Foo Fighters;Medium Rare [LP Rip];13;/home/pi/Music/Foo Fighters/Medium Rare/13 This Will Be Our Year [The Zombies Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;153.75995
+Band On The Run [Wings Cover];Foo Fighters;Medium Rare [LP Rip];01;/home/pi/Music/Foo Fighters/Medium Rare/01 Band On The Run [Wings Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;308.16975
+I Feel Free [Cream Cover];Foo Fighters;Medium Rare [LP Rip];02;/home/pi/Music/Foo Fighters/Medium Rare/02 I Feel Free [Cream Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;175.206475
+Danny Says [Ramones Cover Feat Greg Bissonette On Drums];Foo Fighters;Medium Rare [LP Rip];09;/home/pi/Music/Foo Fighters/Medium Rare/09 Danny Says [Ramones Cover Feat Greg Bissonette On Drums].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;179.098725
+Bad Reputation [Thin Lizzy Cover];Foo Fighters;Medium Rare [LP Rip];05;/home/pi/Music/Foo Fighters/Medium Rare/05 Bad Reputation [Thin Lizzy Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;153.3681
+Never Talking To You Again [Husker Du Cover];Foo Fighters;Medium Rare [LP Rip];11;/home/pi/Music/Foo Fighters/Medium Rare/11 Never Talking To You Again [Husker Du Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;113.74035
+Down In The Park [Gary Numan & Tubeway Army Cover];Foo Fighters;Medium Rare [LP Rip];07;/home/pi/Music/Foo Fighters/Medium Rare/07 Down In The Park [Gary Numan & Tubeway Army Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;250.2824
+Baker Street [Gerry Rafferty Cover];Foo Fighters;Medium Rare [LP Rip];08;/home/pi/Music/Foo Fighters/Medium Rare/08 Baker Street [Gerry Rafferty Cover].mp3;/home/pi/Music/Foo Fighters/Medium Rare/folder.jpg;335.728925
+DOA;Foo Fighters;In Your Honor;4;/home/pi/Music/Foo Fighters/In Your Honor/04 DOA.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;252.106666667
+The Deepest Blues Are Black;Foo Fighters;In Your Honor;9;/home/pi/Music/Foo Fighters/In Your Honor/09 The Deepest Blues Are Black.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;238.333333333
+Free Me;Foo Fighters;In Your Honor;7;/home/pi/Music/Foo Fighters/In Your Honor/07 Free Me.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;278.6
+End Over End;Foo Fighters;In Your Honor;10;/home/pi/Music/Foo Fighters/In Your Honor/10 End Over End.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;352.0
+Over And Out;Foo Fighters;In Your Honor;16;/home/pi/Music/Foo Fighters/In Your Honor/16 Over And Out.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;316.173333333
+Razor;Foo Fighters;In Your Honor;20;/home/pi/Music/Foo Fighters/In Your Honor/20 Razor.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;293.173333333
+The Last Song;Foo Fighters;In Your Honor;6;/home/pi/Music/Foo Fighters/In Your Honor/06 The Last Song.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;199.426666667
+Miracle;Foo Fighters;In Your Honor;13;/home/pi/Music/Foo Fighters/In Your Honor/13 Miracle.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;209.6
+Best Of You;Foo Fighters;In Your Honor;3;/home/pi/Music/Foo Fighters/In Your Honor/03 Best Of You.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;255.626666667
+Still;Foo Fighters;In Your Honor;11;/home/pi/Music/Foo Fighters/In Your Honor/11 Still.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;313.093333333
+Hell;Foo Fighters;In Your Honor;5;/home/pi/Music/Foo Fighters/In Your Honor/05 Hell.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;117.0
+On The Mend;Foo Fighters;In Your Honor;17;/home/pi/Music/Foo Fighters/In Your Honor/17 On The Mend.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;271.826666667
+What If I Do?;Foo Fighters;In Your Honor;12;/home/pi/Music/Foo Fighters/In Your Honor/12 What If I Do.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;302.906666667
+Another Round;Foo Fighters;In Your Honor;14;/home/pi/Music/Foo Fighters/In Your Honor/14 Another Round.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;265.76
+Virginia Moon;Foo Fighters;In Your Honor;18;/home/pi/Music/Foo Fighters/In Your Honor/18 Virginia Moon.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;229.106666667
+Resolve;Foo Fighters;In Your Honor;8;/home/pi/Music/Foo Fighters/In Your Honor/08 Resolve.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;288.64
+Cold Day In The Sun;Foo Fighters;In Your Honor;19;/home/pi/Music/Foo Fighters/In Your Honor/19 Cold Day In The Sun.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;200.626666667
+No Way Back;Foo Fighters;In Your Honor;2;/home/pi/Music/Foo Fighters/In Your Honor/02 No Way Back.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;196.573333333
+In Your Honor;Foo Fighters;In Your Honor;1;/home/pi/Music/Foo Fighters/In Your Honor/01 In Your Honor.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;230.093333333
+Friend Of A Friend;Foo Fighters;In Your Honor;15;/home/pi/Music/Foo Fighters/In Your Honor/15 Friend Of A Friend.mp3;/home/pi/Music/Foo Fighters/In Your Honor/Folder.jpg;193.2
+My Hero;Foo Fighters;Skin And Bones;5;/home/pi/Music/Foo Fighters/Skin And Bones/05 My Hero.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;290.8616
+Best Of You;Foo Fighters;Skin And Bones;14;/home/pi/Music/Foo Fighters/Skin And Bones/14 Best Of You.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;302.3978
+Skin And Bones;Foo Fighters;Skin And Bones;10;/home/pi/Music/Foo Fighters/Skin And Bones/10 Skin And Bones.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;240.7757
+Friend Of A Friend;Foo Fighters;Skin And Bones;13;/home/pi/Music/Foo Fighters/Skin And Bones/13 Friend Of A Friend.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;241.5848
+February Stars;Foo Fighters;Skin And Bones;11;/home/pi/Music/Foo Fighters/Skin And Bones/11 February Stars.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;351.2048
+Walking After You;Foo Fighters;Skin And Bones;3;/home/pi/Music/Foo Fighters/Skin And Bones/03 Walking After You.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;318.4754
+Big Me;Foo Fighters;Skin And Bones;8;/home/pi/Music/Foo Fighters/Skin And Bones/08 Big Me.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;181.7114
+Times Like These;Foo Fighters;Skin And Bones;12;/home/pi/Music/Foo Fighters/Skin And Bones/12 Times Like These.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;325.1048
+Next Year;Foo Fighters;Skin And Bones;6;/home/pi/Music/Foo Fighters/Skin And Bones/06 Next Year.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;274.4708
+Razor;Foo Fighters;Skin And Bones;1;/home/pi/Music/Foo Fighters/Skin And Bones/01 Razor.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;407.7635
+Another Round;Foo Fighters;Skin And Bones;7;/home/pi/Music/Foo Fighters/Skin And Bones/07 Another Round.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;295.0637
+Cold Day In The Sun;Foo Fighters;Skin And Bones;9;/home/pi/Music/Foo Fighters/Skin And Bones/09 Cold Day In The Sun.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;206.0888
+Marigold;Foo Fighters;Skin And Bones;4;/home/pi/Music/Foo Fighters/Skin And Bones/04 Marigold.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;199.5638
+Everlong;Foo Fighters;Skin And Bones;15;/home/pi/Music/Foo Fighters/Skin And Bones/15 Everlong.mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;396.8798
+Over And Out;Foo Fighters;Skin And Bones;2;/home/pi/Music/Foo Fighters/Skin And Bones/02 Over And Out .mp3;/home/pi/Music/Foo Fighters/Skin And Bones/Folder.jpg;356.5031
+Lonely As You;Foo Fighters;One By One;08;/home/pi/Music/Foo Fighters/One By One/08 Lonely As You.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;277.106666667
+Times Like These;Foo Fighters;One By One;04;/home/pi/Music/Foo Fighters/One By One/04 Times Like These.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;266.266666667
+Halo;Foo Fighters;One By One;07;/home/pi/Music/Foo Fighters/One By One/07 Halo.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;306.36
+Burn Away;Foo Fighters;One By One;10;/home/pi/Music/Foo Fighters/One By One/10 Burn Away.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;298.293333333
+All My Life;Foo Fighters;One By One;01;/home/pi/Music/Foo Fighters/One By One/01 All My Life.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;263.56
+Come Back;Foo Fighters;One By One;11;/home/pi/Music/Foo Fighters/One By One/11 Come Back.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;469.866666667
+Tired Of You;Foo Fighters;One By One;06;/home/pi/Music/Foo Fighters/One By One/06 Tired Of You.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;311.266666667
+Low;Foo Fighters;One By One;02;/home/pi/Music/Foo Fighters/One By One/02 Low.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;268.04
+Have It All;Foo Fighters;One By One;03;/home/pi/Music/Foo Fighters/One By One/03 Have It All.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;297.96
+Overdrive;Foo Fighters;One By One;09;/home/pi/Music/Foo Fighters/One By One/09 Overdrive.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;270.466666667
+Disenchanted Lullaby;Foo Fighters;One By One;05;/home/pi/Music/Foo Fighters/One By One/05 Disenchanted Lullaby.mp3;/home/pi/Music/Foo Fighters/One By One/Folder.jpg;273.44
+Long Road To Ruin;Foo Fighters;Echoes, Silence, Patience And Grace;4;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/04 Long Road To Ruin.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;224.59834375
+Summer's End;Foo Fighters;Echoes, Silence, Patience And Grace;8;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/08 Summer's End.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;277.6415
+Let It Die;Foo Fighters;Echoes, Silence, Patience And Grace;2;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/02 Let It Die.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;245.05584375
+Home;Foo Fighters;Echoes, Silence, Patience And Grace;12;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/12 Home.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;292.43665625
+Come Alive;Foo Fighters;Echoes, Silence, Patience And Grace;5;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/05 Come Alive.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;310.23803125
+The Pretender;Foo Fighters;Echoes, Silence, Patience And Grace;1;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/01 The Pretender.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;269.036
+The Ballad of the Beaconsfield Miners;Foo Fighters;Echoes, Silence, Patience And Grace;9;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/09 The Ballad of the Beaconsfield Miners.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;152.00009375
+Statues;Foo Fighters;Echoes, Silence, Patience And Grace;10;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/10 Statues.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;227.51540625
+Once And For All (Demo) [Bonus Track];Foo Fighters;Echoes, Silence, Patience And Grace;13;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/13 Once And For All (Demo) [Bonus Track].mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;227.61978125
+Cheer Up Boys, Your Makeup Is Running;Foo Fighters;Echoes, Silence, Patience And Grace;7;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/07 Cheer Up Boys, Your Makeup Is Running.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;220.88759375
+Erase Replace;Foo Fighters;Echoes, Silence, Patience And Grace;3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/03 Erase Replace.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;252.83178125
+Stranger Things Have Happened;Foo Fighters;Echoes, Silence, Patience And Grace;6;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/06 Stranger Things Have Happened.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;320.67009375
+But Honestly;Foo Fighters;Echoes, Silence, Patience And Grace;11;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/11 But Honestly.mp3;/home/pi/Music/Foo Fighters/Echoes, Silence, Patience And Grace/Folder.jpg;275.37134375
+This Is A Call;Foo Fighters;Foo Fighters;1;/home/pi/Music/Foo Fighters/Foo Fighters/01 This Is A Call.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;233.6
+Alone + Easy Target;Foo Fighters;Foo Fighters;4;/home/pi/Music/Foo Fighters/Foo Fighters/04 Alone + Easy Target.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;245.293333333
+For All The Cows;Foo Fighters;Foo Fighters;9;/home/pi/Music/Foo Fighters/Foo Fighters/09 For All The Cows.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;210.0
+Weenie Beenie;Foo Fighters;Foo Fighters;7;/home/pi/Music/Foo Fighters/Foo Fighters/07 Weenie Beenie.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;165.8
+Exhausted;Foo Fighters;Foo Fighters;12;/home/pi/Music/Foo Fighters/Foo Fighters/12 Exhausted.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;345.293333333
+Floaty;Foo Fighters;Foo Fighters;6;/home/pi/Music/Foo Fighters/Foo Fighters/06 Floaty.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;270.0
+Oh, George;Foo Fighters;Foo Fighters;8;/home/pi/Music/Foo Fighters/Foo Fighters/08 Oh George.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;180.64
+Wattershed;Foo Fighters;Foo Fighters;11;/home/pi/Music/Foo Fighters/Foo Fighters/11 Wattershed.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;135.533333333
+Good Grief;Foo Fighters;Foo Fighters;5;/home/pi/Music/Foo Fighters/Foo Fighters/05 Good Grief.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;241.333333333
+X-Static;Foo Fighters;Foo Fighters;10;/home/pi/Music/Foo Fighters/Foo Fighters/10 X-Static.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;253.133333333
+Big Me;Foo Fighters;Foo Fighters;3;/home/pi/Music/Foo Fighters/Foo Fighters/03 Big Me.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;132.8
+I'll Stick Around;Foo Fighters;Foo Fighters;2;/home/pi/Music/Foo Fighters/Foo Fighters/02 I'll Stick Around.mp3;/home/pi/Music/Foo Fighters/Foo Fighters/Folder.jpg;232.906666667
+Live-In Skin;Foo Fighters;There Is Nothing Left To Lose;07;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/07 Live-In Skin.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;232.76
+M.I.A.;Foo Fighters;There Is Nothing Left To Lose;11;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/11 M.I.A..mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;243.28
+Aurora;Foo Fighters;There Is Nothing Left To Lose;06;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/06 Aurora.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;351.053333333
+Breakout;Foo Fighters;There Is Nothing Left To Lose;02;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/02 Breakout.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;200.8
+Gimme Stitches;Foo Fighters;There Is Nothing Left To Lose;04;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/04 Gimme Stitches.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;222.2
+Headwires;Foo Fighters;There Is Nothing Left To Lose;09;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/09 Headwires.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;277.546666667
+Stacked Actors;Foo Fighters;There Is Nothing Left To Lose;01;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/01 Stacked Actors.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;256.466666667
+Ain't It The Life;Foo Fighters;There Is Nothing Left To Lose;10;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/10 Ain't It The Life.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;254.773333333
+Generator;Foo Fighters;There Is Nothing Left To Lose;05;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/05 Generator.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;229.226666667
+Learn To Fly;Foo Fighters;There Is Nothing Left To Lose;03;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/03 Learn To Fly.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;235.293333333
+Next Year;Foo Fighters;There Is Nothing Left To Lose;08;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/08 Next Year.mp3;/home/pi/Music/Foo Fighters/There Is Nothing Left To Lose/Folder.jpg;277.773333333
+These Days;Foo Fighters;Wasting Light;06;/home/pi/Music/Foo Fighters/Wasting Light/06 These Days.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;298.06035
+Bridge Burning;Foo Fighters;Wasting Light;01;/home/pi/Music/Foo Fighters/Wasting Light/01 Bridge Burning.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;286.1224
+Rope;Foo Fighters;Wasting Light;02;/home/pi/Music/Foo Fighters/Wasting Light/02 Rope.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;259.08565
+Back & Forth;Foo Fighters;Wasting Light;07;/home/pi/Music/Foo Fighters/Wasting Light/07 Back & Forth.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;231.944425
+Dear Rosemary;Foo Fighters;Wasting Light;03;/home/pi/Music/Foo Fighters/Wasting Light/03 Dear Rosemary.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;266.4522
+Arlandria;Foo Fighters;Wasting Light;05;/home/pi/Music/Foo Fighters/Wasting Light/05 Arlandria.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;267.2881
+A Matter Of Time;Foo Fighters;Wasting Light;08;/home/pi/Music/Foo Fighters/Wasting Light/08 A Matter Of Time.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;276.16975
+Miss The Misery;Foo Fighters;Wasting Light;09;/home/pi/Music/Foo Fighters/Wasting Light/09 Miss The Misery.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;271.441575
+White Limo;Foo Fighters;Wasting Light;04;/home/pi/Music/Foo Fighters/Wasting Light/04 White Limo.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;202.2171
+Walk;Foo Fighters;Wasting Light;11;/home/pi/Music/Foo Fighters/Wasting Light/11 Walk.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;255.8726
+I Should Have Know;Foo Fighters;Wasting Light;10;/home/pi/Music/Foo Fighters/Wasting Light/10 I Should Have Know.mp3;/home/pi/Music/Foo Fighters/Wasting Light/folder.jpg;255.428525
+Don't Walk Away;Kensington;Rivals;07;/home/pi/Music/Kensington/Rivals/07 Don't Walk Away.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;213.266666667
+All For Nothing;Kensington;Rivals;02;/home/pi/Music/Kensington/Rivals/02 All For Nothing.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;289.106666667
+Streets;Kensington;Rivals;01;/home/pi/Music/Kensington/Rivals/01 Streets.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;185.346666667
+Rivals;Kensington;Rivals;10;/home/pi/Music/Kensington/Rivals/10 Rivals.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;300.493333333
+Done With It;Kensington;Rivals;03;/home/pi/Music/Kensington/Rivals/03 Done With It.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;202.746666667
+War;Kensington;Rivals;06;/home/pi/Music/Kensington/Rivals/06 War.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;176.653333333
+Little Lights;Kensington;Rivals;08;/home/pi/Music/Kensington/Rivals/08 Little Light.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;307.093333333
+Riddles;Kensington;Rivals;05;/home/pi/Music/Kensington/Rivals/05 Riddles.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;208.546666667
+System;Kensington;Rivals;04;/home/pi/Music/Kensington/Rivals/04 System.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;204.6
+Words You Don't Know;Kensington;Rivals;09;/home/pi/Music/Kensington/Rivals/09 Words You Don't Know.mp3;/home/pi/Music/Kensington/Rivals/Folder.jpg;230.2
+Kilimanjaro;Kensington;Vultures;05;/home/pi/Music/Kensington/Vultures/05 Kilimanjaro.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;276.16
+It Doesn't Have To Hurt;Kensington;Vultures;09;/home/pi/Music/Kensington/Vultures/09 It Doesn't Have To Hurt.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;200.32
+Ride;Kensington;Vultures;02;/home/pi/Music/Kensington/Vultures/02 Ride.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;196.506666667
+Good Life;Kensington;Vultures;11;/home/pi/Music/Kensington/Vultures/11 Good Life.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;186.173333333
+Don't Look Back;Kensington;Vultures;03;/home/pi/Music/Kensington/Vultures/03 Don't Look Back.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;195.866666667
+Call My Name;Kensington;Vultures;10;/home/pi/Music/Kensington/Vultures/10 Call My Name.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;260.546666667
+No Way Out;Kensington;Vultures;04;/home/pi/Music/Kensington/Vultures/04 No Way Out.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;195.053333333
+Send Me Away;Kensington;Vultures;01;/home/pi/Music/Kensington/Vultures/01 Send Me Away.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;186.0
+Ghosts;Kensington;Vultures;08;/home/pi/Music/Kensington/Vultures/08 Ghosts.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;208.8
+Go Down;Kensington;Vultures;07;/home/pi/Music/Kensington/Vultures/07 Go Down.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;173.866666667
+We Are The Young;Kensington;Vultures;06;/home/pi/Music/Kensington/Vultures/06 We Are The Young.mp3;/home/pi/Music/Kensington/Vultures/1000004013372795.jpg;182.76
