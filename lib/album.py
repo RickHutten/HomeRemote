@@ -29,6 +29,12 @@ class Album:
 	def get_songs(self):
 		return self.songs
 
+	def get_song(self, s):
+		for song in self.songs:
+			if song.get_title() == s:
+				return song
+		raise StandardError("Song not found: " + s)
+
 	def add_song(self, songObject):
 		# Add songObject to list
 		songObject.set_album(self)

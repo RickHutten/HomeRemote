@@ -3,3 +3,6 @@
 
 # No buffers
 *~
+
+# No files in data/ folder
+data/

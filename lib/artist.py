@@ -16,6 +16,12 @@ class Artist:
 	def get_albums(self):
 		return self.albums
 
+	def get_album(self, s):
+		for alb in self.albums:
+			if alb.get_title() == s:
+				return alb
+		raise StandardError("Album not found: " + s)
+
 	def set_name(self, s):
 		self.name = s
 
