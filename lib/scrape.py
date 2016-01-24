@@ -1,58 +1,55 @@
-import os
+import os, sys
 import time
+from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
 
 def scrape():
+	print "Scraping songs..."
 	start = time.clock()
 	no_songs = 0
 	f = open("./data/song_data", "w")
 	f.write("song;artist;album;order;file_path;image_path;length\n")
+	
 	for dirname, dirnames, filenames in os.walk('/home/pi/Music'):  # One directory per loop
 	
 	    # Search for album image
 	    img_source = "No image"
 	    for filename in filenames:
-	    	extension = filename.split(".")[1]
+	    	extension = filename.split(".")[-1]
 	        if extension in ["jpg", "JPG", "png", "PNG", "bmp", "BMP", "gif", "GIF"]:
 	        	img_source = os.path.join(dirname, filename)
 	        	break
-	
+
 	    for filename in filenames:
-	    	# Continue if file is image
+	    	# Continue if file is image or not a mp3 file
 	    	extension = filename.split(".")[-1]
 	        if extension in ["jpg", "JPG", "png", "PNG", "bmp", "BMP", "gif", "GIF"]:
 	        	continue
 		if extension != "mp3":
-		    print "Non music file encoutered:"
-		    print os.path.join(dirname, filename)
-		    continue
+			continue
 
 		# Get song path
 		song_path = os.path.join(dirname, filename)		
 
 		# Load song
-		audio = MP3(song_path)
+		audio = MP3(song_path, ID3=EasyID3)
 
 		# Get song attributes
-		song_name = audio["TIT2"]
-		artist = audio["TPE1"]
-		album = audio["TALB"]
-		song_order = str(audio["TRCK"]).split("/")[0] # Some are numbered: '09/16' meaning track 9 of 16
-		length = audio.info.length
+		song_name = str(audio["title"][0])
+		artist = str(audio["artist"][0])
+		album = str(audio["album"][0])
+		song_order = str(audio["tracknumber"][0].split("/")[0]) # Some are numbered: '09/16' meaning track 9 of 16
+		length = int(audio.info.length) + 1 # Roof
 
-
-		# Old way of scraping
-		#song_order = filename[:2]
-		#song_name = filename[:-4][3:]
-	        #artist = song_path.split("/")[4]
-	        #album = song_path.split("/")[5]
-
-
+		# Update user and write source to file
 		no_songs += 1
-	        f.write("%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album, song_order, song_path, img_source, length))
+		print "\r%d songs scraped"%(no_songs),
+	        sys.stdout.flush()
+		f.write("%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album, song_order, song_path, img_source, length))
 	
+	# Close file
 	f.close()
-	print no_songs, "songs scraped in", time.clock() - start, "seconds."
-
+	print "\r" + str(no_songs) + " songs scraped in", time.clock() - start, "seconds."
+	sys.stdout.flush()
 if __name__ == '__main__':
 	scrape()

@@ -8,5 +8,3 @@ import server.routes
 def start_server():
 	app.debug = True
 	app.run(host="0.0.0.0", threaded=True)
-
-

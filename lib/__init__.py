@@ -5,7 +5,6 @@ def get_instance():
         start = time.clock()
 
         lib = library.Library()
-	print " * Music Library created!"
 
         line_no = 0
         f = open("./data/song_data")

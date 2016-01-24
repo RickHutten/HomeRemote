@@ -11,7 +11,7 @@ class ServerVariables():
             # File does not exist, create new
             open(self.filename, "w").close()
 
-    def get(self, key):
+    def get(self, key, default):
         if type(key) != str:
             raise ValueError("Argument should be string not of type: " + str(type(key)))
         key = key.strip()
@@ -21,9 +21,9 @@ class ServerVariables():
             if linesplit[0].strip() == key:
                 f.close()
                 return literal_eval(linesplit[1].strip())
-        # Key not found
+        # Key not found, return default value
         f.close()
-        raise LookupError("Key not found: " + key)
+        return default
 
     def put(self, key, value):
         # Puts key with corresponding value in file. Overwrites if already present.

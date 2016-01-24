@@ -34,9 +34,11 @@ class Library:
 
 	def get_album(self, artist_name, album_title):
 		# Get the albumObject given the album title and artist name
-		for album in self.albums:
-			if album.get_title() == album_title and album.get_artist().get_name() == artist_name:
-				return album
+		for artist in self.artists:
+			if artist.get_name() == artist_name:
+				for album in artist.get_albums():
+					if album.get_title() == album_title:
+						return album
 		raise StandardError("Album not found: %s - %s" % (artist_name, album_title))
 
 	def get_artist(self, artist_name):
@@ -45,6 +47,17 @@ class Library:
 			if artist.get_name() == artist_name:
 				return artist
 		raise StandardError("Artist not found: %s" % artist_name)
+
+	def get_song(self, artist_name, album_title, song_name):
+		# Get the songObject given the artist, album and title of the song
+		for artist in self.artists:
+			if artist.get_name() == artist_name:
+				for album in artist.get_albums():
+					if album.get_title() == album_title:
+						for song in album.get_songs():
+							if song.get_title() == song_name:
+								return song
+		return StandardError("Nothing found: %s, %s, %s" %(artist_name, album_title, song_name))
 
 	def print_lib(self):
 		print "Library sorted by artist:"
@@ -86,5 +99,3 @@ class Library:
 			song_no = len(album.get_songs())
 			print song_no, "songs"
 
-
-			

@@ -22,6 +22,14 @@ class Artist:
 				return alb
 		raise StandardError("Album not found: " + s)
 
+	def get_songs(self):
+		songs = []
+		# Get all songsObjects of the artist
+		for album in self.albums:
+			for songObj in album.get_songs():
+				songs.append(songObj)
+		return songs
+
 	def set_name(self, s):
 		self.name = s
 
