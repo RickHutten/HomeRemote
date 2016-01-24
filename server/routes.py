@@ -3,13 +3,11 @@ import random
 import os
 import hashlib
 import flask
-import lib.variables
 import server.audio
 from flask import abort, send_file, request
-from server import app, library
+from server import app, library, variables
 
-# Get variables
-variables = lib.variables.ServerVariables()
+# Set stop_timer on False on server boot
 variables.put("stop_timer", False)
 
 def t():

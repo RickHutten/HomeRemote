@@ -7,7 +7,16 @@ def scrape():
 	print "Scraping songs..."
 	start = time.clock()
 	no_songs = 0
-	f = open("./data/song_data", "w")
+
+	filename = "./data/song_data"
+        # If the file does not exist, make a new one
+        try:
+            # Try to read the file
+            f = open(self.filename, "r")
+        except IOError:
+            # File does not exist, create new
+            f = open(self.filename, "w")
+
 	f.write("song;artist;album;order;file_path;image_path;length\n")
 	
 	for dirname, dirnames, filenames in os.walk('/home/pi/Music'):  # One directory per loop

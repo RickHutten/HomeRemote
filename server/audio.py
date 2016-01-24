@@ -2,10 +2,7 @@ import time
 import os
 import lib.variables
 from threading import Thread
-from server import library
-
-# Get variables
-variables = lib.variables.ServerVariables()
+from server import library, variables
 
 def play(song):
 	variables.put("playing", [song.get_artist().get_name(), song.get_album().get_title(), song.get_title()])
@@ -56,8 +53,8 @@ def start_timer():
 		return
 
 	variables.put("stop_timer", True)
-	time.sleep(1) # Wait to give the other timer time to stop
-	variables.put("stop_timer", False) # The timer starts
+	time.sleep(1)  # Wait to give the other timer time to stop
+	variables.put("stop_timer", False)  # The timer starts
 
 	playing = variables.get("playing", None)
 	if playing == None:
@@ -83,7 +80,7 @@ def start_timer():
 			# Play new song
 			queue_nr = queue.index(playing)
 			queue_nr += 1
-			song = queue[queue_nr%len(queue)] # Loop
+			song = queue[queue_nr%len(queue)]  # Make dat shit loop
 			print "Playing next song:", song
 			songObj = library.get_song(song[0], song[1], song[2])
 			play(songObj)
