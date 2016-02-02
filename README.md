@@ -9,6 +9,7 @@ The following commands will install the necessary python packages:
 ```
 pip install mutagen
 pip install flask
+pip install pushjack
 ```
 ... and you're done. If you want to type less each time you run a python file than do this:
 ```
