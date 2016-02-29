@@ -6,7 +6,6 @@ import flask
 import server.audio
 from flask import abort, send_file, request
 from server import app, library, variables
-from pushjack import GCMClient
 
 
 # Set stop_timer on False on server boot
@@ -203,7 +202,7 @@ def get_songs_of_album(artist, album):
 @app.route('/set/queue', methods=['POST'])
 def post_queue():
 	limit_remote_addr()  # Limit
-	data = [request.data][0]
+	data = request.data
 	song_strings = data.split(";")
 	playlist = []
 	for song_str in song_strings:
@@ -239,23 +238,17 @@ def get_playing_song():
 
 @app.route("/push")
 def push():
-	client = GCMClient(api_key='AIzaSyAUyqmMcKO3Gqud9P4GseSXzRyw37_qK6g')
-	sender_id = '143702410555'
-
-	registration_id = '<registration id>'
-	alert = 'Hello world.'
-	notification = {'title': 'Title', 'body': 'Body', 'icon': 'icon'}
-
-	# Send to single device.
-	# NOTE: Keyword arguments are optional.
-	res = client.send(registration_id,
-	                  alert,
-	                  notification=notification,
-	                  collapse_key='collapse_key',
-	                  delay_while_idle=True,
-	                  time_to_live=604800)
-
-	# Send to multiple devices by passing a list of ids.
-	client.send([registration_id], alert, **options)
+	server.audio.push()
 	return "User notified"
 
+@app.route("/register_token", methods=['POST'])
+def register_token():
+	limit_remote_addr()  # Limit
+	data = request.data
+	print "Token:", data
+	tokens = variables.get("gmc_tokens", [])
+	if data not in tokens:
+		tokens.append(data)
+		variables.put("gcm_tokens", tokens)
+	return "Succesfully registered token: %s" % data
+	

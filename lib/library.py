@@ -57,7 +57,7 @@ class Library:
 						for song in album.get_songs():
 							if song.get_title() == song_name:
 								return song
-		return StandardError("Nothing found: %s, %s, %s" %(artist_name, album_title, song_name))
+		return StandardError("Song not found: %s, %s, %s" %(artist_name, album_title, song_name))
 
 	def print_lib(self):
 		print "Library sorted by artist:"
@@ -65,9 +65,9 @@ class Library:
 		for artist in sorted(self.artists, key=lambda a: a.get_name()):
 			print artist.get_name(), "\\"
 			for album in sorted(artist.get_albums(), key=lambda a: a.get_title()):
-				print "    ", album.get_title(), "\\\t\t\t", album.get_image()
+				print "    ", album.get_title()
 				for song in sorted(album.get_songs(), key=lambda a: a.get_order()):
-					print "        ", song.get_order(), "-", song.get_title(), "\t\t\t", song.get_path()
+					print "        ", song.get_order(), "-", song.get_title()
 
 		print ""
 		print "---------------------------------------"
@@ -75,9 +75,9 @@ class Library:
 		print "Library sorted by album:"
 		print ""
 		for album in sorted(self.albums, key=lambda a: (a.get_title(), a.get_artist().get_name())):
-			print album.get_title(), ":", album.get_artist().get_name(), "\\\t\t\t", album.get_image()
+			print album.get_title(), ":", album.get_artist().get_name()
 			for song in sorted(album.get_songs(), key=lambda a: a.get_title()):
-				print "    ", song.get_title(), "\t\t\t", song.get_path()
+				print "    ", song.get_title()
 
 	def print_lib_short(self):
 		print "Library sorted by artist:"

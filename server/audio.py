@@ -2,13 +2,16 @@ import time
 import os
 import lib.variables
 from threading import Thread
-from server import library, variables
+from server import library, variables, app
+from flask_pushjack import FlaskGCM
 
 def play(song):
+	variables.put("status", "playing")
 	variables.put("playing", [song.get_artist().get_name(), song.get_album().get_title(), song.get_title()])
 	variables.put("song_start", time.time())
 	os.system("pkill mpg123")  # Kill everything that might be playing
 	os.system('mpg123 -q "%s" &' % song.get_path())  # Play the song
+	push()  # Notify the users
 	
 	# Start counting in new thread
 	thread = Thread(target=start_timer)
@@ -38,11 +41,14 @@ def get_playing():
 
 def pause():
 	os.system("pkill -STOP mpg123")
+	variables.put("status", "paused")
 
 def resume():
 	os.system("pkill -CONT mpg123")
+	variables.put("status", "playing")
 
 def stop():
+	variables.put("status", "stopped")
 	variables.put("playing", None)
 	variables.put("stop_timer", True)
 	os.system("pkill mpg123")
@@ -71,7 +77,7 @@ def start_timer():
 	# Start counting
 	while True:
 		time_elapsed = time.time() - start_time
-		if time_elapsed >= int(song.get_duration()):
+		if time_elapsed >= float(song.get_duration()):
 			# Song is done playing, play next song
 			queue = variables.get("queue", None)
 			if queue == None:
@@ -87,9 +93,43 @@ def start_timer():
 			return  # Stop this timer
 
 		time.sleep(0.1)  # Sleep for a bit
-		# print "Counting ", int(song.get_duration()) - time_elapsed, "seconds to go"
+
+		# print "Counting ", float(song.get_duration()) - time_elapsed, "seconds to go"
 		if variables.get("stop_timer", False):
 			# A new timer is ready to go, stop this one
-			variables.put("stop_timer", False)
 			return
+		# If the music is paused
+		if variables.get("status", "") == "paused":
+			start_pause_time = time.time()
+			while variables.get("status", "") == "paused":
+				time.sleep(0.1)  # Wait for the music to be continued
+			start_time += time.time() - start_pause_time  # Correct for the paused time
+
+def push():
+	config = {
+		'GCM_API_KEY' : variables.get("gcm_api_key", "")
+	}
+	app.config.update(config)
+	
+	client = FlaskGCM()
+	client.init_app(app)
+
+	with app.app_context():
+		tokens = variables.get("gcm_tokens", [])
+		if tokens == []:
+			print "No devices registered"
+			return
+		playing = variables.get("playing", [])
+		alert = {"artist" : playing[0], "album" : playing[1], "song" : playing[2]}
+
+		# Send to single device.
+		# NOTE: Keyword arguments are optional.
+		res = client.send(tokens,
+	                  alert,
+	                  collapse_key='collapse_key',
+	                  delay_while_idle=True,
+	                  time_to_live=604800)
+		
+	# Send to multiple devices by passing a list of ids.
+	#client.send(tokens, alert)#, **options)
 	

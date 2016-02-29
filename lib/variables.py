@@ -25,6 +25,7 @@ class ServerVariables():
 				linesplit = line.split("=")
 				if linesplit[0].strip() == key:
 				    f.close()
+				    # Finally will be called where the lock will be released
 				    return literal_eval(linesplit[1].strip())
 			# Key not found, return default value
 			f.close()
@@ -60,8 +61,7 @@ class ServerVariables():
 		        else:
 		            f.write(key + " = " + str(value) + "\n")
 		        f.close()
-		        lock.release()
-		        return
+			return  # Finally will be called where the lock will be released
 		    # Key already exists
 		    f = open(self.filename, "r")
 		    lines = f.readlines()
@@ -73,7 +73,7 @@ class ServerVariables():
 		    # Overwrite new lines to file
 		    f = open(self.filename, "w")
 		    f.writelines(lines)
-		    f.close()
+		    f.close()	
 		finally:
 			lock.release()
 
