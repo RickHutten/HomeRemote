@@ -9,13 +9,7 @@ def scrape():
 	no_songs = 0
 
 	filename = "./data/song_data"
-        # If the file does not exist, make a new one
-        try:
-            # Try to read the file
-            f = open(self.filename, "r")
-        except IOError:
-            # File does not exist, create new
-            f = open(self.filename, "w")
+        f = open(filename, "w")
 
 	f.write("song;artist;album;order;file_path;image_path;length\n")
 	
@@ -44,9 +38,13 @@ def scrape():
 		audio = MP3(song_path, ID3=EasyID3)
 
 		# Get song attributes
-		song_name = str(audio["title"][0])
-		artist = str(audio["artist"][0])
-		album = str(audio["album"][0])
+		song_name = audio["title"][0]
+		artist = audio["artist"][0]
+		#try:
+		album = audio["album"][0]
+		#except:
+			#print "Dit gaat fout"
+			#print audio["album"][0]
 		song_order = str(audio["tracknumber"][0].split("/")[0]) # Some are numbered: '09/16' meaning track 9 of 16
 		length = int(audio.info.length) + 1 # Roof
 
@@ -54,7 +52,8 @@ def scrape():
 		no_songs += 1
 		print "\r%d songs scraped"%(no_songs),
 	        sys.stdout.flush()
-		f.write("%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album, song_order, song_path, img_source, length))
+		line = "%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album, song_order, song_path, img_source, length)
+		f.write(line.encode("utf8"))
 	
 	# Close file
 	f.close()

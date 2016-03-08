@@ -17,12 +17,14 @@ def play(song):
 	thread = Thread(target=start_timer)
 	thread.start()
 
-def set_volume(vol):
+def set_volume(vol, fade=False):
 	# Set volume in percentage
 	if 0 <= vol <= 100:
 		# Volume has to be between 0 and 100
+		if not fade:
+			variables.put("volume", vol)		
 		if vol == 0:
-			os.system("amixer -1 sset PCM 0%")
+			os.system("amixer -q sset PCM 0%")
 			return True
 		# Map 0-100% to 50-100%
 		percentage = 50 + vol/2.
@@ -30,6 +32,33 @@ def set_volume(vol):
 		os.system(command)
 		return True
 	return False
+
+def fade_out(s):
+	# Fade out in s seconds, music is paused afterwards and original volume restored.
+	if s < 0.5:
+		print "Time to fade out may not be smaller than 0.5 seconds."
+		s = 0.5
+	volume = variables.get("volume", 75)
+	start = time.time()
+	for i in range(20):
+		vol = volume*(1 - (i/20.))
+		set_volume(int(vol), True)
+		time.sleep(s/20. - 0.5/20)  # Fade out takes about 0.5 seconds "-0.5/20" compensates for that	
+	pause()  # Pause the music
+	time.sleep(0.5)  # Wait a bit, otherwise you hear the music resume on high volume for a fraction of a second
+	set_volume(volume, True)  # Set the volume back
+
+def fade_in(s):
+	# Fade in in s seconds
+	if s < 0.5:
+		print "Time to fade in may not be smaller than 0.5 seconds."
+		s = 0.5
+	volume = variables.get("volume", 75)
+	start = time.time()
+	for i in range(20):
+		vol = volume*((i/20.))
+		set_volume(int(vol), True)
+		time.sleep(s/20. - 0.5/20)  # Fade out takes about 0.5 seconds "-0.5/20" compensates for that	
 
 def get_playing():
 	# Return songObject of song played

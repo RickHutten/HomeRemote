@@ -4,7 +4,7 @@ import os
 import hashlib
 import flask
 import server.audio
-from flask import abort, send_file, request
+from flask import abort, send_file, request, render_template
 from server import app, library, variables
 
 
@@ -23,6 +23,10 @@ def limit_remote_addr():
 	if ip in variables.get("banned", []):
 		print t(), "Banned IP acces denied"
 		abort(403)  # Forbidden
+
+@app.route("/")
+def show_homepage():
+	return render_template("home.html"), 200
 
 @app.route("/register_ip")
 def register_ip():
@@ -57,13 +61,26 @@ def print_liberary():
 	library.print_lib()
 	return "Library printed in terminal"
 
+@app.route("/poll")
+def long_poll():
+	artist, album, song = variables.get("playing", [])
+	while True:
+		# Return when the song has changed
+		new_artist, new_album, new_song = variables.get("playing", [])
+		if artist != new_artist or album != new_album or song != new_song:
+			# New song is played
+			json = {"artist": new_artist, "album": new_album, "song": new_song}
+			return flask.jsonify(**json)
+		time.sleep(0.5)
+
 @app.route("/play")
 def play_music():
 	songs = library.get_songs()
 	random.shuffle(songs)
 	song = songs[0]
 	server.audio.play(song)
-	return "Playing %s by %s : %s" % (song.get_title(), song.get_artist().get_name(), song.get_album().get_title())
+	json = {"artist": song.get_artist().get_name(), "album": song.get_album().get_title(), "song": song.get_title()}
+	return flask.jsonify(**json)
 
 @app.route("/play/<string:artist>")
 def play_music_artist(artist):
@@ -163,6 +180,8 @@ def get_image(artist, album):
 
 @app.route("/shutdown")
 def shutdown():
+	# Fade audio out
+	server.audio.fade_out(1)
 	os.system("sudo shutdown -h now")
 	return "Shutting down server..."
 
@@ -231,11 +250,10 @@ def set_music_volume(volume):
 
 @app.route("/playing")
 def get_playing_song():
-	song = server.audio.get_playing()
-	if song == None:
-		return "Nothing is playing"
-	return "%s - %s" % (song.get_title(), song.get_artist().get_name())
-
+	artist, album, song = variables.get("playing", [])
+	json = {"artist": artist, "album": album, "song": song}
+	return flask.jsonify(**json)
+	
 @app.route("/push")
 def push():
 	server.audio.push()
