@@ -1,4 +1,4 @@
 #!/usr/bin/env python
-import 	server
+import server
 
 server.start_server()
