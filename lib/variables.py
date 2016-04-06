@@ -1,10 +1,11 @@
 from ast import literal_eval
 from threading import Lock
 
-lock = Lock()  # Thread lock for accessing the file
-
-
 class ServerVariables:
+
+    lock = Lock()  # Thread lock for accessing the file
+    glob = dict()  # Global dictionary holding all variables
+
     def __init__(self):
         self.filename = "./data/server_variables"
         # If the file does not exist, make a new one
@@ -12,41 +13,41 @@ class ServerVariables:
             # Try to read the file
             open(self.filename, "r").close()
         except IOError:
-            # File does not exist, create new
+            # File does not exist, create new and dont fill global variable
             open(self.filename, "w").close()
+            return
+
+        # Now that a file is present, fill global variable with variables
+        f = open(self.filename, "r")
+        for line in f:
+            linesplit = line.split("=")
+            # Get key and values from file
+            key = linesplit[0].strip()
+            value = literal_eval(linesplit[1].strip())
+            # Save in global variable
+            self.glob[key] = value
 
     def get(self, key, default):
-        lock.acquire()
-        try:
-            if type(key) != str:
-                raise ValueError(
-                    "Argument should be string not of type: " + str(type(key)))
-            key = key.strip()
-            f = open(self.filename, "r")
-            for line in f:
-                linesplit = line.split("=")
-                if linesplit[0].strip() == key:
-                    f.close()
-                    # Finally will be called where the lock will be released
-                    return literal_eval(linesplit[1].strip())
-            # Key not found, return default value
-            f.close()
-        finally:
-            lock.release()
-        return default
+        if self.contains(key):
+            return self.glob[key]
+        else:
+            return default
 
     def put(self, key, value):
-        lock.acquire()
+        self.lock.acquire()
         try:
             # Puts key with corresponding value in file.
             if type(key) != str:
-                raise ValueError(
+                raise TypeError(
                     "First argument should be string not of type: " + str(
                         type(key)))
             if type(value) not in [int, float, str, list, dict, tuple, bool,
                                    type(None)]:
-                raise ValueError(
+                raise TypeError(
                     "Value type not supported: " + str(type(value)))
+            # Save variable in global
+            self.glob[key] = value
+
             key = key.strip()
             # Check if key already exists
             f = open(self.filename, "r")
@@ -81,12 +82,43 @@ class ServerVariables:
             f.writelines(lines)
             f.close()
         finally:
-            lock.release()
+            # Release lock
+            self.lock.release()
 
     def contains(self, key):
+        # Returns whether the key exists in the varible
+        if type(key) != str:
+            raise TypeError(
+                "Argument should be string not of type: " + str(type(key)))
+        return key in self.glob.keys()
+
+    def get_from_file(self, key, default):
+        ### Should not be used any more! ###
+        # Reads file and returns it's value
+        self.lock.acquire()
+        try:
+            if type(key) != str:
+                raise TypeError(
+                    "Argument should be string not of type: " + str(type(key)))
+            key = key.strip()
+            f = open(self.filename, "r")
+            for line in f:
+                linesplit = line.split("=")
+                if linesplit[0].strip() == key:
+                    f.close()
+                    # Finally will be called where the lock will be released
+                    return literal_eval(linesplit[1].strip())
+            # Key not found, return default value
+            f.close()
+        finally:
+            self.lock.release()
+        return default
+
+    def contains_in_file(self, key):
+        ### Should not be used any more! ###
         # Return True/False if file contains key
         if type(key) != str:
-            raise ValueError(
+            raise TypeError(
                 "Argument should be string not of type: " + str(type(key)))
         key = key.strip()
         f = open(self.filename, "r")

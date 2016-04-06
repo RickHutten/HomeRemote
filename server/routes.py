@@ -247,6 +247,7 @@ def get_albums_of_artist(artist):
 def get_songs_of_album(artist, album):
     artist = artist.replace("_", " ")
     album = album.replace("_", " ")
+    #print [album.encode('latin-1')] ik word gek
     album_object = library.get_album(artist, album)
     s = ""
     for song in sorted(album_object.get_songs(), key=lambda a: a.get_order()):
