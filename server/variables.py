@@ -3,6 +3,11 @@ from threading import Lock
 
 class ServerVariables:
 
+    # Declaring constants
+    PLAYING = 0
+    PAUSED = 1
+    STOPPED = 2
+
     lock = Lock()  # Thread lock for accessing the file
     glob = dict()  # Global dictionary holding all variables
 

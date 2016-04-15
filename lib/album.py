@@ -46,3 +46,7 @@ class Album:
         for song in self.songs:
             print song.get_title(),
         print ""
+
+    def download_image(self, artist_name, image_manager):
+        # Downloads file and sets the image path
+        self.image = image_manager.get_album_image_filepath(artist_name, self.title)

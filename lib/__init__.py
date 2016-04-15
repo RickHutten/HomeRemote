@@ -1,11 +1,13 @@
+from threading import Thread
 import library
 import artist
 import album
 import song
-
+import image
 
 def get_instance():
     lib = library.Library()
+    image_manager = image.ImageManager()
     line_no = 0
     f = open("./data/song_data")
 
@@ -44,7 +46,10 @@ def get_instance():
             # Set title and image only if album is new
             al.set_title(album_title)
             al.set_image(image_path)
-
+            # Start new thread that downloads the image
+            thread = Thread(target=al.download_image, args=(artist_name, image_manager))
+            thread.start()
+            
         for art in lib.get_artists():
             if art.get_name() == artist_name:
                 # Artist already created
@@ -53,6 +58,9 @@ def get_instance():
         else:
             # Set artist name only if artist is new
             ar.set_name(artist_name)
+            # Start new thread that downloads the image
+            thread = Thread(target=ar.download_image, args=(image_manager,))
+            thread.start()
 
         al.add_song(s)
         ar.add_album(al)
@@ -60,3 +68,5 @@ def get_instance():
 
     f.close()
     return lib
+
+

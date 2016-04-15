@@ -4,11 +4,17 @@ import os
 import hashlib
 import flask
 import server.audio
-from flask import abort, send_file, request, render_template
-from server import app, library, variables
+from flask import abort
+from flask import send_file
+from flask import request
+from flask import render_template
+from server import app
+from server import library
+from server import variables
 
 # Set stop_timer on False on server boot
 variables.put("stop_timer", False)
+variables.put("status", variables.STOPPED)
 
 
 def t():
@@ -18,8 +24,7 @@ def t():
 @app.before_request
 def limit_remote_addr():
     ip = request.remote_addr
-    if ip not in variables.get("ip", []) and str(
-            request.path) != "/register_ip":
+    if ip not in variables.get("ip", []) and str(request.path) != "/register_ip":
         print t(), "Unauthorised request! ->", request.remote_addr
         abort(401)  # Unauthorized
     if ip in variables.get("banned", []):
@@ -85,12 +90,14 @@ def long_poll():
 
 @app.route("/play")
 def play_music():
+    # Play random number
     songs = library.get_songs()
     random.shuffle(songs)
     song = songs[0]
     server.audio.play(song)
     json = {"artist": song.get_artist().get_name(),
             "album": song.get_album().get_title(), "song": song.get_title()}
+    variables.put("queue", [])  # If a randon number is played, delete queue
     return flask.jsonify(**json)
 
 
@@ -106,9 +113,8 @@ def play_music_artist(artist):
     random.shuffle(songs)
     song = songs[0]
     server.audio.play(song)
-    return "Playing %s by %s : %s" % (song.get_title(),
-                                      song.get_artist().get_name(),
-                                      song.get_album().get_title())
+    return "Playing %s by %s : %s" % (song.get_title(), 
+            song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/play/<string:artist>/<string:album>")
@@ -122,8 +128,7 @@ def play_music_album(artist, album):
     song = songs[0]
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
-                                      song.get_artist().get_name(),
-                                      song.get_album().get_title())
+            song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/play/<string:artist>/<string:album>/<string:song>")
@@ -137,8 +142,7 @@ def play_music_song(artist, album, song):
 
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
-                                      song.get_artist().get_name(),
-                                      song.get_album().get_title())
+            song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/stop")
@@ -154,8 +158,7 @@ def pause_music():
     if song is None:
         return "Can't pause. Nothing is playing"
     return "Music paused: %s by %s : %s" % (song.get_title(),
-                                            song.get_artist().get_name(),
-                                            song.get_album().get_title())
+            song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/resume")
@@ -165,8 +168,7 @@ def resume_music():
     if song is None:
         return "Can't resume. Nothing is playing"
     return "Resumed playing %s by %s : %s" % (song.get_title(),
-                                              song.get_artist().get_name(),
-                                              song.get_album().get_title())
+            song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/next")
@@ -198,11 +200,21 @@ def previous_song():
 
 
 @app.route("/image/<string:artist>/<string:album>")
-def get_image(artist, album):
+def get_album_image(artist, album):
     artist = artist.replace("_", " ")
     album = album.replace("_", " ")
     try:
         filename = library.get_album(artist, album).get_image()
+    except StandardError:
+        # The image is not found
+        return abort(404)
+    return send_file(filename, mimetype="image/jpg")
+
+@app.route("/image/<string:artist>")
+def get_artist_image(artist):
+    artist = artist.replace("_", " ")
+    try:
+        filename = library.get_artist(artist).get_image()
     except StandardError:
         # The image is not found
         return abort(404)
@@ -217,6 +229,7 @@ def shutdown():
     return "Shutting down server..."
 
 
+# Niet meer nodig bij JSON
 @app.route("/artists")
 def get_artists():
     s = ""
@@ -225,6 +238,13 @@ def get_artists():
     return s[:-1]
 
 
+@app.route("/artists2")
+def get_artists2():
+    json = {"artists": [artist.get_name() for artist in sorted(library.get_artists(), key=lambda a: a.get_name())]}
+    return flask.jsonify(**json)
+
+
+# Niet meer nodig bij JSON
 @app.route("/albums")
 def get_albums():
     s = ""
@@ -233,6 +253,13 @@ def get_albums():
     return s[:-1]
 
 
+@app.route("/albums2")
+def get_albums2():
+    json = {"albums": [album.get_title() for album in sorted(library.get_albums(), key=lambda a: a.get_title())]}
+    return flask.jsonify(**json)
+
+
+# Niet meer nodig bij JSON
 @app.route("/get/<string:artist>")
 def get_albums_of_artist(artist):
     artist = artist.replace("_", " ")
@@ -243,6 +270,25 @@ def get_albums_of_artist(artist):
     return s[:-1]
 
 
+@app.route("/get2/<string:artist>")
+def get2_albums_of_artist(artist):
+    artist = artist.replace("_", " ")
+    artist_object = library.get_artist(artist)
+    albums = artist_object.get_albums()
+    album_list = []
+    for album in albums:
+        song_list = []
+        for song in sorted(album.get_songs(), key=lambda a: a.get_order()):
+            song_list.append({"title": song.get_title(), 
+                              "order": song.get_order(),
+                              "duration": song.get_duration()})
+        album_list.append({"title": album.get_title(),
+                           "songs": song_list})
+    json = {"albums": album_list}
+    return flask.jsonify(**json)
+    
+
+# Niet meer nodig bij JSON
 @app.route("/get/<string:artist>/<string:album>")
 def get_songs_of_album(artist, album):
     artist = artist.replace("_", " ")
@@ -280,17 +326,24 @@ def get_route():
     return result[:-1]
 
 
-@app.route("/set/volume/<string:volume>")
+@app.route("/set/volume/<int:volume>")
 def set_music_volume(volume):
-    if server.audio.set_volume(int(volume)):
-        return "Volume set to " + volume + "%"
-    return "Can not set volume to " + volume + "%"
+    if server.audio.set_volume(volume):
+        return "Volume set to " + str(volume) + "%"
+    return "Can not set volume to " + str(volume) + "%"
 
 
-@app.route("/playing")
-def get_playing_song():
+@app.route("/status")
+def get_status():
+    # Returns JSON with server status
     artist, album, song = variables.get("playing", [])
-    json = {"artist": artist, "album": album, "song": song}
+    json = dict()
+    status = variables.get("status", -1)
+    json["status"] = status
+    if status != 2:
+        json["playing"] = {"artist": artist, "album": album, "song": song}
+    json["volume"] = variables.get("volume", 50)
+    json["queue"] = variables.get("queue", [])
     return flask.jsonify(**json)
 
 

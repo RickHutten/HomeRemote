@@ -1,15 +1,18 @@
 import time
 import os
 from threading import Thread
-from server import library, variables, app
+from server import library
+from server import variables
+from server import app
 from flask_pushjack import FlaskGCM
 
 
 def play(song):
-    variables.put("status", "playing")
+    variables.put("status", variables.PLAYING)
     variables.put("playing",
                   [song.get_artist().get_name(), song.get_album().get_title(),
                    song.get_title()])
+    variables.put("song_duration", song.get_duration())
     variables.put("song_start", time.time())
     os.system("pkill mpg123")  # Kill everything that might be playing
     os.system('mpg123 -q "%s" &' % song.get_path())  # Play the song
@@ -21,16 +24,16 @@ def play(song):
 
 
 def set_volume(vol, fade=False):
-    # Set volume in percentage
+    # Set volume in percentage. Volume has to be between 0 and 100
     if 0 <= vol <= 100:
-        # Volume has to be between 0 and 100
+        # Don't set new volume if this function is called for fading in or out
         if not fade:
             variables.put("volume", vol)
         if vol == 0:
             os.system("amixer -q sset PCM 0%")
             return True
-        # Map 0-100% to 50-100%
-        percentage = 50 + vol / 2.
+        # Map 0-100% to 50-100% through a sqrt function
+        percentage = 5 * vol**0.5 + 50
         command = "amixer -q sset PCM " + str(percentage) + "%"
         os.system(command)
         return True
@@ -78,16 +81,16 @@ def get_playing():
 
 def pause():
     os.system("pkill -STOP mpg123")
-    variables.put("status", "paused")
+    variables.put("status", variables.PAUSED)
 
 
 def resume():
     os.system("pkill -CONT mpg123")
-    variables.put("status", "playing")
+    variables.put("status", variables.PLAYING)
 
 
 def stop():
-    variables.put("status", "stopped")
+    variables.put("status", variables.STOPPED)
     variables.put("playing", None)
     variables.put("stop_timer", True)
     os.system("pkill mpg123")
@@ -138,9 +141,9 @@ def start_timer():
             # A new timer is ready to go, stop this one
             return
         # If the music is paused
-        if variables.get("status", "") == "paused":
+        if variables.get("status", -1) == variables.PAUSED:
             start_pause_time = time.time()
-            while variables.get("status", "") == "paused":
+            while variables.get("status", -1) == variables.PAUSED:
                 time.sleep(0.1)  # Wait for the music to be continued
             start_time += time.time() - start_pause_time
 
@@ -160,7 +163,8 @@ def push():
             print "No devices registered"
             return
         playing = variables.get("playing", [])
-        alert = {"artist": playing[0], "album": playing[1], "song": playing[2]}
+        alert = {"artist": playing[0], "album": playing[1], 
+                 "song": playing[2], "duration": variables.get("song_duration", 0)}
 
         # Send to single device.
         # NOTE: Keyword arguments are optional.
@@ -168,7 +172,7 @@ def push():
                           alert,
                           collapse_key='collapse_key',
                           delay_while_idle=True,
-                          time_to_live=604800)
+                          time_to_live=600)
 
     # Send to multiple devices by passing a list of ids.
     # client.send(tokens, alert)#, **options)

@@ -2,6 +2,7 @@ class Artist:
     def __init__(self):
         self.name = ""  # String of artist name
         self.albums = []  # List containing AlbumObjects
+        self.image = ""  # String (image path)
 
     def add_album(self, album_object):
         # Add albumObject in album list
@@ -35,3 +36,11 @@ class Artist:
 
     def get_name(self):
         return self.name
+
+    def get_image(self):
+        return self.image
+
+    def download_image(self, image_manager):
+        # Downloads file and sets the image path
+        self.image = image_manager.get_artist_image_filepath(self.name)
+        
