@@ -20,16 +20,35 @@ variables.put("status", variables.STOPPED)
 def t():
     return "[" + time.asctime(time.localtime(time.time())) + "]"
 
-
-@app.before_request
-def limit_remote_addr():
+	
+def valid_ip():
+    """
+    :return: True when the user is permitted to call the function with it's ip,
+    False if the user is not permitted.
+    """
     ip = request.remote_addr
-    if ip not in variables.get("ip", []) and str(request.path) != "/register_ip":
+    return ip in variables.get("ip", []) or str(request.path) == "/register_ip"
+
+
+def verify_ip(fn):
+    """
+    :param fn: function to call when the ip is verified
+    :return: function when ip is verified or block access to function
+    """
+    def verify():
+        if valid_ip():
+            return fn
+        else:
+            print t(), "Unauthorised request! ->", request.remote_addr
+            abort(401)  # Unauthorized
+    return verify
+	
+	
+@app.before_request
+def limit_remote_address():
+    if not valid_ip():
         print t(), "Unauthorised request! ->", request.remote_addr
         abort(401)  # Unauthorized
-    if ip in variables.get("banned", []):
-        print t(), "Banned IP acces denied"
-        abort(403)  # Forbidden
 
 
 @app.route("/")
@@ -45,8 +64,7 @@ def register_ip():
     if key is None:
         print "Registery denied\n"
         return "Register failed"
-    if hashlib.sha224(
-            key).hexdigest() != \
+    if hashlib.sha224(key).hexdigest() != \
             "e40206e07b61b34c898d38e6756d99c6bbc74279445afa320c0eb053":
         bannedlist = variables.get("banned", [])
         bannedlist.append(ip)
@@ -90,19 +108,38 @@ def long_poll():
 
 @app.route("/play")
 def play_music():
-    # Play random number
+    """
+    Shuffle the whole library
+    :return: Json of song information
+    """
     songs = library.get_songs()
     random.shuffle(songs)
+
+    # Set playlist
+    playlist = []
+    for song in songs:
+        artist_name = song.get_artist().get_name()
+        album_title = song.get_album().get_title()
+        song_name = song.get_title()
+        playlist.append([artist_name, album_title, song_name])
+    # TODO: push queue to user
+    variables.put("queue", playlist)
+
+    # Play first song
     song = songs[0]
     server.audio.play(song)
     json = {"artist": song.get_artist().get_name(),
             "album": song.get_album().get_title(), "song": song.get_title()}
-    variables.put("queue", [])  # If a randon number is played, delete queue
     return flask.jsonify(**json)
 
 
 @app.route("/play/<string:artist>")
 def play_music_artist(artist):
+    """
+    Shuffle the artist.
+    :param artist: String of artist name
+    :return: Not important
+    """
     artist = artist.replace("_", " ")
     artist_object = library.get_artist(artist)
     albums = artist_object.get_albums()
@@ -111,20 +148,50 @@ def play_music_artist(artist):
         for song in album.get_songs():
             songs.append(song)
     random.shuffle(songs)
+
+    # Set playlist
+    playlist = []
+    for song in songs:
+        artist_name = song.get_artist().get_name()
+        album_title = song.get_album().get_title()
+        song_name = song.get_title()
+        playlist.append([artist_name, album_title, song_name])
+    # TODO: push queue to user
+    variables.put("queue", playlist)
+
+    # Play first song
     song = songs[0]
     server.audio.play(song)
-    return "Playing %s by %s : %s" % (song.get_title(), 
+    return "Playing %s by %s : %s" % (song.get_title(),
             song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/play/<string:artist>/<string:album>")
 def play_music_album(artist, album):
+    """
+    Shuffle the album.
+    :param artist: String of artist name
+    :param album: String of album name
+    :return: Not important
+    """
     artist = artist.replace("_", " ")
     album = album.replace("_", " ")
 
     album_object = library.get_album(artist, album)
     songs = album_object.get_songs()
     random.shuffle(songs)
+
+    # Set playlist
+    playlist = []
+    for song in songs:
+        artist_name = song.get_artist().get_name()
+        album_title = song.get_album().get_title()
+        song_name = song.get_title()
+        playlist.append([artist_name, album_title, song_name])
+    # TODO: push queue to user
+    variables.put("queue", playlist)
+
+    # Plat first song
     song = songs[0]
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
@@ -135,11 +202,9 @@ def play_music_album(artist, album):
 def play_music_song(artist, album, song):
     artist = artist.replace("_", " ")
     album = album.replace("_", " ")
-    song = song.replace("_", " ")
+    song_name = song.replace("_", " ")
 
-    album_object = library.get_album(artist, album)
-    song = album_object.get_song(song)
-
+    song = library.get_song(artist, album, song_name)
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
             song.get_artist().get_name(), song.get_album().get_title())
@@ -157,8 +222,8 @@ def pause_music():
     song = server.audio.get_playing()
     if song is None:
         return "Can't pause. Nothing is playing"
-    return "Music paused: %s by %s : %s" % (song.get_title(),
-            song.get_artist().get_name(), song.get_album().get_title())
+    return "Music paused: %s by %s : %s" % (song.get_title(), 
+	        song.get_artist().get_name(), song.get_album().get_title())
 
 
 @app.route("/resume")
@@ -170,6 +235,7 @@ def resume_music():
     return "Resumed playing %s by %s : %s" % (song.get_title(),
             song.get_artist().get_name(), song.get_album().get_title())
 
+			
 
 @app.route("/next")
 def next_song():
