@@ -15,15 +15,18 @@ class ImageManager:
         # If the file already exists, return filepath
         artist_underscore = artist.replace(" ", "_")
         artist_plus = artist.replace(" ", "+")
-        if os.path.isfile("./data/images/artists/%s.jpg" % (artist_underscore)):
-            return "%s/data/images/artists/%s.jpg" % (os.getcwd(), artist_underscore) 
+        if os.path.isfile("./data/images/artists/%s.jpg" % artist_underscore):
+            return "%s/data/images/artists/%s.jpg" % (
+                os.getcwd(), artist_underscore)
 
-        # Download json to get image urls
-        data = self._get_json("https://api.spotify.com/v1/search?type=artist&q=%s" % (artist_plus))
+            # Download json to get image urls
+        data = self._get_json(
+            "https://api.spotify.com/v1/search?type=artist&q=%s" % (
+                artist_plus))
         try:
             images = data["artists"]["items"][0]["images"]
         except IndexError:
-            print "Could not find artist: %s" % (artist_underscore)
+            print "Could not find artist: %s" % artist_underscore
             return "%s/data/images/no-artist.jpg" % (os.getcwd())
 
         # Get image with biggest width
@@ -35,9 +38,11 @@ class ImageManager:
                 best_url = image["url"]
 
         # Now we have the best url, download it to a file and return filepath
-        self._download_image(best_url, "./data/images/artists/%s.jpg" % (artist_underscore))
+        self._download_image(best_url, "./data/images/artists/%s.jpg" % (
+            artist_underscore))
         print "Artist image downloaded: " + artist
-        return "%s/data/images/artists/%s.jpg" % (os.getcwd(), artist_underscore)
+        return "%s/data/images/artists/%s.jpg" % (
+            os.getcwd(), artist_underscore)
 
     def get_album_image_filepath(self, artist, album):
         # If the file already exists, return filepath
@@ -45,23 +50,31 @@ class ImageManager:
         artist_plus = artist.replace(" ", "+")
         album_underscore = album.replace(" ", "_")
         album_plus = album.replace(" ", "+")
-        if os.path.isfile("./data/images/albums/%s.jpg" % (artist_underscore + "-" + album_underscore)):
-            return "%s/data/images/albums/%s.jpg" % (os.getcwd(), artist_underscore + "-" + album_underscore) 
+        if os.path.isfile("./data/images/albums/%s.jpg" % (
+                artist_underscore + "-" + album_underscore)):
+            return "%s/data/images/albums/%s.jpg" % (
+                os.getcwd(), artist_underscore + "-" + album_underscore)
 
-        # Download json to get image urls
-        #print "https://api.spotify.com/v1/search?type=album&q=%s" % (artist_plus + "+" + album_plus.replace("&", "+"))
-        data = self._get_json("https://api.spotify.com/v1/search?type=album&q=%s" % (artist_plus + "+" + album_plus.replace("&", "+")))
+            # Download json to get image urls
+        data = self._get_json(
+            "https://api.spotify.com/v1/search?type=album&q=%s" % (
+                artist_plus + "+" + album_plus.replace("&", "+")))
         items = data["albums"]["items"]
         try:
             item = items[0]
         except IndexError:
             # Try the hard way
             image_url = self._download_album_hard_way(artist, album)
-            if (image_url != None):
+            if image_url is not None:
                 # Success, continue program
-                print "Album download method 2 success: %s" % (artist + " - " + album)
-                self._download_image(image_url, "./data/images/albums/%s.jpg" % (artist_underscore + "-" + album_underscore))
-                return "%s/data/images/albums/%s.jpg" % (os.getcwd(), artist_underscore + "-" + album_underscore)
+                print "Album download method 2 success: %s" % (
+                    artist + " - " + album)
+                self._download_image(
+                    image_url,
+                    "./data/images/albums/%s.jpg" % (
+                            artist_underscore + "-" + album_underscore))
+                return "%s/data/images/albums/%s.jpg" % (
+                    os.getcwd(), artist_underscore + "-" + album_underscore)
             else:
                 print "Failed to find album: %s" % (artist + " - " + album)
                 return "%s/data/images/no-album.jpg" % (os.getcwd())
@@ -82,16 +95,20 @@ class ImageManager:
                 best_url = image["url"]
 
         # Now we have the best url, download it to a file and return filepath
-        self._download_image(best_url, "./data/images/albums/%s.jpg" % (artist_underscore + "-" + album_underscore))
+        self._download_image(best_url, "./data/images/albums/%s.jpg" % (
+            artist_underscore + "-" + album_underscore))
         print "Album image downloaded: " + artist + " - " + album
-        return "%s/data/images/albums/%s.jpg" % (os.getcwd(), artist_underscore + "-" + album_underscore)
+        return "%s/data/images/albums/%s.jpg" % (
+            os.getcwd(), artist_underscore + "-" + album_underscore)
 
-    def _get_json(self, url):
+    @staticmethod
+    def _get_json(url):
         data = urlopen(url).read()
         output = json.loads(data)
         return output
 
-    def _download_image(self, url, filename):
+    @staticmethod
+    def _download_image(url, filename):
         fileout = open(filename, "wb")
         fileout.write(urlopen(url).read())
         fileout.close()
@@ -100,13 +117,17 @@ class ImageManager:
     def _download_album_hard_way(self, artist, album):
         artist_plus = artist.replace(" ", "+")
         # Download json of the artist to get the artist ID
-        data = self._get_json("https://api.spotify.com/v1/search?type=artist&q=%s" % (artist_plus))
-	# Sort by popularity
-        item = sorted(data["artists"]["items"], key=lambda a: a["popularity"], reverse=True)[0]
+        data = self._get_json(
+            "https://api.spotify.com/v1/search?type=artist&q=%s" % (
+                artist_plus))
+        # Sort by popularity
+        item = sorted(data["artists"]["items"], key=lambda a: a["popularity"],
+                      reverse=True)[0]
         artist_id = item["id"]
         # Get the albums of the artist now that we have the artist ID
-        
-        data = self._get_json("https://api.spotify.com/v1/artists/%s/albums" % (artist_id))
+
+        data = self._get_json(
+            "https://api.spotify.com/v1/artists/%s/albums" % artist_id)
         items = data["items"]
         for item in items:
             if item["name"] == album:
@@ -120,5 +141,3 @@ class ImageManager:
                         best_url = image["url"]
                 return best_url
         return
-
-

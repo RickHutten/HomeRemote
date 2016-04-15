@@ -43,4 +43,3 @@ class Artist:
     def download_image(self, image_manager):
         # Downloads file and sets the image path
         self.image = image_manager.get_artist_image_filepath(self.name)
-        

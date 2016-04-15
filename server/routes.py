@@ -20,7 +20,7 @@ variables.put("status", variables.STOPPED)
 def t():
     return "[" + time.asctime(time.localtime(time.time())) + "]"
 
-	
+
 def valid_ip():
     """
     :return: True when the user is permitted to call the function with it's ip,
@@ -35,15 +35,17 @@ def verify_ip(fn):
     :param fn: function to call when the ip is verified
     :return: function when ip is verified or block access to function
     """
+
     def verify():
         if valid_ip():
             return fn
         else:
             print t(), "Unauthorised request! ->", request.remote_addr
             abort(401)  # Unauthorized
+
     return verify
-	
-	
+
+
 @app.before_request
 def limit_remote_address():
     if not valid_ip():
@@ -163,7 +165,8 @@ def play_music_artist(artist):
     song = songs[0]
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
-            song.get_artist().get_name(), song.get_album().get_title())
+                                      song.get_artist().get_name(),
+                                      song.get_album().get_title())
 
 
 @app.route("/play/<string:artist>/<string:album>")
@@ -195,7 +198,8 @@ def play_music_album(artist, album):
     song = songs[0]
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
-            song.get_artist().get_name(), song.get_album().get_title())
+                                      song.get_artist().get_name(),
+                                      song.get_album().get_title())
 
 
 @app.route("/play/<string:artist>/<string:album>/<string:song>")
@@ -207,7 +211,8 @@ def play_music_song(artist, album, song):
     song = library.get_song(artist, album, song_name)
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
-            song.get_artist().get_name(), song.get_album().get_title())
+                                      song.get_artist().get_name(),
+                                      song.get_album().get_title())
 
 
 @app.route("/stop")
@@ -222,8 +227,9 @@ def pause_music():
     song = server.audio.get_playing()
     if song is None:
         return "Can't pause. Nothing is playing"
-    return "Music paused: %s by %s : %s" % (song.get_title(), 
-	        song.get_artist().get_name(), song.get_album().get_title())
+    return "Music paused: %s by %s : %s" % (song.get_title(),
+                                            song.get_artist().get_name(),
+                                            song.get_album().get_title())
 
 
 @app.route("/resume")
@@ -233,9 +239,9 @@ def resume_music():
     if song is None:
         return "Can't resume. Nothing is playing"
     return "Resumed playing %s by %s : %s" % (song.get_title(),
-            song.get_artist().get_name(), song.get_album().get_title())
+                                              song.get_artist().get_name(),
+                                              song.get_album().get_title())
 
-			
 
 @app.route("/next")
 def next_song():
@@ -276,6 +282,7 @@ def get_album_image(artist, album):
         return abort(404)
     return send_file(filename, mimetype="image/jpg")
 
+
 @app.route("/image/<string:artist>")
 def get_artist_image(artist):
     artist = artist.replace("_", " ")
@@ -306,7 +313,9 @@ def get_artists():
 
 @app.route("/artists2")
 def get_artists2():
-    json = {"artists": [artist.get_name() for artist in sorted(library.get_artists(), key=lambda a: a.get_name())]}
+    json = {"artists": [artist.get_name() for artist in
+                        sorted(library.get_artists(),
+                               key=lambda a: a.get_name())]}
     return flask.jsonify(**json)
 
 
@@ -321,7 +330,9 @@ def get_albums():
 
 @app.route("/albums2")
 def get_albums2():
-    json = {"albums": [album.get_title() for album in sorted(library.get_albums(), key=lambda a: a.get_title())]}
+    json = {"albums": [album.get_title() for album in
+                       sorted(library.get_albums(),
+                              key=lambda a: a.get_title())]}
     return flask.jsonify(**json)
 
 
@@ -345,21 +356,21 @@ def get2_albums_of_artist(artist):
     for album in albums:
         song_list = []
         for song in sorted(album.get_songs(), key=lambda a: a.get_order()):
-            song_list.append({"title": song.get_title(), 
+            song_list.append({"title": song.get_title(),
                               "order": song.get_order(),
                               "duration": song.get_duration()})
         album_list.append({"title": album.get_title(),
                            "songs": song_list})
     json = {"albums": album_list}
     return flask.jsonify(**json)
-    
+
 
 # Niet meer nodig bij JSON
 @app.route("/get/<string:artist>/<string:album>")
 def get_songs_of_album(artist, album):
     artist = artist.replace("_", " ")
     album = album.replace("_", " ")
-    #print [album.encode('latin-1')] ik word gek
+    # print [album.encode('latin-1')] ik word gek
     album_object = library.get_album(artist, album)
     s = ""
     for song in sorted(album_object.get_songs(), key=lambda a: a.get_order()):
@@ -368,8 +379,8 @@ def get_songs_of_album(artist, album):
 
 
 @app.route('/set/queue', methods=['POST'])
+@verify_ip
 def post_queue():
-    limit_remote_addr()  # Limit
     data = request.data
     song_strings = data.split(";")
     playlist = []
@@ -420,8 +431,8 @@ def push():
 
 
 @app.route("/register_token", methods=['POST'])
+@verify_ip
 def register_token():
-    limit_remote_addr()  # Limit
     data = request.data
     print "Token:", data
     tokens = variables.get("gmc_tokens", [])

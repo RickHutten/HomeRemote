@@ -6,7 +6,8 @@ app = Flask(__name__)
 library = lib.get_instance()  # Get the music library
 variables = ServerVariables()  # Import server variables instance
 
-import server.routes  # Has to be imported after declaring variables 'app', 'library' and 'variables'
+# Has to be imported after declaring variables 'app', 'library' and 'variables'
+import server.routes
 
 
 def start_server():

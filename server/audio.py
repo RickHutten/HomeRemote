@@ -163,8 +163,10 @@ def push():
             print "No devices registered"
             return
         playing = variables.get("playing", [])
-        alert = {"artist": playing[0], "album": playing[1], 
-                 "song": playing[2], "duration": variables.get("song_duration", 0)}
+        alert = {"artist": playing[0],
+                 "album": playing[1],
+                 "song": playing[2],
+                 "duration": variables.get("song_duration", 0)}
 
         # Send to single device.
         # NOTE: Keyword arguments are optional.

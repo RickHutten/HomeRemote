@@ -5,6 +5,7 @@ import album
 import song
 import image
 
+
 def get_instance():
     lib = library.Library()
     image_manager = image.ImageManager()
@@ -47,7 +48,8 @@ def get_instance():
             al.set_title(album_title)
             al.set_image(image_path)
             # Start new thread that downloads the image
-            thread = Thread(target=al.download_image, args=(artist_name, image_manager))
+            thread = Thread(target=al.download_image,
+                            args=(artist_name, image_manager))
             thread.start()
             
         for art in lib.get_artists():
@@ -68,5 +70,3 @@ def get_instance():
 
     f.close()
     return lib
-
-

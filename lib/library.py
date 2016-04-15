@@ -73,11 +73,8 @@ class Library:
                                    key=lambda a: a.get_order()):
                     print "        ", song.get_order(), "-", song.get_title()
 
-        print ""
-        print "---------------------------------------"
-        print ""
-        print "Library sorted by album:"
-        print ""
+        print "\n---------------------------------------\n"
+        print "Library sorted by album:\n"
         for album in sorted(self.albums, key=lambda a:
                             (a.get_title(), a.get_artist().get_name())):
             print album.get_title(), ":", album.get_artist().get_name()
@@ -85,8 +82,7 @@ class Library:
                 print "    ", song.get_title()
 
     def print_lib_short(self):
-        print "Library sorted by artist:"
-        print ""
+        print "Library sorted by artist:\n"
         for artist in sorted(self.artists, key=lambda a: a.get_name()):
             print artist.get_name(), "\\"
             for album in sorted(artist.get_albums(),
@@ -95,11 +91,8 @@ class Library:
                 song_no = len(album.get_songs())
                 print song_no, "songs"
 
-        print ""
-        print "---------------------------------------"
-        print ""
-        print "Library sorted by album:"
-        print ""
+        print "\n---------------------------------------\n"
+        print "Library sorted by album:\n"
         for album in sorted(self.albums, key=lambda a:
                             (a.get_title(), a.get_artist().get_name())):
             print album.get_title(), ":", album.get_artist().get_name(), ":",
