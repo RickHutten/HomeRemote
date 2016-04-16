@@ -30,20 +30,8 @@ def valid_ip():
     return ip in variables.get("ip", []) or str(request.path) == "/register_ip"
 
 
-def verify_ip(fn):
-    """
-    :param fn: function to call when the ip is verified
-    :return: function when ip is verified or block access to function
-    """
-
-    def verify():
-        if valid_ip():
-            return fn
-        else:
-            print t(), "Unauthorised request! ->", request.remote_addr
-            abort(401)  # Unauthorized
-
-    return verify
+def block_user():
+    abort(401)
 
 
 @app.before_request
@@ -379,8 +367,9 @@ def get_songs_of_album(artist, album):
 
 
 @app.route('/set/queue', methods=['POST'])
-@verify_ip
 def post_queue():
+    if not valid_ip():
+        block_user()
     data = request.data
     song_strings = data.split(";")
     playlist = []
@@ -431,8 +420,9 @@ def push():
 
 
 @app.route("/register_token", methods=['POST'])
-@verify_ip
 def register_token():
+    if not valid_ip():
+        block_user()
     data = request.data
     print "Token:", data
     tokens = variables.get("gmc_tokens", [])
