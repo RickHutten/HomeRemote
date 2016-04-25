@@ -179,10 +179,10 @@ def play_music_album(artist, album):
         album_title = song.get_album().get_title()
         song_name = song.get_title()
         playlist.append([artist_name, album_title, song_name])
-    # TODO: push queue to user
+
     variables.put("queue", playlist)
 
-    # Plat first song
+    # Play first song
     song = songs[0]
     server.audio.play(song)
     return "Playing %s by %s : %s" % (song.get_title(),
@@ -301,9 +301,14 @@ def get_artists():
 
 @app.route("/artists2")
 def get_artists2():
-    json = {"artists": [artist.get_name() for artist in
-                        sorted(library.get_artists(),
-                               key=lambda a: a.get_name())]}
+    artistlist = []
+    for artist in sorted(library.get_artists(), key=lambda a: a.get_name()):
+        jobject = {"name": artist.get_name(),
+                   "albums": len(artist.get_albums()),
+                   "songs": len(artist.get_songs())}
+        artistlist.append(jobject)
+    
+    json = {"artists": artistlist}
     return flask.jsonify(**json)
 
 
@@ -318,9 +323,14 @@ def get_albums():
 
 @app.route("/albums2")
 def get_albums2():
-    json = {"albums": [album.get_title() for album in
-                       sorted(library.get_albums(),
-                              key=lambda a: a.get_title())]}
+    albumlist = []
+    for album in sorted(library.get_albums(), key=lambda a: a.get_title()):
+        jobject = {"title": album.get_title(),
+                   "artist": album.get_artist().get_name(),
+                   "songs": len(album.get_songs())}
+        albumlist.append(jobject)
+
+    json = {"albums": albumlist}
     return flask.jsonify(**json)
 
 
@@ -385,11 +395,9 @@ def get_route():
     queue = variables.get("queue", [])
     if not queue:  # Queue is empty
         return "No queue found"
-    result = ""
-    for item in queue:
-        artist, album, song = item
-        result += artist + ":" + album + ":" + song + ";"
-    return result[:-1]
+    songlist = [{"artist": i[0], "album": i[1], "song": i[2]} for i in queue]
+    json = {"queue": songlist}
+    return flask.jsonify(**json)
 
 
 @app.route("/set/volume/<int:volume>")
@@ -405,11 +413,12 @@ def get_status():
     artist, album, song = variables.get("playing", [])
     json = dict()
     status = variables.get("status", -1)
+    queue = variables.get("queue", [])
     json["status"] = status
     if status != 2:
         json["playing"] = {"artist": artist, "album": album, "song": song}
     json["volume"] = variables.get("volume", 50)
-    json["queue"] = variables.get("queue", [])
+    json["queue"] = [{"artist": i[0], "album": i[1], "song": i[2]} for i in queue]
     return flask.jsonify(**json)
 
 

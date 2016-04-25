@@ -173,7 +173,7 @@ def push():
         res = client.send(tokens,
                           alert,
                           collapse_key='collapse_key',
-                          delay_while_idle=True,
+                          delay_while_idle=False,
                           time_to_live=600)
 
     # Send to multiple devices by passing a list of ids.
