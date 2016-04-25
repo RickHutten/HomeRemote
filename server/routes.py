@@ -416,7 +416,9 @@ def get_status():
     queue = variables.get("queue", [])
     json["status"] = status
     if status != 2:
-        json["playing"] = {"artist": artist, "album": album, "song": song}
+        json["playing"] = {"artist": artist, "album": album, "song": song,
+                           "elapsed": variables.get("elapsed", 0),
+                           "duration": variables.get("song_duration", 0)}
     json["volume"] = variables.get("volume", 50)
     json["queue"] = [{"artist": i[0], "album": i[1], "song": i[2]} for i in queue]
     return flask.jsonify(**json)

@@ -120,6 +120,7 @@ def start_timer():
     # Start counting
     while True:
         time_elapsed = time.time() - start_time
+        variables.put("elapsed", int(time_elapsed*1000)/1000., False)
         if time_elapsed >= float(song.get_duration()):
             # Song is done playing, play next song
             queue = variables.get("queue", None)

@@ -38,22 +38,28 @@ class ServerVariables:
         else:
             return default
 
-    def put(self, key, value):
-        self.lock.acquire()
-        try:
-            # Puts key with corresponding value in file.
-            if type(key) != str:
-                raise TypeError(
-                    "First argument should be string not of type: " + str(
-                        type(key)))
-            if type(value) not in [int, float, str, list, dict, tuple, bool,
-                                   type(None)]:
-                raise TypeError(
-                    "Value type not supported: " + str(type(value)))
-            # Save variable in global
-            self.glob[key] = value
+    def put(self, key, value, writeToFile=True):
+        # Check if the key and value are of the correct types
+        if type(key) != str:
+            raise TypeError(
+                "First argument should be string not of type: " + str(
+                    type(key)))
+        if type(value) not in [int, float, str, list, dict, tuple, bool,
+                               type(None)]:
+            raise TypeError(
+                "Value type not supported: " + str(type(value)))
 
-            key = key.strip()
+        # Save variable in global
+        key = key.strip()
+        self.glob[key] = value
+
+        if not writeToFile:
+                # Don't write the key and value to file
+                return
+
+        # Write key to file
+        self.lock.acquire()  # Acquire lock
+        try:
             # Check if key already exists
             f = open(self.filename, "r")
             for i, line in enumerate(f):
