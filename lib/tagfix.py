@@ -42,6 +42,7 @@ def fix():
                 warnings += 1
                 continue
 
+            #print filename
             # Get song path
             song_path = os.path.join(dirname, filename)
 

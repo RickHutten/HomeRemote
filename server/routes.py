@@ -252,10 +252,17 @@ def previous_song():
     if queue is None or playing is None:
         return "Something went wrong"
     queue_nr = queue.index(playing)
-    song = queue[queue_nr - 1]
+    if variables.get("elapsed", 0) > 4:
+        # Replay the song
+        song = playing
+        print "Replaying song from beginning:", song
+    else:
+        # Play the previous song
+        song = queue[queue_nr - 1]
+        print "Playing previous song:", song
     song_obj = library.get_song(song[0], song[1], song[2])
     server.audio.play(song_obj)
-    print "Playing previous song:", song
+    
     return song[0] + ";" + song[1] + ";" + song[2]
 
 

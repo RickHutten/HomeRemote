@@ -102,7 +102,8 @@ def start_timer():
         return
 
     variables.put("stop_timer", True)
-    time.sleep(1)  # Wait to give the other timer time to stop
+    variables.put("elapsed", 0, False)
+    time.sleep(0.5)  # Wait to give the other timer time to stop
     variables.put("stop_timer", False)  # The timer starts
 
     playing = variables.get("playing", None)
@@ -120,7 +121,7 @@ def start_timer():
     # Start counting
     while True:
         time_elapsed = time.time() - start_time
-        variables.put("elapsed", int(time_elapsed*1000)/1000., False)
+        
         if time_elapsed >= float(song.get_duration()):
             # Song is done playing, play next song
             queue = variables.get("queue", None)
@@ -136,17 +137,19 @@ def start_timer():
             play(song_obj)
             return  # Stop this timer
 
-        time.sleep(0.1)  # Sleep for a bit
-
         if variables.get("stop_timer", False):
             # A new timer is ready to go, stop this one
             return
+
         # If the music is paused
         if variables.get("status", -1) == variables.PAUSED:
             start_pause_time = time.time()
             while variables.get("status", -1) == variables.PAUSED:
                 time.sleep(0.1)  # Wait for the music to be continued
             start_time += time.time() - start_pause_time
+
+        variables.put("elapsed", int(time_elapsed*1000)/1000., False)
+        time.sleep(0.1)  # Sleep for a bit
 
 
 def push():

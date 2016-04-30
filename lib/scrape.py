@@ -34,7 +34,7 @@ def scrape():
                 continue
             if extension != "mp3":
                 continue
-
+            #print filename
             # Get song path
             song_path = os.path.join(dirname, filename)
 
@@ -51,16 +51,17 @@ def scrape():
             # print audio["album"][0]
             # Some are numbered: '09/16' meaning track 9 of 16
             song_order = str(audio["tracknumber"][0].split("/")[0])
-            length = int(audio.info.length) + 1  # Roof
+            length = audio.info.length
 
             # Update user and write source to file
             no_songs += 1
             print "\r%d songs scraped" % no_songs,
             sys.stdout.flush()
-            line = "%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album,
-                                               song_order, song_path,
-                                               img_source, length)
-            f.write(line.encode("utf8"))
+#            line = "%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album,
+#                                               song_order, song_path,
+#                                               img_source, length)
+            line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + img_source + ";" + str(length)
+            f.write(line.encode("utf8") + "\n")
 
     # Close file
     f.close()
