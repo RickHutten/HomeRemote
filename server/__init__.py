@@ -11,5 +11,5 @@ import server.routes
 
 
 def start_server():
-    app.debug = True
+    app.debug = False
     app.run(host="0.0.0.0", port=80, threaded=True)

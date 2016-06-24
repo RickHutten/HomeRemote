@@ -25,8 +25,8 @@ def get_instance():
         album_title = line[2].strip()
         song_order = line[3].strip()
         song_path = line[4].strip()
-        image_path = line[5].strip()
-        duration = line[6].strip()
+#        image_path = line[5].strip()
+        duration = line[5].strip()
 
         s = song.Song()
         al = album.Album()
@@ -46,7 +46,7 @@ def get_instance():
         else:
             # Set title and image only if album is new
             al.set_title(album_title)
-            al.set_image(image_path)
+#            al.set_image(image_path)
             # Start new thread that downloads the image
             thread = Thread(target=al.download_image,
                             args=(artist_name, image_manager))

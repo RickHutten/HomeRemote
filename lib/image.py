@@ -121,8 +121,12 @@ class ImageManager:
             "https://api.spotify.com/v1/search?type=artist&q=%s" % (
                 artist_plus))
         # Sort by popularity
-        item = sorted(data["artists"]["items"], key=lambda a: a["popularity"],
-                      reverse=True)[0]
+        try :
+                item = sorted(data["artists"]["items"], key=lambda a:
+                      a["popularity"], reverse=True)[0]
+        except IndexError:
+                # Noting is found
+                return
         artist_id = item["id"]
         # Get the albums of the artist now that we have the artist ID
 

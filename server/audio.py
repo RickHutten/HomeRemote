@@ -13,7 +13,7 @@ def play(song):
                   [song.get_artist().get_name(), song.get_album().get_title(),
                    song.get_title()])
     variables.put("song_duration", song.get_duration())
-    variables.put("song_start", time.time())
+    variables.put("song_start", time.time(), False)
     os.system("pkill mpg123")  # Kill everything that might be playing
     os.system('mpg123 -q "%s" &' % song.get_path())  # Play the song
     push()  # Notify the users
@@ -85,14 +85,26 @@ def pause():
 
 
 def resume():
-    os.system("pkill -CONT mpg123")
+    status = variables.get("status", variables.STOPPED)
+
+    if status == variables.PLAYING:
+        return
+    elif status == variables.STOPPED:
+        # Music is stopped, play song from beginning
+        playing = variables.get("playing", None)
+        if playing is None:
+            return
+        song_obj = library.get_song(playing[0], playing[1], playing[2])
+        play(song_obj)
+    elif status == variables.PAUSED:
+        os.system("pkill -CONT mpg123")
+
     variables.put("status", variables.PLAYING)
 
 
 def stop():
     variables.put("status", variables.STOPPED)
-    variables.put("playing", None)
-    variables.put("stop_timer", True)
+    variables.put("stop_timer", True, False)
     os.system("pkill mpg123")
 
 
@@ -101,10 +113,10 @@ def start_timer():
         # A timer is already waiting to start
         return
 
-    variables.put("stop_timer", True)
+    variables.put("stop_timer", True, False)
     variables.put("elapsed", 0, False)
     time.sleep(0.5)  # Wait to give the other timer time to stop
-    variables.put("stop_timer", False)  # The timer starts
+    variables.put("stop_timer", False, False)  # The timer starts
 
     playing = variables.get("playing", None)
     if playing is None:
@@ -121,7 +133,7 @@ def start_timer():
     # Start counting
     while True:
         time_elapsed = time.time() - start_time
-        
+
         if time_elapsed >= float(song.get_duration()):
             # Song is done playing, play next song
             queue = variables.get("queue", None)

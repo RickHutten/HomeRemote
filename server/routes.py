@@ -13,7 +13,7 @@ from server import library
 from server import variables
 
 # Set stop_timer on False on server boot
-variables.put("stop_timer", False)
+variables.put("stop_timer", False, False)
 variables.put("status", variables.STOPPED)
 
 
@@ -379,7 +379,7 @@ def get_songs_of_album(artist, album):
     album_object = library.get_album(artist, album)
     s = ""
     for song in sorted(album_object.get_songs(), key=lambda a: a.get_order()):
-        s += song.get_title() + ":" + song.get_duration() + ";"
+        s += song.get_title() + ":" + str(song.get_duration()) + ";"
     return s[:-1]
 
 
@@ -420,14 +420,12 @@ def get_status():
     artist, album, song = variables.get("playing", [])
     json = dict()
     status = variables.get("status", -1)
-    queue = variables.get("queue", [])
     json["status"] = status
-    if status != 2:
+    if status != variables.STOPPED:
         json["playing"] = {"artist": artist, "album": album, "song": song,
                            "elapsed": variables.get("elapsed", 0),
                            "duration": variables.get("song_duration", 0)}
     json["volume"] = variables.get("volume", 50)
-    json["queue"] = [{"artist": i[0], "album": i[1], "song": i[2]} for i in queue]
     return flask.jsonify(**json)
 
 

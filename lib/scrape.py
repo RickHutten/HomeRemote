@@ -12,19 +12,19 @@ def scrape():
 
     filename = "./data/song_data"
     f = open(filename, "w")
-    f.write("song;artist;album;order;file_path;image_path;length\n")
+    f.write("song;artist;album;order;file_path;length\n")
 
     for dirname, dirnames, filenames in os.walk(
             '/home/pi/Music'):  # One directory per loop
 
-        # Search for album image
-        img_source = "No image"
-        for filename in filenames:
-            extension = filename.split(".")[-1]
-            if extension in ["jpg", "JPG", "png", "PNG", "bmp", "BMP", "gif",
-                             "GIF"]:
-                img_source = os.path.join(dirname, filename)
-                break
+#        # Search for album image
+#        img_source = "No image"
+#        for filename in filenames:
+#            extension = filename.split(".")[-1]
+#            if extension in ["jpg", "JPG", "png", "PNG", "bmp", "BMP", "gif",
+#                             "GIF"]:
+#                img_source = os.path.join(dirname, filename)
+#                break
 
         for filename in filenames:
             # Continue if file is image or not a mp3 file
@@ -60,7 +60,7 @@ def scrape():
 #            line = "%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album,
 #                                               song_order, song_path,
 #                                               img_source, length)
-            line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + img_source + ";" + str(length)
+            line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + str(length)
             f.write(line.encode("utf8") + "\n")
 
     # Close file

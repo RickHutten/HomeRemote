@@ -29,7 +29,7 @@ class Song:
 
     def set_duration(self, f):
         # Set duration of song
-        self.duration = f
+        self.duration = float(f)
 
     def get_duration(self):
         return self.duration
