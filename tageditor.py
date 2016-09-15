@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import sys
 import lib
@@ -137,10 +138,20 @@ def ask_continue():
     else:
         return
 
+def fix_property_of_song(artist, album, title):
+    song = library.get_song(artist, album, title)
+    print song.get_title()
+    audio = MP3(song.get_path(), ID3=EasyID3)
+
+    new_name = u'El Mañana'
+    audio["title"] = new_name
+    audio.save()
+
 
 # tag: ["title", "artist", "album", "tracknumber"]:
 # audio.info.length
 
 if __name__ == '__main__':
     print "### Tag Editor v2.0 ###"
-    fix()
+    #fix()
+    fix_property_of_song("Gorillaz", "Demon Days", "El Manana")

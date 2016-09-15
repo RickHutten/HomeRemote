@@ -58,8 +58,7 @@ class Library:
                         for song in album.get_songs():
                             if song.get_title() == song_name:
                                 return song
-        return StandardError("Song not found: %s, %s, %s" %
-                             (artist_name, album_title, song_name))
+        print "Song not found: %s, %s, %s" % (artist_name, album_title, song_name)
 
     def print_lib(self):
         print "Library sorted by artist:"

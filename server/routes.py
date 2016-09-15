@@ -4,6 +4,8 @@ import os
 import hashlib
 import flask
 import server.audio
+import lib.string
+from ast import literal_eval
 from flask import abort
 from flask import send_file
 from flask import request
@@ -96,32 +98,25 @@ def long_poll():
         time.sleep(0.5)
 
 
-@app.route("/play")
+@app.route("/play", methods=['POST'])
 def play_music():
     """
-    Shuffle the whole library
+    Play the song requested by POST request
     :return: Json of song information
     """
-    songs = library.get_songs()
-    random.shuffle(songs)
+    if not valid_ip():
+        block_user()
 
-    # Set playlist
-    playlist = []
-    for song in songs:
-        artist_name = song.get_artist().get_name()
-        album_title = song.get_album().get_title()
-        song_name = song.get_title()
-        playlist.append([artist_name, album_title, song_name])
-    # TODO: push queue to user
-    variables.put("queue", playlist)
+    data = request.data
+    data = literal_eval(data)
 
-    # Play first song
-    song = songs[0]
-    server.audio.play(song)
-    json = {"artist": song.get_artist().get_name(),
-            "album": song.get_album().get_title(), "song": song.get_title()}
-    return flask.jsonify(**json)
+    artist = lib.string.cleanJSON(data["artist"])
+    album = lib.string.cleanJSON(data["album"])
+    song = lib.string.cleanJSON(data["song"])
 
+    songObj = library.get_song(artist, album, song)
+    server.audio.play(songObj)
+    return get_status()
 
 @app.route("/play/<string:artist>")
 def play_music_artist(artist):

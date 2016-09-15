@@ -32,7 +32,7 @@ def set_volume(vol, fade=False):
         if vol == 0:
             os.system("amixer -q sset PCM 0%")
             return True
-        # Map 0-100% to 50-100% through a sqrt function
+        # Map 0-100% to 50-100% through a function
         percentage = 5 * vol**0.5 + 50
         command = "amixer -q sset PCM " + str(percentage) + "%"
         os.system(command)
