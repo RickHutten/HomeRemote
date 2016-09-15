@@ -2,6 +2,7 @@
 import server
 import warnings
 import argparse
+from lib.log import log
 
 # Get rid of those f*cking warnings of Flask
 warnings.filterwarnings("ignore")
@@ -16,5 +17,7 @@ if args.log:
     import time
     sys.stderr = open("./log/%s.txt" %(time.strftime('%d-%m-%y %H:%M:%S')), "w")
     sys.stdout = sys.stderr
+
+log("Starting server")
 
 server.start_server()

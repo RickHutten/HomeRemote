@@ -1,6 +1,7 @@
 import json
 import os
 from urllib2 import urlopen
+from lib.log import log
 
 
 class ImageManager:
@@ -26,7 +27,7 @@ class ImageManager:
         try:
             images = data["artists"]["items"][0]["images"]
         except IndexError:
-            print "Could not find artist: %s" % artist_underscore
+            log("Could not find artist: %s" % artist_underscore)
             return "%s/data/images/no-artist.jpg" % (os.getcwd())
 
         # Get image with biggest width
@@ -40,7 +41,7 @@ class ImageManager:
         # Now we have the best url, download it to a file and return filepath
         self._download_image(best_url, "./data/images/artists/%s.jpg" % (
             artist_underscore))
-        print "Artist image downloaded: " + artist
+        log("Artist image downloaded: " + artist)
         return "%s/data/images/artists/%s.jpg" % (
             os.getcwd(), artist_underscore)
 
@@ -67,8 +68,8 @@ class ImageManager:
             image_url = self._download_album_hard_way(artist, album)
             if image_url is not None:
                 # Success, continue program
-                print "Album download method 2 success: %s" % (
-                    artist + " - " + album)
+                log("Album download method 2 success: %s" % (
+                    artist + " - " + album))
                 self._download_image(
                     image_url,
                     "./data/images/albums/%s.jpg" % (
@@ -76,7 +77,7 @@ class ImageManager:
                 return "%s/data/images/albums/%s.jpg" % (
                     os.getcwd(), artist_underscore + "-" + album_underscore)
             else:
-                print "Failed to find album: %s" % (artist + " - " + album)
+                log("Failed to find album: %s" % (artist + " - " + album))
                 return "%s/data/images/no-album.jpg" % (os.getcwd())
 
         for i in items:
@@ -97,7 +98,7 @@ class ImageManager:
         # Now we have the best url, download it to a file and return filepath
         self._download_image(best_url, "./data/images/albums/%s.jpg" % (
             artist_underscore + "-" + album_underscore))
-        print "Album image downloaded: " + artist + " - " + album
+        log("Album image downloaded: " + artist + " - " + album)
         return "%s/data/images/albums/%s.jpg" % (
             os.getcwd(), artist_underscore + "-" + album_underscore)
 

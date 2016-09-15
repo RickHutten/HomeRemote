@@ -1,5 +1,6 @@
 from ast import literal_eval
 from threading import Lock
+from lib.log import log
 
 class ServerVariables:
 
@@ -41,13 +42,12 @@ class ServerVariables:
     def put(self, key, value, writeToFile=True):
         # Check if the key and value are of the correct types
         if type(key) != str:
-            raise TypeError(
-                "First argument should be string not of type: " + str(
-                    type(key)))
+            log("First argument should be string not of type: " + str(type(key)))
+            return
         if type(value) not in [int, float, str, list, dict, tuple, bool,
                                type(None)]:
-            raise TypeError(
-                "Value type not supported: " + str(type(value)))
+            log("Value type not supported: " + str(type(value)))
+            return
 
         # Save variable in global
         key = key.strip()
@@ -99,8 +99,8 @@ class ServerVariables:
     def contains(self, key):
         # Returns whether the key exists in the varible
         if type(key) != str:
-            raise TypeError(
-                "Argument should be string not of type: " + str(type(key)))
+            log("Argument should be string not of type: " + str(type(key)))
+            return
         return key in self.glob.keys()
 
     def get_from_file(self, key, default):
@@ -109,8 +109,8 @@ class ServerVariables:
         self.lock.acquire()
         try:
             if type(key) != str:
-                raise TypeError(
-                    "Argument should be string not of type: " + str(type(key)))
+                log("Argument should be string not of type: " + str(type(key)))
+                return
             key = key.strip()
             f = open(self.filename, "r")
             for line in f:
@@ -129,8 +129,8 @@ class ServerVariables:
         ### Should not be used any more! ###
         # Return True/False if file contains key
         if type(key) != str:
-            raise TypeError(
-                "Argument should be string not of type: " + str(type(key)))
+            log("Argument should be string not of type: " + str(type(key)))
+            return
         key = key.strip()
         f = open(self.filename, "r")
         for line in f:

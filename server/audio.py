@@ -5,9 +5,11 @@ from server import library
 from server import variables
 from server import app
 from flask_pushjack import FlaskGCM
+from lib.log import log
 
 
 def play(song):
+    log("Playing song: %s by %s" %(song.get_title(), song.get_artist().get_name()))
     variables.put("status", variables.PLAYING)
     variables.put("playing",
                   [song.get_artist().get_name(), song.get_album().get_title(),
@@ -43,7 +45,7 @@ def set_volume(vol, fade=False):
 def fade_out(s):
     # Music paused afterwards and original volume restored.
     if s < 0.5:
-        print "Time to fade out may not be smaller than 0.5 seconds."
+        log("Time to fade out may not be smaller than 0.5 seconds.")
         s = 0.5
     volume = variables.get("volume", 75)
     s -= 0.5  # Compensate for computing time
@@ -60,7 +62,7 @@ def fade_out(s):
 def fade_in(s):
     # Fade in in s seconds
     if s < 0.5:
-        print "Time to fade in may not be smaller than 0.5 seconds."
+        log("Time to fade in may not be smaller than 0.5 seconds.")
         s = 0.5
     volume = variables.get("volume", 75)
     s -= 0.5  # Compensate for computing time
@@ -120,14 +122,14 @@ def start_timer():
 
     playing = variables.get("playing", None)
     if playing is None:
-        print "Audio.py: playing == None!"
+        log("Audio.py: playing == None!")
         return
 
     song = library.get_song(playing[0], playing[1], playing[2])
 
     start_time = variables.get("song_start", None)
     if start_time is None:
-        print "Audio.py: song_start = None!"
+        log("Audio.py: song_start = None!")
         return
 
     # Start counting
@@ -138,13 +140,13 @@ def start_timer():
             # Song is done playing, play next song
             queue = variables.get("queue", None)
             if queue is None:
-                print "Audio.py: queue = None!"
+                log("Audio.py: queue = None!")
                 return
             # Play new song
             queue_nr = queue.index(playing)
             queue_nr += 1
             song = queue[queue_nr % len(queue)]  # Make dat shit loop
-            print "Playing next song:", song
+
             song_obj = library.get_song(song[0], song[1], song[2])
             play(song_obj)
             return  # Stop this timer
@@ -176,7 +178,7 @@ def push():
     with app.app_context():
         tokens = variables.get("gcm_tokens", [])
         if not tokens:
-            print "No devices registered"
+            log("No devices registered")
             return
         playing = variables.get("playing", [])
         alert = {"artist": playing[0],

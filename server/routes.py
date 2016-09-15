@@ -13,14 +13,11 @@ from flask import render_template
 from server import app
 from server import library
 from server import variables
+from lib.log import log
 
 # Set stop_timer on False on server boot
 variables.put("stop_timer", False, False)
 variables.put("status", variables.STOPPED)
-
-
-def t():
-    return "[" + time.asctime(time.localtime(time.time())) + "]"
 
 
 def valid_ip():
@@ -39,7 +36,7 @@ def block_user():
 @app.before_request
 def limit_remote_address():
     if not valid_ip():
-        print t(), "Unauthorised request! ->", request.remote_addr
+        log("Unauthorised request! -> " +str(request.remote_addr))
         abort(401)  # Unauthorized
 
 
@@ -51,25 +48,24 @@ def show_homepage():
 @app.route("/register_ip")
 def register_ip():
     ip = request.remote_addr
-    print "\n", t(), "IP registery attempt! ->", ip, "  ",
     key = request.args.get("key")
     if key is None:
-        print "Registery denied\n"
+        log("Registery denied")
         return "Register failed"
     if hashlib.sha224(key).hexdigest() != \
             "e40206e07b61b34c898d38e6756d99c6bbc74279445afa320c0eb053":
         bannedlist = variables.get("banned", [])
         bannedlist.append(ip)
         variables.put("banned", bannedlist)
-        print "IP banned\n"
+        log("IP banned")
         return "IP banned"
     ips = variables.get("ip", [])
     if ip in ips:
-        print "IP already registered\n"
+        log("IP already registered")
         return "IP already registered"
     ips.append(ip)
     variables.put("ip", ips)
-    print "Registered succesfully\n"
+    log("Registered succesfully")
     return "Registered succesfully"
 
 
@@ -236,7 +232,6 @@ def next_song():
     song = queue[(queue_nr + 1) % len(queue)]
     song_obj = library.get_song(song[0], song[1], song[2])
     server.audio.play(song_obj)
-    print "Playing next song:", song
     return song[0] + ";" + song[1] + ";" + song[2]
 
 
@@ -250,11 +245,10 @@ def previous_song():
     if variables.get("elapsed", 0) > 4:
         # Replay the song
         song = playing
-        print "Replaying song from beginning:", song
+        log("Replaying song from beginning:" + str(song))
     else:
         # Play the previous song
         song = queue[queue_nr - 1]
-        print "Playing previous song:", song
     song_obj = library.get_song(song[0], song[1], song[2])
     server.audio.play(song_obj)
     
@@ -286,6 +280,7 @@ def get_artist_image(artist):
 
 @app.route("/shutdown")
 def shutdown():
+    log("Shutting down server...")
     # Fade audio out
     server.audio.fade_out(1)
     os.system("sudo shutdown -h now")
@@ -370,7 +365,6 @@ def get2_albums_of_artist(artist):
 def get_songs_of_album(artist, album):
     artist = artist.replace("_", " ")
     album = album.replace("_", " ")
-    # print [album.encode('latin-1')] ik word gek
     album_object = library.get_album(artist, album)
     s = ""
     for song in sorted(album_object.get_songs(), key=lambda a: a.get_order()):
@@ -435,7 +429,7 @@ def register_token():
     if not valid_ip():
         block_user()
     data = request.data
-    print "Token:", data
+    log("Token: " + str(data))
     tokens = variables.get("gmc_tokens", [])
     if data not in tokens:
         tokens.append(data)

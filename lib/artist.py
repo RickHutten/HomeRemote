@@ -1,3 +1,5 @@
+from lib.log import log
+
 class Artist:
     def __init__(self):
         self.name = ""  # String of artist name
@@ -21,7 +23,7 @@ class Artist:
         for alb in self.albums:
             if alb.get_title() == s:
                 return alb
-        raise StandardError("Album not found: " + s)
+        log("Album not found: " + s)
 
     def get_songs(self):
         songs = []

@@ -1,3 +1,5 @@
+from lib.log import log
+
 class Library:
     def __init__(self):
         self.albums = []  # List of albumObjects
@@ -39,15 +41,14 @@ class Library:
                 for album in artist.get_albums():
                     if album.get_title() == album_title:
                         return album
-        raise StandardError(
-            "Album not found: %s - %s" % (artist_name, album_title))
+        log("Album not found: %s - %s" % (artist_name, album_title))
 
     def get_artist(self, artist_name):
         # Get the artistObject given the artist name
         for artist in self.artists:
             if artist.get_name() == artist_name:
                 return artist
-        raise StandardError("Artist not found: %s" % artist_name)
+        log("Artist not found: %s" % artist_name)
 
     def get_song(self, artist_name, album_title, song_name):
         # Get the songObject given the artist, album and title of the song
@@ -58,7 +59,7 @@ class Library:
                         for song in album.get_songs():
                             if song.get_title() == song_name:
                                 return song
-        print "Song not found: %s, %s, %s" % (artist_name, album_title, song_name)
+        log("Song not found: %s, %s, %s" % (artist_name, album_title, song_name))
 
     def print_lib(self):
         print "Library sorted by artist:"
