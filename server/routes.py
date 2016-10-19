@@ -255,6 +255,40 @@ def previous_song():
     return song[0] + ";" + song[1] + ";" + song[2]
 
 
+@app.route("/image", methods=['POST'])
+def get_image():
+    """
+    Get the image of the requested artist or album
+    Json argument 'album' is optional, when not given the 
+    image of the artist is returned
+    """
+    if not valid_ip():
+        block_user()
+
+    data = request.data
+    data = literal_eval(data)
+
+    artist = lib.string.cleanJSON(data["artist"])
+
+    if "album" not in data.keys():
+        # No album is given, return the artist image
+        try:
+            filename = library.get_artist(artist).get_image()
+        except StandardError:
+            # The image is not found
+            return abort(404)
+        return send_file(filename, mimetype="image/jpg")
+
+    # Album is given, return album image
+    album = lib.string.cleanJSON(data["album"])
+    try:
+        filename = library.get_album(artist, album).get_image()
+    except StandardError:
+        # The image is not found
+        return abort(404)
+    return send_file(filename, mimetype="image/jpg")
+
+
 @app.route("/image/<string:artist>/<string:album>")
 def get_album_image(artist, album):
     artist = artist.replace("_", " ")

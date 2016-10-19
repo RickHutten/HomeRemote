@@ -1,0 +1,23 @@
+.album-view-image-container {
+	width: 50%;
+	float: left;
+}
+
+.album-view-image {
+	display: inline-block;
+	float: right;
+	width: 100%;
+	max-width: 250px;
+}
+
+.album-text-container {
+	width: 50%;
+	max-width: 400px;
+	display: inline-block;
+	float: left;
+}
+
+.album-text-container > h1 {
+	margin-top: 60px;
+	margin-bottom: 15px;
+}

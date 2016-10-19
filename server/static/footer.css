@@ -1,0 +1,42 @@
+footer {
+	position: fixed;
+	bottom: 0px;
+	height: 100px;
+	width: 100%;
+	background: #e5e5e5;
+	outline: #000 solid thin;
+}
+
+.controls-container {
+	background: #ffffff;
+}
+
+.playing-image-container {
+	display: inline-block;
+	float: left;
+	width: 30%;
+	height: 100px;
+}
+
+#playing-image {
+	width: 100px;
+	height: 100px;
+}
+
+.playing-text-container {
+	display: inline-block;
+	margin: 32px 0px;
+	width: 40%;
+}
+
+.button-container {
+	display: inline-block;
+	float: right;
+	width: 30%;
+}
+.btn-control {
+	height: 50px;
+	width: 50px;
+	margin: 25px 10px;
+	float: right;
+}

@@ -153,5 +153,5 @@ def fix_property_of_song(artist, album, title):
 
 if __name__ == '__main__':
     print "### Tag Editor v2.0 ###"
-    #fix()
-    fix_property_of_song("Gorillaz", "Demon Days", "El Manana")
+    fix()
+    #fix_property_of_song("Gorillaz", "Demon Days", "El Manana")

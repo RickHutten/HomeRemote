@@ -1,110 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		.footer {
-			position: fixed;
-			bottom: 0px;
-			left: 0px;
-			width: 100%;
-			height: 100px;
-			background-color: CornflowerBlue;		
-		}
-
-		.button {
-			width: 100px;
-			height: 50px;
-			background-color: orange;
-			display: inline-block;
-			margin: 25px;
-		}
-
-		.playing-text-container {
-			position: fixed;
-			width: 100%;
-			height: 80px;
-			background-color: orange;
-			bottom: 0px;
-		}
-
-		#playing-artist, #playing-song {
-			margin: 12px;
-			margin-left: 140px;			
-		}
-
-		.album-cover {
-			position: fixed;
-			width: 120px;
-			height: 120px;
-			left: 10px;
-			bottom: 10px;
-		}
-	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script>
-		$(document).ready(function() {
-
-			// Long poll function
-			function poll() {
-				console.log("Polling...");
-				$.get("http://rickert.noip.me/poll", function(data, status){
-					// When a new song is played on the server
-					var artist = data.artist;
-					var album = data.album;
-					var song = data.song;
-					$("#playing-artist").html(artist);
-					$("#playing-song").html(song);
-					var src = "http://rickert.noip.me/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_");
-					$(".album-cover").attr("src", src);
-					poll();  // Start function again
-				});
-			}
-			poll();  // Start polling
-
-			$("#play").click(function(){
-				$.get("http://rickert.noip.me/play", function(data, status){
-					var artist = data.artist;
-					var album = data.album;
-					var song = data.song;
-					$("#playing-artist").html(artist);
-					$("#playing-song").html(song);
-					var src = "http://rickert.noip.me/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_");
-					$(".album-cover").attr("src", src);
-				});
-			});
-			$("#pause").click(function(){
-				$.get("http://rickert.noip.me/pause", function(data, status){
-					alert("Data: " + data + "\nStatus: " + status);
-				});
-			});
-			$("#resume").click(function(){
-				$.get("http://rickert.noip.me/resume", function(data, status){
-					alert("Data: " + data + "\nStatus: " + status);
-				});
-			});
-		});
-	</script>
+	<title>Home Entertainment System</title>
+	<meta name=viewport content="width=device-width">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tiles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='album-view.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='footer.css') }}">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='structures.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 </head>
 <body>
-	<div class="button" id="play">
-		<p>Play</p>
-	</div>
-	<div class="button" id="pause">
-		<p>Pause</p>
-	</div>
-	<div class="button" id="resume">
-		<p>Resume</p>
-	</div>
-	<footer class="footer">
-		<div class="playing-text-container">
-			<p id="playing-artist">
-				Artist
-			</p>
-			<p id="playing-song">
-				Song
-			</p>
+	<div class="navbar">
+		<p class="title center-text">Home Entertainment System</p>
+		<div class="tabbar">
+			<div id="tab-artist" class="tabbar-item center-text left">Artists</div>
+			<div id="tab-album" class="tabbar-item center-text">Albums</div>
+			<div id="tab-playlist" class="tabbar-item center-text right">Playlists</div>
 		</div>
-		<img class="album-cover" src="http://rickert.noip.me/image/Kensington/Rivals"></img>
+	</div>
+	
+	<div id="content">
+		<div class="album-view-image-container">
+			<image class="album-view-image" src="http://rickert.noip.me/image/Foo_Fighters/Foo_Fighters">
+		</div>
+		<div class="album-text-container">
+			<h1><p class="center-text">Album title</p></h1>
+			<p class="center-text">Artist</p>
+		</div>	
+	</div>
+	
+	<footer>
+		<div class="playing-image-container">
+			<img id="playing-image" src="http://netstorage.metrolyrics.com/albums/2016/09/1472151365kings-of-leon-walls-2016-2480x2480.jpg">
+		</div>
+		<div class="playing-text-container">
+			<p id="playing-title" class="center-text"></p>
+			<p id="playing-artist-album" class="center-text"></p>
+		</div>
+		
+		<div class="button-container">
+			<input class="btn-control" type="image" src="https://image.freepik.com/free-icon/play-button_318-42541.png" />
+			<input class="btn-control" type="image" src="https://image.freepik.com/free-icon/play-button_318-42541.png" />
+		</div>
 	</footer>
 </body>
 </html>

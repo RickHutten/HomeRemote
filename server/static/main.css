@@ -1,0 +1,50 @@
+html {
+	min-height:100%;
+	min-width: 490px;
+}
+
+body {
+	background: #d5d5d5;
+	margin: 0px;
+}
+
+p {
+	margin: 0px;
+}
+
+#content {
+	margin-top: 98px;
+	margin-bottom: 89px;
+	padding: 20px;
+}
+
+.center-in-parent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.center-vertical {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.center-horizontal {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.center-text {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
