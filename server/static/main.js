@@ -25,6 +25,11 @@ $(window).resize(function() {
 	sizeBody();
 });
 
+$(window).scroll(function() {
+	var scrolly = $(window).scrollLeft();
+	$('footer').css("left", -scrolly + "px");
+});
+
 function sizeBody() {
 	var top = document.getElementById('navbar').getBoundingClientRect().bottom;
 	var bottom = document.getElementById('footer').getBoundingClientRect().top;
@@ -63,7 +68,6 @@ function getStatus() {
 		if (status == "PLAYING") {
 			$('#play-pause').eq(0).attr("src", "http://rickert.noip.me/static/pause.png");
 		}
-		
 	});
 }
 
@@ -86,7 +90,6 @@ function setClickListeners() {
 			});
 		}
 	});
-
 	$('#skip-next').click(function() {
 		$.get("http://rickert.noip.me/next", null);
 	});
@@ -109,20 +112,39 @@ function onArtistClicked() {
 }
 
 function onSongClicked(e) {
-	var song = $(e).find('.song-title')[0].innerHTML;
-	var artist = $('#artist')[0].innerHTML;
-	var album = $('#album')[0].innerHTML;
-
-	var data = new FormData();
-	data.append("artist", artist);
-	data.append("album", album);
-	data.append("song", song);
+	var song = $(e).eq(0).attr("title");
+	var artist = $(e).eq(0).attr("artist");
+	var album = $(e).eq(0).attr("album");
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "http://rickert.noip.me/play", true);
 	xhr.onload = function() {console.log(this.responseText)};
 	data = '{"artist":"'+artist+'", "album":"'+album+'", "song":"'+song+'"}';
-	xhr.send(data);	
+	xhr.send(data);
+
+	postQueue();
+}
+
+function postQueue() {
+	// POSTs all songviews on the screen to the server
+	var songs = $('.song-view');
+	// {"songs": [ {"artist": artist, "album": album, "song": song}, ...]}
+	var data = '';
+	for (i = 0; i < songs.length; i++) {
+		var song = songs.eq(i);
+		var title = song.attr("title");
+		var artist = song.attr("artist");
+		var album = song.attr("album");
+		data += '{"artist":"'+artist+'", "album":"'+album+'", "song":"'+title+'"}';
+		// Add comma for next song
+		if (i != songs.length-1) {data += ',';}
+	}
+	var json = '{"songs": [ ' + data + "]}";
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://rickert.noip.me/set2/queue", true);
+	xhr.onload = function() {console.log(this.responseText)};
+	xhr.send(json);
 }
 
 function setAlbums() {
@@ -194,12 +216,4 @@ function poll() {
 		}
 		poll();  // Start function again
 	});
-}
-
-function clearSelection() {
-	if (document.selection) {
-		document.selection.empty();
-	} else if (window.getSelection){
-		window.getSelection().removeAllRanges();
-	}
 }

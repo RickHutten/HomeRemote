@@ -17,7 +17,7 @@ function getAlbumView(artist, album, songs) {
 		var song = songs[i];
 		var title = song.title;
 		var duration = song.duration;
-		songhtml += '<div class="song-view" onclick="onSongClicked(this)"><p class="song-title">'+title+'</p><p class="song-duration">'+Math.floor(duration)+'</p></div>';
+		songhtml += '<div class="song-view" onclick="onSongClicked(this)" artist="'+artist+'" album="'+album+'" title="'+title+'"><p class="song-title">'+title+'</p><p class="song-duration">'+Math.floor(duration)+'</p></div>';
 	}
 	return basehtml + songhtml + endhtml;
 	

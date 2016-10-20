@@ -1,6 +1,7 @@
 #navbar {
 	z-index: 5000;
 	width: 100%;
+	min-width: 490px;
 	background: #303030;
 	color: white;
 }

@@ -3,6 +3,7 @@ footer {
 	bottom: 0px;
 	height: 100px;
 	width: 100%;
+	min-width: 507px;
 	background: #c5c5c5;
 	outline: #000 solid thin;
 }

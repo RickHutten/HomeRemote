@@ -104,9 +104,6 @@ def play_music():
     if not valid_ip():
         block_user()
 
-    print "lollol"
-    print [request.data]
-
     data = request.data
     data = literal_eval(data)
 
@@ -410,6 +407,7 @@ def get_songs_of_album(artist, album):
     return s[:-1]
 
 
+# Should not be used any more, doesn't use JSON
 @app.route('/set/queue', methods=['POST'])
 def post_queue():
     if not valid_ip():
@@ -424,8 +422,37 @@ def post_queue():
     return "Queue received succesfully"
 
 
+@app.route('/set2/queue', methods=['POST'])
+def post_queue2():
+    """
+    Data: {"songs": [ {"artist": artist, "album": album, "song": song}, ...]}
+    """
+    if not valid_ip():
+        block_user()
+    data = request.data
+    print [data]
+    print ""
+    data = literal_eval(data)
+    print [data]
+    
+    songs = data["songs"]
+    playlist = []
+    print "hier"
+
+    for song in songs:
+        artist = lib.string.cleanJSON(song["artist"])
+        album = lib.string.cleanJSON(song["album"])
+        song_name = lib.string.cleanJSON(song["song"])
+        print artist, album, song_name
+        
+        playlist.append([artist, album, song_name])
+
+    variables.put("queue", playlist)
+    return "Queue received succesfully"
+
+
 @app.route("/queue")
-def get_route():
+def get_queue():
     queue = variables.get("queue", [])
     if not queue:  # Queue is empty
         return "No queue found"
