@@ -83,14 +83,15 @@ def print_library():
 
 @app.route("/poll")
 def long_poll():
+    status = variables.get("status", "STOPPED")
     artist, album, song = variables.get("playing", [])
     while True:
         # Return when the song has changed
+        new_status = variables.get("status", "STOPPED")
         new_artist, new_album, new_song = variables.get("playing", [])
-        if artist != new_artist or album != new_album or song != new_song:
+        if artist != new_artist or album != new_album or song != new_song or status != new_status:
             # New song is played
-            json = {"artist": new_artist, "album": new_album, "song": new_song}
-            return flask.jsonify(**json)
+            return get_status()
         time.sleep(0.5)
 
 
@@ -102,6 +103,9 @@ def play_music():
     """
     if not valid_ip():
         block_user()
+
+    print "lollol"
+    print [request.data]
 
     data = request.data
     data = literal_eval(data)
