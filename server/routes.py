@@ -383,11 +383,29 @@ def get2_albums_of_artist(artist):
         song_list = []
         for song in sorted(album.get_songs(), key=lambda a: a.get_order()):
             song_list.append({"title": song.get_title(),
+                              "artist": song.get_artist().get_name(),
                               "order": song.get_order(),
                               "duration": song.get_duration()})
         album_list.append({"title": album.get_title(),
                            "songs": song_list})
     json = {"albums": album_list}
+    return flask.jsonify(**json)
+
+@app.route("/get2/<string:artist>/<string:album>")
+def get2_albums(artist, album):
+    artist = artist.replace("_", " ")
+    album = album.replace("_", " ")
+    album = library.get_album(artist, album)
+    song_list = []
+    for song in sorted(album.get_songs(), key=lambda a: a.get_order()):
+        song_list.append({"title": song.get_title(),
+                          "artist": song.get_artist().get_name(),
+                          "order": song.get_order(),
+                          "duration": song.get_duration()})
+
+    json = {"title": album.get_title(),
+            "albumartist": album.get_artist().get_name(),
+            "songs": song_list}
     return flask.jsonify(**json)
 
 
