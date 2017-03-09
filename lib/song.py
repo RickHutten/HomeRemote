@@ -2,9 +2,16 @@ class Song:
     def __init__(self):
         self.title = ""  # String (title)
         self.album = None  # Album object
+        self.artist = None  # Artist object
         self.order = -1  # Int (order)
         self.path = ""  # Path of the song
         self.duration = -1  # Duration of song (seconds)
+
+    def __str__(self):
+        return "SongObject: " + self.title + " by " + self.get_artist().get_name()
+
+    def __repr__(self):
+        return self.__str__() 
 
     def set_title(self, s):
         # Set title of song
@@ -34,8 +41,12 @@ class Song:
     def get_duration(self):
         return self.duration
 
+    def set_artist(self, artist_object):
+        # Set artist of song
+        self.artist = artist_object
+
     def get_artist(self):
-        return self.album.get_artist()
+        return self.artist
 
     def set_path(self, s):
         # Set path of song

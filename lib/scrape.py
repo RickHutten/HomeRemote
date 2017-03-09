@@ -12,20 +12,10 @@ def scrape():
 
     filename = "./data/song_data"
     f = open(filename, "w")
-    f.write("song;artist;album;order;file_path;length\n")
+    f.write("song;artist;album;order;file_path;length;albumartist\n")
 
-    for dirname, dirnames, filenames in os.walk(
-            '/home/pi/Music'):  # One directory per loop
-
-#        # Search for album image
-#        img_source = "No image"
-#        for filename in filenames:
-#            extension = filename.split(".")[-1]
-#            if extension in ["jpg", "JPG", "png", "PNG", "bmp", "BMP", "gif",
-#                             "GIF"]:
-#                img_source = os.path.join(dirname, filename)
-#                break
-
+    # One directory per loop
+    for dirname, dirnames, filenames in os.walk('/home/pi/Music'):
         for filename in filenames:
             # Continue if file is image or not a mp3 file
             extension = filename.split(".")[-1]
@@ -44,11 +34,16 @@ def scrape():
             # Get song attributes
             song_name = audio["title"][0]
             artist = audio["artist"][0]
-            # try:
             album = audio["album"][0]
-            # except:
-            # print "Dit gaat fout"
-            # print audio["album"][0]
+
+            # Try to get the album artist tag, if not present, use song artist
+            try:
+                album_artist = audio["albumartist"][0] # This line
+                if album_artist.lower() == artist.lower():  # Prevent difference in caps
+                    album_artist = artist
+            except KeyError:
+                album_artist = artist
+
             # Some are numbered: '09/16' meaning track 9 of 16
             song_order = str(audio["tracknumber"][0].split("/")[0])
             length = audio.info.length
@@ -57,10 +52,8 @@ def scrape():
             no_songs += 1
             print "\r%d songs scraped" % no_songs,
             sys.stdout.flush()
-#            line = "%s;%s;%s;%s;%s;%s;%s\n" % (song_name, artist, album,
-#                                               song_order, song_path,
-#                                               img_source, length)
-            line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + str(length)
+
+            line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + str(length) + ";" + album_artist
             f.write(line.encode("utf8") + "\n")
 
     # Close file

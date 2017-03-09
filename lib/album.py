@@ -1,9 +1,15 @@
 class Album:
     def __init__(self):
         self.title = ""  # String (title)
-        self.artist = None  # Artist object
+        self.artist = None  # Album, Artist object
         self.image = ""  # String (image path)
         self.songs = []  # List of Song objects
+
+    def __str__(self):
+        return "AlbumObject: " + self.title + " by " + self.get_artist().get_name()
+
+    def __repr__(self):
+        return self.__str__()
 
     def set_title(self, s):
         # Set title of the Album
@@ -19,10 +25,6 @@ class Album:
     def get_artist(self):
         return self.artist
 
-    def set_image(self, s):
-        # Set image path of the Album
-        self.image = s
-
     def get_image(self):
         return self.image
 
@@ -37,7 +39,6 @@ class Album:
 
     def add_song(self, song_object):
         # Add songObject to list
-        song_object.set_album(self)
         self.songs.append(song_object)
 
     def print_songs(self):
@@ -47,7 +48,7 @@ class Album:
             print song.get_title(),
         print ""
 
-    def download_image(self, artist_name, image_manager):
+    def set_image(self, artist_name, image_manager):
         # Downloads file and sets the image path
         self.image = image_manager.get_album_image_filepath(artist_name,
                                                             self.title)

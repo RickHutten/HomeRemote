@@ -26,7 +26,7 @@ def valid_ip():
     False if the user is not permitted.
     """
     ip = request.remote_addr
-    return ip in variables.get("ip", []) or str(request.path) == "/register_ip"
+    return (ip in variables.get("ip", []) or str(request.path) == "/register_ip") and ip not in variables.get("banned", [])
 
 
 def block_user():
@@ -124,11 +124,7 @@ def play_music_artist(artist):
     """
     artist = artist.replace("_", " ")
     artist_object = library.get_artist(artist)
-    albums = artist_object.get_albums()
-    songs = []
-    for album in albums:
-        for song in album.get_songs():
-            songs.append(song)
+    songs = artist_object.get_songs()
     random.shuffle(songs)
 
     # Set playlist

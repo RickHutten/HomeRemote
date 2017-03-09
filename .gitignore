@@ -4,9 +4,10 @@
 # No buffers
 *~
 
-# No files in data/ folder
+# No files in data/, log/ and .idea/ folder
 data/
 .idea/
-test*.py
-log.txt
 log/
+
+# No test files 
+*test*.py
