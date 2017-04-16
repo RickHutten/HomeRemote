@@ -48,7 +48,7 @@ class Album:
             print song.get_title(),
         print ""
 
-    def set_image(self, artist_name, image_manager):
+    def set_image(self, image_manager):
         # Downloads file and sets the image path
-        self.image = image_manager.get_album_image_filepath(artist_name,
+        self.image = image_manager.get_album_image_filepath(self.get_artist().get_name(),
                                                             self.title)

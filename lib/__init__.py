@@ -77,14 +77,14 @@ def get_instance():
         else: # If loop is ended without break, make new one
             # Set title and image only if album is new
             al.set_title(album_title)
+            al.set_artist(alar)
             # Start new thread that downloads the image
-            thread = Thread(target=al.set_image,
-                            args=(artist_name, image_manager))
+            thread = Thread(target=al.set_image, args=(image_manager,))
             thread.start()
 
         alar.add_album(al)
         ar.add_album(al)
-        al.set_artist(alar)
+        #al.set_artist(alar)
 
         al.add_song(s)
 

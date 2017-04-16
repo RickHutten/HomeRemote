@@ -20,10 +20,6 @@ def fix():
             if extension == "mp3":
                 mp3s += 1
 
-        if mp3s != 0 and img_source == "No image":
-            print "No image found for files in path " + dirname
-            warnings += 1
-
         no_images = 0
         for filename in filenames:
             # Continue if file is image
@@ -75,7 +71,7 @@ def fix():
                     audio.save()
 
             try:
-                length = int(audio.info.length)
+                length = float(audio.info.length)
                 if length < 2:
                     # Length of audio file is very short, probably false
                     raise ValueError

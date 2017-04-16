@@ -470,7 +470,10 @@ def get_queue():
     queue = variables.get("queue", [])
     if not queue:  # Queue is empty
         return "No queue found"
-    songlist = [{"artist": i[0], "album": i[1], "song": i[2]} for i in queue]
+    songlist = []
+    for song in queue:
+        songObj = library.get_song(song[0], song[1], song[2])
+        songlist.append({"artist": song[0], "album": song[1], "song": song[2], "duration": songObj.get_duration()})
     json = {"queue": songlist}
     return flask.jsonify(**json)
 

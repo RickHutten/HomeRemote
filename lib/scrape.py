@@ -10,7 +10,7 @@ from mutagen.mp3 import MP3
 def scrape():
     print "Scraping songs..."
     start = time.time()
-    no_threads = 4
+    no_threads = 3
     threads = []
     no_songs = Value('i', 0)
     thread_output = [Manager().list() for i in range(no_threads)]
@@ -64,8 +64,11 @@ def read_songs(songs, output, total_songs, no_songs):
     # Process the given list of songs
     for song_path in songs:
         # Load song
-        audio = MP3(song_path, ID3=EasyID3)
-
+        try:
+         audio = MP3(song_path, ID3=EasyID3)
+        except:
+            print "\nError reading file:", song_path
+            continue
         # Get song attributes
         song_name = audio["title"][0]
         artist = audio["artist"][0]
