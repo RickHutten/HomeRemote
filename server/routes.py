@@ -433,7 +433,7 @@ def post_queue():
         artist_name, album_title, song_name = song_str.split(":")
         playlist.append([artist_name, album_title, song_name])
     variables.put("queue", playlist)
-    return "Queue received succesfully"
+    return get_status()
 
 
 @app.route('/set2/queue', methods=['POST'])
@@ -462,7 +462,7 @@ def post_queue2():
         playlist.append([artist, album, song_name])
 
     variables.put("queue", playlist)
-    return "Queue received succesfully"
+    return get_status()
 
 
 @app.route("/queue")
