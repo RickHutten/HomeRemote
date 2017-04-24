@@ -8,23 +8,29 @@
 	box-shadow: 0px 0px 10px 4px #888888;
 }
 
+#playing-image-container {
+	height: 250px;
+}
+
+#playing-text-container {
+	color: white;
+	position: absolute;
+	width: calc(100% - 20px);
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.3);
+}
+
 .controls-container {
 	background: #ffffff;
 
 }
 
 #playing-image {
-	width: 100%;
+	width: 250px;
+	height: 250px;
 }
 
-.playing-text-container {
-	color: white;
-	position: absolute;
-	width: calc(100% - 20px);
-	top: 0px;
-	padding: 10px;
-	background: rgba(0, 0, 0, 0.2);
-}
+
 
 #button-container {
 	position: absolute;
@@ -37,8 +43,34 @@
 .btn-control {
 	width: 50px;
 	height: 50px;
+	cursor: pointer;
 }
 
 .material-icons.md-48 { 
 	font-size: 48px;
 }
+
+#queue {
+	overflow-y: scroll;
+}
+
+.queue-song-view {
+	display: flex;
+    justify-content: space-between;
+	padding: 10px 5px;
+	cursor: pointer;
+}
+
+.queue-song-view:hover {
+	box-shadow: inset 0px 0px 10px #999;
+}
+
+.queue-song-title {
+	white-space: nowrap;
+    overflow: hidden;
+}
+
+.queue-song-duration {
+	margin-left:5px;
+}
+

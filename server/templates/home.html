@@ -17,34 +17,32 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 </head>
 <body>	
-	<div id="content-container">
-		<div id="navbar">
-			<div class="tabbar">
-				<div id="tab-artist" class="tabbar-item center-text left">Artists</div>
-				<div id="tab-album" class="tabbar-item center-text">Albums</div>
-				<div id="tab-playlist" class="tabbar-item center-text right">Playlists</div>
+	<div id="navbar">
+		<div class="tabbar">
+			<div id="tab-artist" class="tabbar-item center-text left">Artists</div>
+			<div id="tab-album" class="tabbar-item center-text">Albums</div>
+			<div id="tab-playlist" class="tabbar-item center-text right">Playlists</div>
+		</div>
+	</div>
+	
+	<div id="content">If you see this something went wrong... :(</div>
+	<div id="queue-container">
+		<div id="playing-image-container">
+			<img id="playing-image" src="http://netstorage.metrolyrics.com/albums/2016/09/1472151365kings-of-leon-walls-2016-2480x2480.jpg">
+			<div id="playing-text-container">
+				<strong><p id="playing-title"></p></strong>
+				<p id="playing-artist"></p>
+				<p id="playing-album"></p>
 			</div>
 		</div>
+		<div id="queue"></div>
 		
-		<div id="content">If you see this something went wrong... :(</div>
-		<div id="queue-container">
-			<div id="playing_image_container">
-				<img id="playing-image" src="http://netstorage.metrolyrics.com/albums/2016/09/1472151365kings-of-leon-walls-2016-2480x2480.jpg">
-				<div class="playing-text-container">
-					<strong><p id="playing-title"></p></strong>
-					<p id="playing-artist"></p>
-					<p id="playing-album"></p>
-				</div>
-			</div>
-			
-			<div id="button-container">
-				<img id="skip-next" class="btn-control" src="{{ url_for('static', filename='prev.png') }}">
-				<img id="play-pause" class="btn-control" src="{{ url_for('static', filename='play.png') }}">
-				<img id="skip-next" class="btn-control" src="{{ url_for('static', filename='next.png') }}">
-			</div>
-		
+		<div id="button-container">
+			<img id="btn-prev" class="btn-control" src="{{ url_for('static', filename='prev.png') }}">
+			<img id="play-pause" class="btn-control" src="{{ url_for('static', filename='play.png') }}">
+			<img id="btn-next" class="btn-control" src="{{ url_for('static', filename='next.png') }}">
 		</div>
-		
+	
 	</div>
 </body>
 </html>

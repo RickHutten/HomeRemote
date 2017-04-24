@@ -1,26 +1,23 @@
 .album-header {
-	width: 100%;
-	height: 250px;
-}
-
-.album-view-image-container {
-	width: 50%;
-	float: left;
+	width: 30%;
+	padding-top: 150px;
+	position: fixed;
 }
 
 .album-view-image {
-	display: inline-block;
-	float: right;
-	width: 100%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
 	max-width: 250px;
 	box-shadow: 0px 0px 15px #555;
 }
 
 .album-text-container {
-	width: 50%;
-	max-width: 400px;
-	display: inline-block;
-	float: left;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	margin-top: 250px;
+	transform: translate(-50%, 0);
 }
 
 .album-text-container > h1 {
@@ -29,18 +26,20 @@
 }
 
 .song-container {
-	width: 100%;
-	max-width: 800px;
-	margin: auto;
-	margin-top: 20px;
+	margin-left: 43%;
 }
 
 .song-view {
 	width: 100%;
 	height: 75px;
 	cursor: pointer;
-	border-bottom: 1px solid #aaa;
+	display: inline-flex;
+	justify-content: space-between;
 	transition: all 0.075s ease-in-out;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #aaa;
 }
 
 .song-view:hover {
@@ -49,18 +48,12 @@
 
 .song-title {
 	font-size: 130%;
-	margin-top: 25px;
-	margin-left: 3%;
-	float: left;
-	max-height: 1em;
-	width: 82%;	
+	margin: auto 0px !important;
+	padding-left: 15px;
 }
 
 .song-duration {
 	font-size: 110%;
-	margin-top: 26px;
-	margin-right: 3%;
-	text-align: right;
-	float: right;
-	width: 12%;
+	margin: auto 0px !important;
+	padding-right: 15px;
 }
