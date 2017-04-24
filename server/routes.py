@@ -122,7 +122,7 @@ def play_music_artist(artist):
     :param artist: String of artist name
     :return: Not important
     """
-    artist = artist.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
     artist_object = library.get_artist(artist)
     songs = artist_object.get_songs()
     random.shuffle(songs)
@@ -153,8 +153,8 @@ def play_music_album(artist, album):
     :param album: String of album name
     :return: Not important
     """
-    artist = artist.replace("_", " ")
-    album = album.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
+    album = album.replace("_", " ").replace("&amp;", "&")
 
     album_object = library.get_album(artist, album)
     songs = album_object.get_songs()
@@ -180,9 +180,9 @@ def play_music_album(artist, album):
 
 @app.route("/play/<string:artist>/<string:album>/<string:song>")
 def play_music_song(artist, album, song):
-    artist = artist.replace("_", " ")
-    album = album.replace("_", " ")
-    song_name = song.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
+    album = album.replace("_", " ").replace("&amp;", "&")
+    song_name = song.replace("_", " ").replace("&amp;", "&")
 
     song = library.get_song(artist, album, song_name)
     server.audio.play(song)
@@ -288,8 +288,8 @@ def get_image():
 
 @app.route("/image/<string:artist>/<string:album>")
 def get_album_image(artist, album):
-    artist = artist.replace("_", " ")
-    album = album.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
+    album = album.replace("_", " ").replace("&amp;", "&")
     try:
         filename = library.get_album(artist, album).get_image()
     except StandardError:
@@ -300,7 +300,7 @@ def get_album_image(artist, album):
 
 @app.route("/image/<string:artist>")
 def get_artist_image(artist):
-    artist = artist.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
     try:
         filename = library.get_artist(artist).get_image()
     except StandardError:
@@ -365,7 +365,7 @@ def get_albums2():
 # Niet meer nodig bij JSON
 @app.route("/get/<string:artist>")
 def get_albums_of_artist(artist):
-    artist = artist.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
     artist_object = library.get_artist(artist)
     s = ""
     for album in artist_object.get_albums():
@@ -375,7 +375,7 @@ def get_albums_of_artist(artist):
 
 @app.route("/get2/<string:artist>")
 def get2_albums_of_artist(artist):
-    artist = artist.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
     artist_object = library.get_artist(artist)
     albums = artist_object.get_albums()
     album_list = []
@@ -393,8 +393,8 @@ def get2_albums_of_artist(artist):
 
 @app.route("/get2/<string:artist>/<string:album>")
 def get2_albums(artist, album):
-    artist = artist.replace("_", " ")
-    album = album.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
+    album = album.replace("_", " ").replace("&amp;", "&")
     album = library.get_album(artist, album)
     song_list = []
     for song in sorted(album.get_songs(), key=lambda a: a.get_order()):
@@ -412,8 +412,8 @@ def get2_albums(artist, album):
 # Niet meer nodig bij JSON
 @app.route("/get/<string:artist>/<string:album>")
 def get_songs_of_album(artist, album):
-    artist = artist.replace("_", " ")
-    album = album.replace("_", " ")
+    artist = artist.replace("_", " ").replace("&amp;", "&")
+    album = album.replace("_", " ").replace("&amp;", "&")
     album_object = library.get_album(artist, album)
     s = ""
     for song in sorted(album_object.get_songs(), key=lambda a: a.get_order()):

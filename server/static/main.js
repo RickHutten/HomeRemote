@@ -40,14 +40,13 @@ function showAlbum(artist, album) {
 		}
 	})
 }
-var playing_image_bottom = 0;
-var playing_text_height = 0;
+
 function setQueueContainerSize() {
-	playing_image_bottom = $("#playing-image-container").offset().top + $("#playing-image-container").height();
+	var playing_image_bottom = $("#playing-image-container").offset().top + $("#playing-image-container").height();
 	var button_container_top = $("#button-container").offset().top;
 	$("#queue").height(button_container_top - playing_image_bottom);
 	
-	playing_text_height = $("#playing-text-container").outerHeight();
+	var playing_text_height = $("#playing-text-container").outerHeight();
 	$("#playing-text-container").css({ top: (playing_image_bottom - playing_text_height - $("body").scrollTop()) + 'px' });
 }
 
@@ -102,12 +101,12 @@ function setClickListeners() {
 		if ($('#play-pause').eq(0).attr("status") == "PLAYING") {
 			$.get(getUrl("/pause"), function(data, status){
 				$('#play-pause').eq(0).attr("src", getUrl("/static/play.png"));
-				$('#play-pause').eq(0).attr("status", "PAUSED");
+				$('#play-pause').eq(0).attr("state", "PAUSED");
 			});
 		} else {
 			$.get(getUrl("/resume"), function(data, status){
 				$('#play-pause').eq(0).attr("src", getUrl("/static/pause.png"));
-				$('#play-pause').eq(0).attr("status", "PLAYING");
+				$('#play-pause').eq(0).attr("state", "PLAYING");
 			});
 		}
 	});
