@@ -62,6 +62,7 @@ function fillContentFromStatus(data) {
 	$("#playing-title").html(song);
 	$("#playing-artist").html(artist);
 	$("#playing-album").html(album);
+	$("#playing-text-container").show();
 	var src = getUrl("/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_"));
 	$("#playing-image").attr("src", src);
 
@@ -98,7 +99,8 @@ function setClickListeners() {
 
 	// Set music control listeners
 	$('#play-pause').click(function() {
-		if ($('#play-pause').eq(0).attr("status") == "PLAYING") {
+		if ($('#play-pause').eq(0).attr("state") == "PLAYING") {
+			$('#play-pause').eq(0).attr("src", getUrl("/static/play.png"));
 			$.get(getUrl("/pause"), function(data, status){
 				$('#play-pause').eq(0).attr("src", getUrl("/static/play.png"));
 				$('#play-pause').eq(0).attr("state", "PAUSED");
@@ -110,6 +112,7 @@ function setClickListeners() {
 			});
 		}
 	});
+	
 	$('#btn-prev').click(function() {
 		$.get(getUrl("/previous"), null);
 	});
@@ -119,7 +122,6 @@ function setClickListeners() {
 }
 
 function scrollToTop() {
-	//$('#content').animate({scrollTop: 0}, 1000);
 	window.scrollTo(0, 0);
 }
 
@@ -144,12 +146,13 @@ function onSongClicked(e) {
 	data = '{"artist":"'+artist+'", "album":"'+album+'", "song":"'+song+'"}';
 	xhr.send(data);
 
-	postQueue();
+	postQueue(e);
 }
 
-function postQueue() {
+function postQueue(e) {
 	// POSTs all songviews on the screen to the server
-	var songs = $('.song-view');
+	var class_name = $(e).attr("class").split(/\s+/)[0];
+	var songs = $('.'+class_name);
 	// {"songs": [ {"artist": artist, "album": album, "song": song}, ...]}
 	var data = '';
 	for (i = 0; i < songs.length; i++) {

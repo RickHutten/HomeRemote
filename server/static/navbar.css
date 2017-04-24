@@ -1,7 +1,6 @@
 #navbar {
 	z-index: 5000;
 	width: calc(100% - 250px);
-	min-width: 760px;
 	background: #000;
 	color: white;
 	position: fixed;
