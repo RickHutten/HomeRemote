@@ -48,7 +48,7 @@ function setQueueContainerSize() {
 	$("#queue").height(button_container_top - playing_image_bottom);
 	
 	playing_text_height = $("#playing-text-container").outerHeight();
-	$("#playing-text-container").css({ top: (playing_image_bottom - playing_text_height) + 'px' });
+	$("#playing-text-container").css({ top: (playing_image_bottom - playing_text_height - $("body").scrollTop()) + 'px' });
 }
 
 function fillContentFromStatus(data) {
