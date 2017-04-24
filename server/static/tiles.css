@@ -12,8 +12,9 @@
 	height: 95%;
 	background: white;
 	margin: auto;
-	outline: #000 solid thin;
 	overflow: hidden;
+	border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 0px 4px #888;
 }
 
 .tile:hover {

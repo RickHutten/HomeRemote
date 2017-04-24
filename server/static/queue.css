@@ -1,0 +1,44 @@
+#queue-container {
+	background: white;
+	width: 250px;
+	height: 100%;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	box-shadow: 0px 0px 10px 4px #888888;
+}
+
+.controls-container {
+	background: #ffffff;
+
+}
+
+#playing-image {
+	width: 100%;
+}
+
+.playing-text-container {
+	color: white;
+	position: absolute;
+	width: calc(100% - 20px);
+	top: 0px;
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#button-container {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.btn-control {
+	width: 50px;
+	height: 50px;
+}
+
+.material-icons.md-48 { 
+	font-size: 48px;
+}

@@ -25,11 +25,6 @@ $(window).resize(function() {
 	sizeBody();
 });
 
-$(window).scroll(function() {
-	var scrolly = $(window).scrollLeft();
-	$('footer').css("left", -scrolly + "px");
-});
-
 function sizeBody() {
 	var top = document.getElementById('navbar').getBoundingClientRect().bottom;
 	var bottom = document.getElementById('footer').getBoundingClientRect().top;
@@ -38,7 +33,7 @@ function sizeBody() {
 }
 
 function showAlbum(artist, album) {
-	$.get("http://rickert.noip.me/get2/" + artist.replace(/ /g,"_"), function(data, status){
+	$.get(getUrl("/get2/" + artist.replace(/ /g,"_")), function(data, status){
 		var albums = data.albums;
 		for (i = 0; i < albums.length; i++) {
 			var alb = albums[i];
@@ -53,20 +48,21 @@ function showAlbum(artist, album) {
 }
 
 function getStatus() {
-	$.get("http://rickert.noip.me/status", function(data, status){
+	$.get(getUrl("/status"), function(data, status){
 		var playing = data.playing;
 		var status = data.status;
 		var artist = playing.artist;
 		var album = playing.album;
 		var song = playing.song;
 		$("#playing-title").html(song);
-		$("#playing-artist-album").html(artist + " - " + album);
-		var src = "http://rickert.noip.me/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_");
+		$("#playing-artist").html(artist);
+		$("#playing-album").html(album);
+		var src = getUrl("/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_"));
 		$("#playing-image").attr("src", src);
 
 		$('#play-pause').eq(0).attr("status", status);
 		if (status == "PLAYING") {
-			$('#play-pause').eq(0).attr("src", "http://rickert.noip.me/static/pause.png");
+			$('#play-pause').eq(0).attr("src", getUrl("/static/pause.png"));
 		}
 	});
 }
@@ -79,19 +75,19 @@ function setClickListeners() {
 	// Set music control listeners
 	$('#play-pause').click(function() {
 		if ($('#play-pause').eq(0).attr("status") == "PLAYING") {
-			$.get("http://rickert.noip.me/pause", function(data, status){
-				$('#play-pause').eq(0).attr("src", "http://rickert.noip.me/static/play.png");
+			$.get(getUrl("/pause"), function(data, status){
+				$('#play-pause').eq(0).attr("src", getUrl("/static/play.png"));
 				$('#play-pause').eq(0).attr("status", "PAUSED");
 			});
 		} else {
-			$.get("http://rickert.noip.me/resume", function(data, status){
-				$('#play-pause').eq(0).attr("src", "http://rickert.noip.me/static/pause.png");
+			$.get(getUrl("/resume"), function(data, status){
+				$('#play-pause').eq(0).attr("src", getUrl("/pause.png"));
 				$('#play-pause').eq(0).attr("status", "PLAYING");
 			});
 		}
 	});
 	$('#skip-next').click(function() {
-		$.get("http://rickert.noip.me/next", null);
+		$.get(getUrl("/next"), null);
 	});
 }
 
@@ -117,7 +113,7 @@ function onSongClicked(e) {
 	var album = $(e).eq(0).attr("album");
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "http://rickert.noip.me/play", true);
+	xhr.open("POST", getUrl("/play"), true);
 	xhr.onload = function() {console.log(this.responseText)};
 	data = '{"artist":"'+artist+'", "album":"'+album+'", "song":"'+song+'"}';
 	xhr.send(data);
@@ -142,13 +138,13 @@ function postQueue() {
 	var json = '{"songs": [ ' + data + "]}";
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "http://rickert.noip.me/set2/queue", true);
+	xhr.open("POST", getUrl("/set2/queue"), true);
 	xhr.onload = function() {console.log(this.responseText)};
 	xhr.send(json);
 }
 
 function setAlbums() {
-	$.get("http://rickert.noip.me/albums2", function(data, status){
+	$.get(getUrl("/albums2"), function(data, status){
 		var albums = data.albums;
 		var htmlString = '';
 		for (i = 0; i < albums.length; i++) {
@@ -166,7 +162,7 @@ function setAlbums() {
 }
 
 function setArtists() {
-	$.get("http://rickert.noip.me/artists2", function(data, status){
+	$.get(getUrl("/artists2"), function(data, status){
 		var artists = data.artists;
 		var htmlString = '';
 		for (i = 0; i < artists.length; i++) {
@@ -193,7 +189,7 @@ function setTileSize() {
 }
 
 function poll() {
-	$.get("http://rickert.noip.me/poll", function(data, status){
+	$.get(getUrl("/poll"), function(data, status){
 		console.log("data returned");
 		// When a new song is played on the server
 		var playing = data.playing;
@@ -202,18 +198,24 @@ function poll() {
 		var album = playing.album;
 		var song = playing.song;
 		$("#playing-title").html(song);
-		$("#playing-artist-album").html(artist + " - " + album);
-		var src = "http://rickert.noip.me/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_");
+		$("#playing-artist").html(artist);
+		$("#playing-album").html(album);
+		var src = getUrl("/image/" + artist.replace(/ /g,"_") + "/" + album.replace(/ /g,"_"));
 		$("#playing-image").attr("src", src);
 
 		$('#play-pause').eq(0).attr("status", status);
 		if (status == "PLAYING") {
-			$('#play-pause').eq(0).attr("src", "http://rickert.noip.me/static/pause.png");
+			$('#play-pause').eq(0).attr("src", getUrl("/static/pause.png"));
 			$('#play-pause').eq(0).attr("status", "PLAYING");
 		} else if (status == "PAUSED") {
-			$('#play-pause').eq(0).attr("src", "http://rickert.noip.me/static/play.png");
+			$('#play-pause').eq(0).attr("src", getUrl("/static/play.png"));
 			$('#play-pause').eq(0).attr("status", "PAUSED");
 		}
 		poll();  // Start function again
 	});
+}
+
+function getUrl(subdomain) {
+	//return "https://rickert.noip.me" + subdomain;  // For public site on RPi
+	return "" + subdomain;  // For localhost
 }

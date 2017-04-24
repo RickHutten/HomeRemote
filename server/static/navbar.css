@@ -1,9 +1,11 @@
 #navbar {
 	z-index: 5000;
-	width: 100%;
-	min-width: 490px;
+	width: calc(100% - 250px);
+	min-width: 760px;
 	background: #303030;
 	color: white;
+	position: fixed;
+	height: 60px;
 }
 
 .tabbar-item {
