@@ -36,8 +36,13 @@
 			</div>
 		</div>
 		<div id="queue"></div>
-		
+		<div id="volume-control">
+			<div id="volume-bar"></div>
+			<div id="volume-bar-background"></div>
+			<div id="volume-knob" onmousedown="onKnobDown(event)"></div>
+		</div>
 		<div id="button-container">
+			
 			<img id="btn-prev" class="btn-control" src="{{ url_for('static', filename='prev.png') }}">
 			<img id="play-pause" class="btn-control" src="{{ url_for('static', filename='play.png') }}">
 			<img id="btn-next" class="btn-control" src="{{ url_for('static', filename='next.png') }}">

@@ -8,6 +8,7 @@ $(document).ready(function() {
 			$( this ).removeClass("underline");
 		}
 	);
+	
 
 	getStatus();
 
@@ -21,10 +22,46 @@ $(document).ready(function() {
 });
 
 $(window).resize(function() {
-	console.log("Called");
+	console.log("OnResize");
 	setTileSize();
 	setQueueContainerSize();
 });
+
+function onKnobDown(e) {
+	//console.log(e);
+	document.body.onmouseup = function(e){
+		document.body.onmouseup = null;
+		document.body.onmousemove = null;
+		var posX = e.pageX;
+		var left = $('#volume-bar-background').offset().left;
+		var right = left + $('#volume-bar-background').width();
+		var mouseOffsetFrac = (posX - left) / (right - left);
+		if (mouseOffsetFrac < 0) {
+			mouseOffsetFrac = 0;
+		} else if (mouseOffsetFrac > 1) {
+			mouseOffsetFrac = 1;
+		}
+		var volume = Math.round(mouseOffsetFrac * 100);
+		$.get(getUrl("/set/volume/" + volume), null);
+	};
+	document.body.onmousemove = function(e){
+		var posX = e.pageX;
+		var left = $('#volume-bar-background').offset().left;
+		var right = left + $('#volume-bar-background').width();
+		var mouseOffsetFrac = (posX - left) / (right - left);
+		if (mouseOffsetFrac < 0) {
+			mouseOffsetFrac = 0;
+		} else if (mouseOffsetFrac > 1) {
+			mouseOffsetFrac = 1;
+		}
+		setVolumeVisual(mouseOffsetFrac);
+	};
+}
+
+function setVolumeVisual(fraction) {
+	document.getElementById("volume-knob").style.right = "calc("+ (90 - (fraction * 80)) +"% - 10px";
+	document.getElementById("volume-bar").style.width = (fraction * 80) +"%";
+}
 
 function showAlbum(artist, album) {
 	$.get(getUrl("/get2/" + artist.replace(/ /g,"_")), function(data, status){
@@ -43,8 +80,8 @@ function showAlbum(artist, album) {
 
 function setQueueContainerSize() {
 	var playing_image_bottom = $("#playing-image-container").offset().top + $("#playing-image-container").height();
-	var button_container_top = $("#button-container").offset().top;
-	$("#queue").height(button_container_top - playing_image_bottom);
+	var volume_top = $("#volume-control").offset().top;
+	$("#queue").height(volume_top - playing_image_bottom);
 	
 	var playing_text_height = $("#playing-text-container").outerHeight();
 	$("#playing-text-container").css({ top: (playing_image_bottom - playing_text_height - $("body").scrollTop()) + 'px' });
@@ -56,9 +93,13 @@ function fillContentFromStatus(data) {
 	}
 	var playing = data.playing;
 	var state = data.status;
+	var volume = data.volume;
 	var artist = playing.artist;
 	var album = playing.album;
 	var song = playing.song;
+	
+	setVolumeVisual(volume / 100);
+	
 	$("#playing-title").html(song);
 	$("#playing-artist").html(artist);
 	$("#playing-album").html(album);
