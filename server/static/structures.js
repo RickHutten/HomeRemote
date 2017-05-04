@@ -23,11 +23,7 @@ function getAlbumView(artist, album, songs) {
 		}
 		duration += seconds;
 		
-		if (i == songs.length - 1) {
-			songhtml += getSongView(artist, album, title, duration, false);
-		} else {
-			songhtml += getSongView(artist, album, title, duration, true);
-		}
+		songhtml += getSongView(artist, album, title, duration);
 	}
 	return basehtml + songhtml + endhtml;
 	
@@ -52,27 +48,17 @@ function getQueueSongs(queue) {
 		}
 		duration += seconds;
 		
-		if (i == queue.length - 1) {
-			str += getQueueSongView(artist, album, title, duration, false);
-		} else {
-			str += getQueueSongView(artist, album, title, duration, true);
-		}
+		str += getQueueSongView(artist, album, title, duration);
 	}
 	return str;
 }
 
-function getQueueSongView(artist, album, title, duration, border_bottom) {
-	if (border_bottom) {
-		return '<div class="queue-song-view border-bottom" onclick="onSongClicked(this)" artist="'+artist+'" album="'+album+'" title="'+title+'"><p class="queue-song-title">'+title+'</p><p class="queue-song-duration">'+duration+'</p></div>';
-	}
+function getQueueSongView(artist, album, title, duration) {
 	return '<div class="queue-song-view" onclick="onSongClicked(this)" artist="'+artist+'" album="'+album+'" title="'+title+'"><p class="queue-song-title">'+title+'</p><p class="queue-song-duration">'+duration+'</p></div>';
 }
 
 
-function getSongView(artist, album, title, duration, border_bottom) {
-	if (border_bottom) {
-		return '<div class="song-view border-bottom" onclick="onSongClicked(this)" artist="'+artist+'" album="'+album+'" title="'+title+'"><p class="song-title">'+title+'</p><p class="song-duration">'+duration+'</p></div>';
-	}
+function getSongView(artist, album, title, duration) {
 	return '<div class="song-view" onclick="onSongClicked(this)" artist="'+artist+'" album="'+album+'" title="'+title+'"><p class="song-title">'+title+'</p><p class="song-duration">'+duration+'</p></div>';
 }
 

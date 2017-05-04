@@ -13,12 +13,17 @@
 	background: white;
 	margin: auto;
 	overflow: hidden;
+	transition: all 0.2s ease;
 	border-radius: 5px 5px 5px 5px;
-    box-shadow: 0px 0px 4px #888;
+    box-shadow: 0px 0px 4px rgba(1, 1, 1, 0.2);
 }
 
 .tile:hover {
 	cursor: pointer;
+	transform: scale(1.05);
+	transition: all 0.2s ease;
+	box-shadow: 6px 6px 8px 2px rgba(1, 1, 1, 0.2);
+	transition-delay: 0.15s;
 }
 
 .tile > p {

@@ -38,10 +38,6 @@
 	transition: all 0.075s ease-in-out;
 }
 
-.border-bottom {
-	border-bottom: 1px solid #aaa;
-}
-
 .song-view:hover {
 	box-shadow: inset 0px 0px 10px #999;
 }
