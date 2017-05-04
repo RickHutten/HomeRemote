@@ -4,8 +4,8 @@
 	background: #FF6D00;
 	color: white;
 	position: fixed;
-	
 	height: 60px;
+	font-weight: 700;
 }
 
 .tabbar-item {

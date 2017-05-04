@@ -1,5 +1,5 @@
 function getAlbumTile(artist, album) {
-	return '<div class="tile-container"><div class="tile album-tile" onclick="onAlbumClicked(this)"><image class="tile-image" src="' + getUrl('/image/' + replaceAll(artist, " ", "_") + '/' + replaceAll(album, " ", "_")) + '"><p>' + album + '</p><p>' + artist + '</p></div></div>'
+	return '<div class="tile-container"><div class="tile album-tile" onclick="onAlbumClicked(this)"><image class="tile-image" src="' + getUrl('/image/' + replaceAll(artist, " ", "_") + '/' + replaceAll(album, " ", "_")) + '"><p><strong>' + album + '</strong></p><p style="font-size: 12px;">' + artist + '</p></div></div>'
 }
 
 function getArtistTile(artist) {
