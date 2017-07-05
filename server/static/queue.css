@@ -57,10 +57,12 @@
     justify-content: space-between;
 	padding: 10px 5px;
 	cursor: pointer;
+	transition: all 0.4s;
+    border-radius: 2px;
 }
 
 .queue-song-view:hover {
-	box-shadow: inset 0px 0px 10px #999;
+	background: #e5e5e5;
 }
 
 .queue-song-title {

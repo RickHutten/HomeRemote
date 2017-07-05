@@ -35,11 +35,12 @@
 	cursor: pointer;
 	display: inline-flex;
 	justify-content: space-between;
-	transition: all 0.075s ease-in-out;
+	transition: all 0.4s;
+    border-radius: 2px;
 }
 
 .song-view:hover {
-	box-shadow: inset 0px 0px 10px #999;
+	background: #e5e5e5;
 }
 
 .song-title {
