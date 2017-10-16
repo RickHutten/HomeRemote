@@ -14,5 +14,4 @@ print "Starting server"
 
 
 def start_server():
-    app.debug = False
-    app.run(threaded=True)
+    app.run(host='0.0.0.0', port=80, debug=False, threaded=True)

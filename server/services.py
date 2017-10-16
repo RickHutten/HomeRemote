@@ -16,6 +16,7 @@ def mac_scanner():
                 break
             if word == 'Address:':
                 result[-1].append(linesplit[i + 1])
+                break
     result = [i for i in result if len(i) == 2]  # Remove items where no MAC is set
     variables.put('devices', result, False)
     time.sleep(120)  # Wait two minutes before calling itself again

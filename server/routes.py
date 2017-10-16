@@ -491,7 +491,7 @@ def set_music_volume(volume):
 @app.route("/get_local_devices")
 def get_local_devices():
     # Return the devices connected to the local network of the server
-    devices = variables.get("devices")
+    devices = variables.get("devices", [])
     json = {'devices': [{'name': name, 'MAC': mac} for name, mac in devices]}
     return flask.jsonify(**json)
 
