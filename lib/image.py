@@ -52,7 +52,7 @@ class ImageManager:
         album_underscore = album.replace(" ", "_")
         album_plus = album.replace(" ", "+")
         if os.path.isfile("./data/images/albums/%s.jpg" % (
-                artist_underscore + "-" + album_underscore)):
+                        artist_underscore + "-" + album_underscore)):
             return "%s/data/images/albums/%s.jpg" % (
                 os.getcwd(), artist_underscore + "-" + album_underscore)
 
@@ -73,7 +73,7 @@ class ImageManager:
                 self._download_image(
                     image_url,
                     "./data/images/albums/%s.jpg" % (
-                            artist_underscore + "-" + album_underscore))
+                        artist_underscore + "-" + album_underscore))
                 return "%s/data/images/albums/%s.jpg" % (
                     os.getcwd(), artist_underscore + "-" + album_underscore)
             else:
@@ -122,12 +122,11 @@ class ImageManager:
             "https://api.spotify.com/v1/search?type=artist&q=%s" % (
                 artist_plus))
         # Sort by popularity
-        try :
-                item = sorted(data["artists"]["items"], key=lambda a:
-                      a["popularity"], reverse=True)[0]
+        try:
+            item = sorted(data["artists"]["items"], key=lambda a: a["popularity"], reverse=True)[0]
         except IndexError:
-                # Noting is found
-                return
+            # Noting is found
+            return
         artist_id = item["id"]
         # Get the albums of the artist now that we have the artist ID
 

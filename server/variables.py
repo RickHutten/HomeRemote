@@ -2,8 +2,8 @@ from ast import literal_eval
 from threading import Lock
 from lib.log import log
 
-class ServerVariables:
 
+class ServerVariables:
     # Declaring constants
     PLAYING = "PLAYING"
     PAUSED = "PAUSED"
@@ -54,8 +54,8 @@ class ServerVariables:
         self.glob[key] = value
 
         if not writeToFile:
-                # Don't write the key and value to file
-                return
+            # Don't write the key and value to file
+            return
 
         # Write key to file
         self.lock.acquire()  # Acquire lock

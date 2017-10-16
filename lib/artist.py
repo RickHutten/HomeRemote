@@ -1,5 +1,6 @@
 from lib.log import log
 
+
 class Artist:
     def __init__(self):
         self.name = ""  # String of artist name
@@ -11,7 +12,7 @@ class Artist:
         return "ArtistObject: " + self.name
 
     def __repr__(self):
-        return self.__str__() 
+        return self.__str__()
 
     def add_album(self, album_object):
         for album in self.get_albums():

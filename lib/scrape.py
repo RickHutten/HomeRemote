@@ -6,7 +6,6 @@ from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
 
 
-
 def scrape():
     print "Scraping songs..."
     start = time.time()
@@ -31,7 +30,7 @@ def scrape():
     # Make threads
     for i in range(no_threads):
         size = len(song_list) / no_threads + 1  # Size of song list to process
-        song_list_slice = song_list[i*size:(i+1)*size]  # Slice of song_list to process
+        song_list_slice = song_list[i * size:(i + 1) * size]  # Slice of song_list to process
         threads.append(Process(target=read_songs, args=(song_list_slice, thread_output[i], len(song_list), no_songs,)))
 
     # Start threads
@@ -41,12 +40,13 @@ def scrape():
     # Wait for all the threads to finish
     for i in range(no_threads):
         threads[i].join()
-    
+
     # Count the number of processed songs (no_songs.value is somehow not always correct!)
     total_songs = 0
     for output in thread_output:
         total_songs += len(output)
-    print "\r" + str(total_songs) + "/" + str(len(song_list)) + " songs scraped in", int((time.time() - start)*100)/100., "seconds."
+    print "\r" + str(total_songs) + "/" + str(len(song_list)) + " songs scraped in", int(
+        (time.time() - start) * 100) / 100., "seconds."
 
     # Write to file
     print "Writing to file..."
@@ -65,7 +65,7 @@ def read_songs(songs, output, total_songs, no_songs):
     for song_path in songs:
         # Load song
         try:
-         audio = MP3(song_path, ID3=EasyID3)
+            audio = MP3(song_path, ID3=EasyID3)
         except:
             print "\nError reading file:", song_path
             continue
@@ -76,7 +76,7 @@ def read_songs(songs, output, total_songs, no_songs):
 
         # Try to get the album artist tag, if not present, use song artist
         try:
-            album_artist = audio["albumartist"][0] # This line
+            album_artist = audio["albumartist"][0]  # This line
             if album_artist.lower() == artist.lower():  # Prevent difference in caps
                 album_artist = artist
         except KeyError:
@@ -90,7 +90,8 @@ def read_songs(songs, output, total_songs, no_songs):
         print "\r%d\%d songs scraped" % (no_songs.value, total_songs),
         sys.stdout.flush()
 
-        line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + str(length) + ";" + album_artist
+        line = song_name + ";" + artist + ";" + album + ";" + song_order + ";" + song_path + ";" + str(
+            length) + ";" + album_artist
         output.append(line.encode("utf8") + "\n")
 
 

@@ -26,7 +26,8 @@ def valid_ip():
     False if the user is not permitted.
     """
     ip = request.remote_addr
-    return (ip in variables.get("ip", []) or str(request.path) == "/register_ip") and ip not in variables.get("banned", [])
+    return (ip in variables.get("ip", []) or str(request.path) == "/register_ip") and ip not in variables.get("banned",
+                                                                                                              [])
 
 
 def block_user():
@@ -36,7 +37,7 @@ def block_user():
 @app.before_request
 def limit_remote_address():
     if not valid_ip():
-        log("Unauthorised request! -> " +str(request.remote_addr))
+        log("Unauthorised request! -> " + str(request.remote_addr))
         abort(401)  # Unauthorized
 
 
@@ -114,6 +115,7 @@ def play_music():
     songObj = library.get_song(artist, album, song)
     server.audio.play(songObj)
     return get_status()
+
 
 @app.route("/play/<string:artist>")
 def play_music_artist(artist):
@@ -248,7 +250,7 @@ def previous_song():
         song = queue[queue_nr - 1]
     song_obj = library.get_song(song[0], song[1], song[2])
     server.audio.play(song_obj)
-    
+
     return song[0] + ";" + song[1] + ";" + song[2]
 
 
@@ -335,7 +337,7 @@ def get_artists2():
                    "albums": len(artist.get_albums()),
                    "songs": len(artist.get_songs())}
         artistlist.append(jobject)
-    
+
     json = {"artists": artistlist}
     return flask.jsonify(**json)
 
@@ -390,6 +392,7 @@ def get2_albums_of_artist(artist):
                            "songs": song_list})
     json = {"albums": album_list}
     return flask.jsonify(**json)
+
 
 @app.route("/get2/<string:artist>/<string:album>")
 def get2_albums(artist, album):
@@ -448,7 +451,7 @@ def post_queue2():
     print ""
     data = literal_eval(data)
     print [data]
-    
+
     songs = data["songs"]
     playlist = []
     print "hier"
@@ -458,7 +461,7 @@ def post_queue2():
         album = lib.string.cleanJSON(song["album"])
         song_name = lib.string.cleanJSON(song["song"])
         print artist, album, song_name
-        
+
         playlist.append([artist, album, song_name])
 
     variables.put("queue", playlist)
@@ -483,6 +486,14 @@ def set_music_volume(volume):
     if server.audio.set_volume(volume):
         return "Volume set to " + str(volume) + "%"
     return "Can not set volume to " + str(volume) + "%"
+
+
+@app.route("/get_local_devices")
+def get_local_devices():
+    # Return the devices connected to the local network of the server
+    devices = variables.get("devices")
+    json = {'devices': [{'name': name, 'MAC': mac} for name, mac in devices]}
+    return flask.jsonify(**json)
 
 
 @app.route("/status")

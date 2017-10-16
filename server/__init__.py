@@ -8,8 +8,11 @@ variables = ServerVariables()  # Import server variables instance
 
 # Has to be imported after declaring variables 'app', 'library' and 'variables'
 import server.routes
+import server.services
+
+print "Starting server"
 
 
 def start_server():
     app.debug = False
-    app.run(host="0.0.0.0", port=80, threaded=True)
+    app.run(threaded=True)

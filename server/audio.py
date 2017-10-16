@@ -9,7 +9,7 @@ from lib.log import log
 
 
 def play(song):
-    log("Playing song: %s by %s" %(song.get_title(), song.get_artist().get_name()))
+    log("Playing song: %s by %s" % (song.get_title(), song.get_artist().get_name()))
     variables.put("status", variables.PLAYING)
     variables.put("playing",
                   [song.get_artist().get_name(), song.get_album().get_title(),
@@ -35,7 +35,7 @@ def set_volume(vol, fade=False):
             os.system("amixer -q sset PCM 0%")
             return True
         # Map 0-100% to 50-100% through a function
-        percentage = 5 * vol**0.5 + 50
+        percentage = 5 * vol ** 0.5 + 50
         command = "amixer -q sset PCM " + str(percentage) + "%"
         os.system(command)
         return True
@@ -162,7 +162,7 @@ def start_timer():
                 time.sleep(0.1)  # Wait for the music to be continued
             start_time += time.time() - start_pause_time
 
-        variables.put("elapsed", int(time_elapsed*1000)/1000., False)
+        variables.put("elapsed", int(time_elapsed * 1000) / 1000., False)
         time.sleep(0.1)  # Sleep for a bit
 
 
@@ -194,5 +194,5 @@ def push():
                           delay_while_idle=False,
                           time_to_live=600)
 
-    # Send to multiple devices by passing a list of ids.
-    # client.send(tokens, alert)#, **options)
+        # Send to multiple devices by passing a list of ids.
+        # client.send(tokens, alert)#, **options)
