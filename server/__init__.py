@@ -1,10 +1,12 @@
 import lib
+import time
 from server.variables import ServerVariables
 from flask import Flask
 
 app = Flask(__name__)
 library = lib.get_instance()  # Get the music library
 variables = ServerVariables()  # Import server variables instance
+variables.put("started_on", time.time())
 
 # Has to be imported after declaring variables 'app', 'library' and 'variables'
 import server.routes

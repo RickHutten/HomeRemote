@@ -19,7 +19,7 @@ def mac_scanner():
                 break
     result = [i for i in result if len(i) == 2]  # Remove items where no MAC is set
     variables.put('devices', result, False)
-    time.sleep(120)  # Wait two minutes before calling itself again
+    time.sleep(60)  # Wait two minutes before calling itself again
     mac_scanner()  # Scan again
 
 

@@ -503,6 +503,10 @@ def get_status():
     json = dict()
     status = variables.get("status", -1)
     json["status"] = status
+
+    elapsed = int(time.time() - variables.get("started_on", 0))
+    json["up time"] = "%dh %dm %ds" % (elapsed/3600, elapsed/60 % 60, elapsed % 60)
+
     if status != variables.STOPPED:
         json["playing"] = {"artist": artist, "album": album, "song": song,
                            "elapsed": variables.get("elapsed", 0),
