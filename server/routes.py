@@ -491,8 +491,9 @@ def set_music_volume(volume):
 @app.route("/get_local_devices")
 def get_local_devices():
     # Return the devices connected to the local network of the server
-    devices = variables.get("devices", [])
-    json = {'devices': [{'name': name, 'MAC': mac} for name, mac in devices]}
+    json = variables.get("devices", {'devices': []})
+    for i, d in enumerate(json['devices']):
+        json['devices'][i] = d.to_dict()
     return flask.jsonify(**json)
 
 
@@ -505,7 +506,7 @@ def get_status():
     json["status"] = status
 
     elapsed = int(time.time() - variables.get("started_on", 0))
-    json["up time"] = "%dh %dm %ds" % (elapsed/3600, elapsed/60 % 60, elapsed % 60)
+    json["uptime"] = "%dh %dm %ds" % (elapsed/3600, elapsed/60 % 60, elapsed % 60)
 
     if status != variables.STOPPED:
         json["playing"] = {"artist": artist, "album": album, "song": song,
