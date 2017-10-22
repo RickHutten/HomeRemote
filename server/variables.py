@@ -1,3 +1,4 @@
+import copy
 from ast import literal_eval
 from threading import Lock
 from lib.log import log
@@ -35,7 +36,7 @@ class ServerVariables:
 
     def get(self, key, default):
         if self.contains(key):
-            return self.glob[key]
+            return copy.deepcopy(self.glob[key])
         else:
             return default
 
