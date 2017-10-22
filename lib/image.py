@@ -1,6 +1,6 @@
 import json
 import os
-from urllib2 import urlopen
+from urllib2 import urlopen, HTTPError
 from lib.log import log
 
 
@@ -104,7 +104,11 @@ class ImageManager:
 
     @staticmethod
     def _get_json(url):
-        data = urlopen(url).read()
+        try:
+            data = urlopen(url).read()
+        except HTTPError as e:
+            print "Error occurred:", e.message
+            print "URL:", url
         output = json.loads(data)
         return output
 
