@@ -9,7 +9,7 @@ def mac_scanner():
     result = variables.get('devices', {'devices': []})
 
     class Device:
-        def __init__(self, name, ip, mac):
+        def __init__(self, name='', ip='', mac=''):
             self.name = name
             self.ip = ip
             self.mac = mac
@@ -22,7 +22,8 @@ def mac_scanner():
                     'last_seen': '%d seconds ago' % (time.time() - self.last_seen)}
 
         def __repr__(self):
-            return "{'name': %s, 'ip': %s, 'mac': %s, 'last_seen': '%d seconds ago'}" % (self.name, self.ip, self.mac, time.time() - self.last_seen)
+            return "{'name': %s, 'ip': %s, 'mac': %s, 'last_seen': '%d seconds ago'}" % \
+                   (self.name, self.ip, self.mac, time.time() - self.last_seen)
 
     def add_device(device):
         # Adds device to list or updates last_seen variable
@@ -41,31 +42,32 @@ def mac_scanner():
                 # Not seen for 10 minutes, remove device from list
                 del result['devices'][i]
 
-    # Call nmap function to scan for connected devices
-    response = os.popen("sudo nmap -sn 192.168.1.0/24 | grep 'MAC Address:\|Nmap scan'").read()
-    response = response.split('\n')
-    result['last_update'] = time.strftime("%Y-%m-%d %H:%M:%S")
+    def scan():
+        # Call nmap function to scan for connected devices
+        response = os.popen("sudo nmap -sn 192.168.1.0/24 | grep 'MAC Address:\|Nmap scan'").read()
+        response = response.split('\n')
+        result['last_update'] = time.strftime("%Y-%m-%d %H:%M:%S")
 
-    current_device = []  # To store information of the device while looping
-    for line in response:
-        linesplit = line.split(' ')
-        for i, word in enumerate(linesplit):
-            if word == 'for':
-                # New device
-                current_device = []
-                current_device.append(linesplit[i + 1])  # Name
-                current_device.append(linesplit[i + 2][1:-1])  # IP
-                break
-            if word == 'Address:':
-                current_device.append(linesplit[i + 1])  # MAC
-                add_device(Device(current_device[0], current_device[1], current_device[2]))  # Add or update device to device list
-                break
+        for line in response:
+            linesplit = line.split(' ')
+            for i, word in enumerate(linesplit):
+                if word == 'for':
+                    # New device
+                    current_device = Device()  # Make new device
+                    current_device.name = linesplit[i + 1]  # Name
+                    current_device.ip = linesplit[i + 2][1:-1]  # IP
+                    break
+                if word == 'Address:':
+                    current_device.mac = linesplit[i + 1]  # MAC
+                    add_device(current_device)  # Add or update device to device list
+                    break
 
-    remove_old_devices()  # Remove old devices if not seen for a long time
-    variables.put('devices', result, False)
+        remove_old_devices()  # Remove old devices if not seen for a long time
+        variables.put('devices', result, False)  # Update devices variable
 
-    time.sleep(60)  # Wait one minute before scanning again
-    mac_scanner()  # Scan again
+    while True:
+        scan()
+        time.sleep(60)  # Wait one minute before scanning again
 
 
 def run_services():
